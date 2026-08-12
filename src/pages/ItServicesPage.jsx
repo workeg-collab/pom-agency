@@ -282,7 +282,7 @@ export default function ItServicesPage() {
                 </div>
                 <h3>{f.title}</h3>
                 <p>{f.desc}</p>
-                <div className="pillar-tag"><CheckCircle2 size={14} /> {lang === 'ar' ? 'خدمة IT مُدارة' : lang === 'fr' ? 'Service IT Géré' : lang === 'hi' ? 'प्रबंधित आईटी सेवा' : 'Managed IT Service'}</div>
+                <div className="pillar-tag"><CheckCircle2 size={14} /> {t('managedItTag')}</div>
               </div>
             ))}
           </div>
@@ -336,8 +336,8 @@ export default function ItServicesPage() {
       {/* Call to Action */}
       <section className="section bg-surface text-center">
         <div className="container">
-          <h2>{lang === 'ar' ? 'هل تريد استشارة وفحص مجاني لبنية IT بشركتك؟' : lang === 'fr' ? 'Besoin d\'un Audit IT Gratuit pour Votre Entreprise ?' : lang === 'hi' ? 'क्या आप अपनी कंपनी के लिए मुफ्त आईटी ऑडिट चाहते हैं?' : 'Ready to Elevate Your Company IT Reliability & Security?'}</h2>
-          <p className="section-subtitle">{lang === 'ar' ? 'تواصل مع المهندسين المعتمدين لدينا للحصول على معاينة فورية.' : lang === 'fr' ? 'Contactez nos ingénieurs certifiés dès aujourd\'hui.' : lang === 'hi' ? 'हमारे प्रमाणित इंजीनियरों से आज ही संपर्क करें।' : 'Schedule an on-site IT audit and infrastructure roadmap with our certified team.'}</p>
+          <h2>{t('itServicesCtaTitle')}</h2>
+          <p className="section-subtitle">{t('itServicesCtaSub')}</p>
           <Link to="/mail-professional" className="btn btn-primary">
             {t('requestITAudit')} <ArrowRight size={18} />
           </Link>

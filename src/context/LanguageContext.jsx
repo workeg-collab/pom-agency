@@ -84,6 +84,9 @@ export const translations = {
     itPackagesSub: 'Flexible SLA tiers offering remote helpdesk, on-site hardware maintenance, and proactive network monitoring.',
     requestITAudit: 'Request Free IT Audit',
     exploreITPackages: 'Explore IT Packages',
+    itServicesCtaTitle: 'Ready to Elevate Your Company IT Reliability & Security?',
+    itServicesCtaSub: 'Schedule an on-site IT audit and infrastructure roadmap with our certified team.',
+    managedItTag: 'Managed IT Service',
 
     // Mail Professional Page Localization
     mailBadge: 'FEATURES',
@@ -334,6 +337,9 @@ export const translations = {
     itPackagesSub: 'مستويات خدمة مرنة تضمن الدعم الفني الفوري، الصيانة الميدانية، ومراقبة استقرار الشبكات.',
     requestITAudit: 'طلب فحص IT مجاني',
     exploreITPackages: 'استعراض باقات IT',
+    itServicesCtaTitle: 'هل تريد استشارة وفحص مجاني لبنية IT بشركتك؟',
+    itServicesCtaSub: 'تواصل مع المهندسين المعتمدين لدينا للحصول على معاينة فورية ومخطط شامل.',
+    managedItTag: 'خدمة IT مُدارة',
 
     // Mail Professional Page Localization
     mailBadge: 'المميزات الرئيسية',
@@ -584,6 +590,9 @@ export const translations = {
     itPackagesSub: 'Niveaux SLA flexibles avec helpdesk et maintenance.',
     requestITAudit: 'Demander un Audit IT Gratuit',
     exploreITPackages: 'Explorer les Packages IT',
+    itServicesCtaTitle: 'Besoin d\'un Audit IT Gratuit pour Votre Entreprise ?',
+    itServicesCtaSub: 'Contactez nos ingénieurs certifiés dès aujourd\'hui.',
+    managedItTag: 'Service IT Géré',
 
     // Mail Professional Page Localization
     mailBadge: 'FONCTIONNALITÉS',
@@ -762,7 +771,7 @@ export const translations = {
     networkServers: 'नेटवर्क और सर्वर',
     smartControl: 'स्मार्ट कंट्रोल',
     it: 'आईटी सेवाएं',
-    mailPro: 'प्रोफेशनल ईमेल',
+    mailPro: 'प्रोफیشنل ईमेल',
     cart: 'कार्ट',
 
     // Actions & Buttons
@@ -834,6 +843,9 @@ export const translations = {
     itPackagesSub: 'लचीली एसएलए योजनाएं।',
     requestITAudit: 'मुफ्त आईटी ऑडिट मांगें',
     exploreITPackages: 'आईटी पैकेज देखें',
+    itServicesCtaTitle: 'क्या आप अपनी कंपनी के लिए मुफ्त आईटी ऑडिट चाहते हैं?',
+    itServicesCtaSub: 'हमारे प्रमाणित इंजीनियरों से आज ही संपर्क करें।',
+    managedItTag: 'प्रबंधित आईटी सेवा',
 
     // Mail Professional Page Localization
     mailBadge: 'विशेषताएं',
@@ -900,7 +912,7 @@ export const translations = {
     // Accounting Page Localization
     accountingBadge: 'ईआरपी और वित्तीय प्रणाली',
     accountingHeroTitle: 'आधुनिक उद्यमों के लिए स्मार्ट अकाउंटिंग और ओडू ईआरपी सिस्टम',
-    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोल पर पूर्ण नियंत्रण पाएं।',
+    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोل पर पूर्ण नियंत्रण पाएं।',
     accountingCapabilities: 'सिस्टम क्षमताएं',
     everythingAccounting: 'वित्तीय नियंत्रण के लिए सब कुछ',
     everythingAccountingSub: 'ऑपरेशन्स को सुगम बनाएं।',
@@ -917,13 +929,13 @@ export const translations = {
     marketingHeroTitle: 'डेटा-ड्रिवन डिजिटल मार्केटिंग और ग्रोथ इंजीनियरिंग',
     marketingHeroSub: 'हम उच्च आरओआई डिजिटल मार्केटिंग अभियानों, सोशल मीडिया रणनीतियों और लक्षित विज्ञापनों के माध्यम से राजस्व बढ़ाते हैं।',
     coreMarketingPillars: 'मुख्य मार्केटिंग स्तंभ',
-    endToEndGrowth: 'आपके ब्रांड के लिए एंड-टू-एंड ग्रोथ इंजन',
+    endToEndGrowth: 'आपके ब्रांड के लिए एंड-टू-إंड ग्रोथ इंजन',
     endToEndSub: 'आपके ब्रांड को उच्च राजस्व प्राप्त करने के लिए सब कुछ।',
-    marketingPackages: 'ग्रोث मार्केटिंग पैकेज',
+    marketingPackages: 'ग्रोथ मार्केटिंग पैकेज',
     marketingPackagesSub: 'लचीली मासिक योजनाएं।',
     campaignShowcase: 'मल्टी-चैनल अभियान शोकेस',
     campaignShowcaseSub: 'फेसबुक, इंस्टाग्राम और गूगल पर हमारे सफल अभियान देखें।',
-    marketingWorkflow: 'ग्रोث रणनीति वर्कफ़्लो',
+    marketingWorkflow: 'ग्रोथ रणनीति वर्कफ़्लो',
     marketingWorkflowSub: 'डेटा-प्रथम प्रक्रिया।',
     startGrowthCampaign: 'ग्रोथ कैंपेन शुरू करें',
     explorePackages: 'पैकेज देखें',
