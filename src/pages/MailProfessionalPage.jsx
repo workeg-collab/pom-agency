@@ -2,36 +2,36 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, CheckCircle2, ShieldCheck, ArrowRight, Settings, CreditCard, UserCheck, Star, Cpu, Layers, Sparkles, Calendar, MapPin, Search, Share2, FileText } from 'lucide-react';
+import { Mail, CheckCircle2, ShieldCheck, ArrowRight, Settings, CreditCard, UserCheck, Star, Cpu, Layers, Sparkles } from 'lucide-react';
 import './MailProfessionalPage.css';
 
 export default function MailProfessionalPage() {
   const { addToCart } = useCart();
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const steps = [
     {
       step: '01',
-      title: 'Create a professional email for your business',
-      desc: 'An email address that matches your custom domain to make your brand appear more credible.',
+      titleKey: 'step1Title',
+      descKey: 'step1Desc',
       icon: Mail
     },
     {
       step: '02',
-      title: 'Choose an email hosting plan',
-      desc: 'Are you running a new business? Follow the Individual, Business, or Professional hosting plans.',
+      titleKey: 'step2Title',
+      descKey: 'step2Desc',
       icon: UserCheck
     },
     {
       step: '03',
-      title: 'Go to payment',
-      desc: 'Select the number of mailboxes and the subscription period. After the payment process is complete, you will be directed to your hosting account control panel.',
+      titleKey: 'step3Title',
+      descKey: 'step3Desc',
       icon: CreditCard
     },
     {
       step: '04',
-      title: 'Configure your email hosting',
-      desc: "Finally, create an email account, set up DNS settings, and sync your email with other devices. All that's left is to send your emails.",
+      titleKey: 'step4Title',
+      descKey: 'step4Desc',
       icon: Settings
     }
   ];
@@ -96,9 +96,9 @@ export default function MailProfessionalPage() {
               {t('mailHeroSub')}
             </p>
             <div className="hero-features-checklist mb-4">
-              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> Custom domain name email accounts</div>
-              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> Enterprise cloud infrastructure & antivirus protection</div>
-              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> Full smartphone & desktop sync support</div>
+              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> {t('customDomainAccounts')}</div>
+              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> {t('cloudInfraSecurity')}</div>
+              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> {t('mobileDesktopSync')}</div>
             </div>
             <div className="hero-actions">
               <a href="#plans" className="btn btn-primary">
@@ -124,17 +124,17 @@ export default function MailProfessionalPage() {
       {/* 2. 4 Steps Process */}
       <section className="section bg-surface">
         <div className="container">
-          <div className="badge-center">HOW IT WORKS</div>
+          <div className="badge-center">{t('mailBadge')}</div>
           <h2 className="section-title">{t('howItWorks')}</h2>
-          <p className="section-subtitle">Get your custom domain email live in minutes.</p>
+          <p className="section-subtitle">{t('howItWorksSub')}</p>
 
           <div className="grid-4-col steps-grid">
             {steps.map((s, idx) => (
               <div key={idx} className="card step-card">
                 <div className="step-num">{s.step}</div>
                 <s.icon size={28} className="step-icon" />
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
+                <h3>{t(s.titleKey)}</h3>
+                <p>{t(s.descKey)}</p>
               </div>
             ))}
           </div>

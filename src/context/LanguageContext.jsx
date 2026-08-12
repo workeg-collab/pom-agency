@@ -66,6 +66,28 @@ export const translations = {
     feat75GB: '75GB for emails',
     featFreeDomain: 'Free domain',
 
+    // Mail Professional Page Localization
+    mailBadge: 'FEATURES',
+    mailHeroTitle: 'Create a professional email for your business',
+    mailHeroSub: 'An email address that matches your custom domain to make your brand appear more credible. Boost team collaboration, enhance data security, and establish customer trust with custom domain email hosting.',
+    customDomainAccounts: 'Custom domain name email accounts',
+    cloudInfraSecurity: 'Enterprise cloud infrastructure & antivirus protection',
+    mobileDesktopSync: 'Full smartphone & desktop sync support',
+    howItWorks: '4 Steps to Setup Your Professional Email',
+    howItWorksSub: 'Get your custom domain email live in minutes.',
+
+    step1Title: 'Create a professional email for your business',
+    step1Desc: 'An email address that matches your custom domain to make your brand appear more credible.',
+    step2Title: 'Choose an email hosting plan',
+    step2Desc: 'Are you running a new business? Follow the Individual, Business, or Professional hosting plans.',
+    step3Title: 'Go to payment',
+    step3Desc: 'Select the number of mailboxes and the subscription period. After the payment process is complete, you will be directed to your hosting account control panel.',
+    step4Title: 'Configure your email hosting',
+    step4Desc: 'Finally, create an email account, set up DNS settings, and sync your email with other devices. All that\'s left is to send your emails.',
+
+    needMore: 'Need more? Get a custom plan',
+    needMoreDesc: 'If you need more than 50 email accounts or want Private Email for more than 20 domains, reach out, and one of our team will create a custom plan for your business.',
+
     // Network & Servers Page Localization
     networkBadge: 'ENTERPRISE INFRASTRUCTURE',
     networkHeroTitle: 'High-Performance Network & Server Engineering',
@@ -249,6 +271,28 @@ export const translations = {
     feat5Mailboxes: 'يتضمن 5 صناديق بريد رسمية',
     feat75GB: 'مساحة 75 جيجابايت للبريد',
     featFreeDomain: 'نطاق (دومين) خاص مجاني',
+
+    // Mail Professional Page Localization
+    mailBadge: 'المميزات الرئيسية',
+    mailHeroTitle: 'إنشاء بريد إلكتروني احترافي لنشاطك التجاري',
+    mailHeroSub: 'عنوان بريد إلكتروني يتطابق مع النطاق الخاص بك لجعل علامتك التجارية تبدو أكثر مصداقية وتعزيز ثقة العملاء.',
+    customDomainAccounts: 'حسابات بريد الكتروني باسم نطاقك الخاص (Custom Domain)',
+    cloudInfraSecurity: 'بنية تحتية سحابية مؤسسية وحماية معتمدة من الفيروسات',
+    mobileDesktopSync: 'دعم المزامنة الكاملة على الموبايل وأجهزة الكمبيوتر',
+    howItWorks: '4 خطوات لإعداد البريد الإلكتروني الاحترافي',
+    howItWorksSub: 'احصل على بريد إلكتروني باسم نطاقك الخاص في دقائق معدودة.',
+
+    step1Title: 'إنشاء بريد إلكتروني احترافي لنشاطك التجاري',
+    step1Desc: 'عنوان بريد إلكتروني يتطابق مع النطاق الخاص بك لجعل علامتك التجارية تبدو أكثر مصداقية وتعزيز الثقة.',
+    step2Title: 'اختيار خطة استضافة البريد الإلكتروني',
+    step2Desc: 'هل تدير شركة جديدة أو متنامية؟ اختر من بين باقات الفردي، الأعمال، أو الباقة الاحترافية.',
+    step3Title: 'الانتقال إلى عملية الدفع',
+    step3Desc: 'حدد عدد صناديق البريد وفترة الاشتراك. بعد اكتمال عملية الدفع، سيتم توجيهك مباشرة إلى لوحة تحكم حساب الاستضافة الخاص بك.',
+    step4Title: 'تهيئة استضافة البريد الإلكتروني',
+    step4Desc: 'أخيراً، قم بإنشاء حساب بريد إلكتروني وضبط إعدادات الـ DNS ومزامنة البريد مع كافة أجهزتك. كل ما تبقى هو إرسال إيميلاتك.',
+
+    needMore: 'تحتاج خطة مخصصة أكبر؟',
+    needMoreDesc: 'إذا كنت بحاجة إلى أكثر من 50 حساب بريد إلكتروني أو تريد بريدًا خاصًا لأكثر من 20 نطاقًا، فتواصل معنا وسينشئ فريقنا خطة مخصصة لشركتك.',
 
     // Network & Servers Page Localization
     networkBadge: 'البنية التحتية للمؤسسات',
@@ -434,6 +478,28 @@ export const translations = {
     feat75GB: '75 Go pour les e-mails',
     featFreeDomain: 'Nom de domaine gratuit',
 
+    // Mail Professional Page Localization
+    mailBadge: 'FONCTIONNALITÉS',
+    mailHeroTitle: 'Créez un e-mail professionnel pour votre entreprise',
+    mailHeroSub: 'Une adresse e-mail qui correspond à votre domaine personnalisé pour rendre votre marque plus crédible.',
+    customDomainAccounts: 'Comptes e-mail avec nom de domaine personnalisé',
+    cloudInfraSecurity: 'Infrastructure cloud et protection antivirus',
+    mobileDesktopSync: 'Support de synchronisation mobile et bureau',
+    howItWorks: '4 Étapes pour Configurer Votre E-mail Professionnel',
+    howItWorksSub: 'Activez votre e-mail professionnel en quelques minutes.',
+
+    step1Title: 'Créez un e-mail professionnel pour votre entreprise',
+    step1Desc: 'Une adresse e-mail qui correspond à votre domaine personnalisé pour rendre votre marque plus crédible.',
+    step2Title: 'Choisissez un plan d\'hébergement e-mail',
+    step2Desc: 'Vous lancez une nouvelle entreprise ? Suivez les forfaits Individuel, Business ou Professionnel.',
+    step3Title: 'Passez au paiement',
+    step3Desc: 'Sélectionnez le nombre de boîtes aux lettres et la durée. Vous serez redirigé vers votre panneau de contrôle.',
+    step4Title: 'Configurez votre hébergement e-mail',
+    step4Desc: 'Créez un compte e-mail, configurez les paramètres DNS et synchronisez votre e-mail.',
+
+    needMore: 'Besoin de plus ? Obtenez un plan sur mesure',
+    needMoreDesc: 'Si vous avez besoin de plus de 50 comptes e-mail, contactez notre équipe pour créer un plan personnalisé.',
+
     // Network & Servers Page Localization
     networkBadge: 'INFRASTRUCTURE D\'ENTREPRISE',
     networkHeroTitle: 'Ingénierie Réseau & Serveur Haute Performance',
@@ -618,6 +684,28 @@ export const translations = {
     feat75GB: 'ईमेल के लिए 75GB',
     featFreeDomain: 'मुफ्त डोमेन',
 
+    // Mail Professional Page Localization
+    mailBadge: 'विशेषताएं',
+    mailHeroTitle: 'अपने व्यवसाय के लिए पेशेवर ईमेल बनाएं',
+    mailHeroSub: 'अपने कस्टम डोमेन से मेल खाता ईमेल पता ताकि आपका ब्रांड अधिक विश्वसनीय दिखे।',
+    customDomainAccounts: 'कस्टम डोमेन ईमेल खाते',
+    cloudInfraSecurity: 'एंटरप्राइज क्लाउड इंफ्रास्ट्रक्चर',
+    mobileDesktopSync: 'स्मार्टफोन और डेस्कटॉप सिंक',
+    howItWorks: 'प्रोफेशनल ईमेल सेटअप करने के 4 आसान चरण',
+    howItWorksSub: 'मिनटों में अपना ईमेल चालू करें।',
+
+    step1Title: 'अपने व्यवसाय के लिए पेशेवर ईमेल बनाएं',
+    step1Desc: 'अपने कस्टम डोमेन से मेल खाता ईमेल पता ताकि आपका ब्रांड अधिक विश्वसनीय दिखे।',
+    step2Title: 'ईमेल होस्टिंग प्लान चुनें',
+    step2Desc: 'क्या आप एक नया व्यवसाय चला रहे हैं? व्यक्तिगत या व्यावसायिक योजनाओं का पालन करें।',
+    step3Title: 'भुगतान पर जाएं',
+    step3Desc: 'मेलबॉक्स की संख्या और सदस्यता अवधि चुनें। फिर नियंत्रण कक्ष पर जाएं।',
+    step4Title: 'अपनी ईमेल होस्टिंग कॉन्फ़िगर करें',
+    step4Desc: 'अंत में, ईमेल खाता बनाएं, डीएनएस सेटिंग्स सेट करें और सिंक करें।',
+
+    needMore: 'कस्टम प्लान चाहिए?',
+    needMoreDesc: 'यदि आपको 50 से अधिक ईमेल खातों की आवश्यकता है, तो संपर्क करें और हमारी टीम एक कस्टम प्लान तैयार करेगी।',
+
     // Network & Servers Page Localization
     networkBadge: 'एंटरप्राइज इंफ्रास्ट्रक्चर',
     networkHeroTitle: 'उच्च प्रदर्शन नेटवर्क और सर्वर इंजीनियरिंग',
@@ -705,7 +793,7 @@ export const translations = {
     featuresBadge: 'विशेषताएं',
     allInOneTitle: 'आपका ऑल-इन-वन टेक पार्टनर',
     allInOneDesc: 'प्रोफेशनल ईमेल से लेकर स्मार्ट कंट्रोल, वेब पोर्टल और अकाउंटिंग तक — हमारी सेवाएं आपके व्यवसाय को बढ़ाती हैं।',
-    integratedDigitalEngineering: 'एकीकृत डिजिटल इंजीनियरिंग और इंफ्राструкक्चर',
+    integratedDigitalEngineering: 'एकीकृत डिजिटल इंजीनियरिंग और इंफ्रास्ट्रक्चर',
     integratedDesc: 'हम सॉफ्टवेयर, नेटवर्क, स्मार्ट कंट्रोल और ईआरपी को एक साथ लाते हैं।',
     lowCurrentCert: 'प्रमाणित नेटवर्क इंस्टॉलेशन',
     cloudEmailCert: 'क्लाउड ईमेल और डोमेन प्रबंधन',
