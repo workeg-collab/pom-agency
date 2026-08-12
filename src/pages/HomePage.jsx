@@ -119,7 +119,7 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* Hero Section */}
+      {/* Top Hero Section with Official Home-3.jpg Main Hero Image */}
       <section className="hero-section">
         <div className="container hero-container">
           <div className="hero-content">
@@ -162,8 +162,8 @@ export default function HomePage() {
           <div className="hero-visual">
             <div className="hero-image-wrapper">
               <img 
-                src="/assets/Illustration-2.jpg" 
-                alt="POM Digital Platform" 
+                src="/assets/Home-3.jpg" 
+                alt="POM Digital Platform Main Hero" 
                 className="hero-official-img"
               />
             </div>
@@ -171,7 +171,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Overview */}
+      {/* Your All-in-One Tech Partner Section (with Illustration-2.jpg graphic directly below) */}
       <section className="section bg-surface">
         <div className="container">
           <div className="badge-center"><Sparkles size={14} /> FEATURES</div>
@@ -180,7 +180,30 @@ export default function HomePage() {
             From professional email and smart control to websites, accounting, and social media — our integrated services cover every step of your business growth.
           </p>
 
-          <div className="grid-5-col">
+          <div className="all-in-one-banner grid-2-col align-center mt-4 mb-5">
+            <div className="all-in-one-text">
+              <h3 className="mb-3" style={{ fontSize: '1.75rem', color: '#343f5a' }}>Integrated Digital Engineering & Infrastructure</h3>
+              <p className="text-muted mb-4">
+                We bring together software engineering, hardware installations, smart control systems, and enterprise accounting into a single unified partner for your organization.
+              </p>
+              <div className="check-list">
+                <div><CheckCircle2 size={16} className="check-icon" /> Certified Low-Current & Network Installations</div>
+                <div><CheckCircle2 size={16} className="check-icon" /> Automated Cloud Email & Domain Management</div>
+                <div><CheckCircle2 size={16} className="check-icon" /> High-Performance Web & ERP Solutions</div>
+              </div>
+            </div>
+            <div className="all-in-one-graphic text-center">
+              <div className="hero-image-wrapper">
+                <img 
+                  src="/assets/Illustration-2.jpg" 
+                  alt="All in One Tech Partner Graphic" 
+                  className="hero-official-img"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-5-col mt-4">
             <div className="tech-pill">
               <Zap size={20} className="pill-icon" />
               <h4>Smart & Scalable Tech</h4>
