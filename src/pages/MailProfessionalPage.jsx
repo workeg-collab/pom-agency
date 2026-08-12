@@ -2,7 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, CheckCircle2, ShieldCheck, ArrowRight, Settings, CreditCard, UserCheck, Star, Cpu, Layers, Sparkles } from 'lucide-react';
+import { 
+  Mail, 
+  CheckCircle2, 
+  ShieldCheck, 
+  ArrowRight, 
+  Settings, 
+  CreditCard, 
+  UserCheck, 
+  Star, 
+  Cpu, 
+  Layers, 
+  Sparkles, 
+  Calendar, 
+  MapPin, 
+  Search, 
+  Share2, 
+  FileText, 
+  Award,
+  Globe
+} from 'lucide-react';
 import './MailProfessionalPage.css';
 
 export default function MailProfessionalPage() {
@@ -84,6 +103,51 @@ export default function MailProfessionalPage() {
     }
   ];
 
+  const aiServices = [
+    {
+      icon: Search,
+      titleKey: 'seoOptimization',
+      descKey: 'seoOptDesc'
+    },
+    {
+      icon: Share2,
+      titleKey: 'socialEngagement',
+      descKey: 'socialEngDesc'
+    },
+    {
+      icon: FileText,
+      titleKey: 'contentMarketing',
+      descKey: 'contentMktDesc'
+    }
+  ];
+
+  const timelineEvents = [
+    {
+      date: 'March 2013',
+      location: 'LA, California',
+      titleKey: 'event1Title',
+      descKey: 'event1Desc'
+    },
+    {
+      date: 'May 2015',
+      location: 'JP, Tokyo',
+      titleKey: 'event2Title',
+      descKey: 'event2Desc'
+    },
+    {
+      date: 'Sept 2018',
+      location: 'Workshops',
+      titleKey: 'event3Title',
+      descKey: 'event3Desc'
+    },
+    {
+      date: 'Jun 2022',
+      location: 'New Order',
+      titleKey: 'event4Title',
+      descKey: 'event4Desc'
+    }
+  ];
+
   return (
     <div className="mail-pro-page">
       {/* 1. Top Hero Header Banner */}
@@ -148,7 +212,7 @@ export default function MailProfessionalPage() {
           <h2 className="section-title">{t('pricingPlans')}</h2>
           <p className="section-subtitle">{t('pricingSub')}</p>
 
-          <div className="grid-3-col pricing-grid">
+          <div className="grid-3-col pricing-grid mb-5">
             {plans.map((p) => (
               <div key={p.id} className={`card pricing-card text-center ${p.isSale ? 'recommended' : ''}`}>
                 {p.isSale && <div className="popular-badge">{t('sale')}</div>}
@@ -187,7 +251,27 @@ export default function MailProfessionalPage() {
             ))}
           </div>
 
-          {/* 4. Custom Plan Banner */}
+          {/* 4. AI Development & Specialized Services Section */}
+          <div className="mt-5 pt-4">
+            <div className="badge-center"><Cpu size={14} /> {t('servicesBadge')}</div>
+            <h2 className="section-title">{t('aiDevTitle')}</h2>
+            <p className="section-subtitle">{t('aiDevSub')}</p>
+
+            <div className="grid-3-col mt-4">
+              {aiServices.map((srv, idx) => (
+                <div key={idx} className="card pillar-card">
+                  <div className="pillar-icon-box">
+                    <srv.icon size={26} className="pillar-icon" />
+                  </div>
+                  <h3>{t(srv.titleKey)}</h3>
+                  <p>{t(srv.descKey)}</p>
+                  <div className="pillar-tag"><CheckCircle2 size={14} /> {lang === 'ar' ? 'خدمة متخصصة' : 'Specialized Solution'}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 5. Custom Plan Banner */}
           <div className="custom-plan-banner card mt-5">
             <div className="banner-text">
               <div className="badge mb-2"><Sparkles size={12} /> {t('whatWeDo')}</div>
@@ -195,8 +279,32 @@ export default function MailProfessionalPage() {
               <p>{t('needMoreDesc')}</p>
             </div>
             <Link to="/terms-and-conditions" className="btn btn-primary">
-              {t('contactUs')} <ArrowRight size={16} />
+              {t('getInTouch')} <ArrowRight size={16} />
             </Link>
+          </div>
+
+          {/* 6. Company Timeline Section */}
+          <div className="timeline-section mt-5 pt-5">
+            <div className="badge-center"><Award size={14} /> {t('companyTimelineBadge')}</div>
+            <h2 className="section-title">{t('companyTimelineTitle')}</h2>
+            <p className="section-subtitle">{t('companyTimelineSub')}</p>
+
+            <div className="grid-4-col timeline-grid mt-4">
+              {timelineEvents.map((ev, idx) => (
+                <div key={idx} className="card timeline-card">
+                  <div className="timeline-date-row flex-center gap-2 mb-2">
+                    <Calendar size={14} className="text-primary" />
+                    <span className="timeline-date">{ev.date}</span>
+                  </div>
+                  <div className="timeline-location-row flex-center gap-1 text-muted mb-3">
+                    <MapPin size={12} />
+                    <span style={{ fontSize: '0.8rem' }}>{ev.location}</span>
+                  </div>
+                  <h3>{t(ev.titleKey)}</h3>
+                  <p>{t(ev.descKey)}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

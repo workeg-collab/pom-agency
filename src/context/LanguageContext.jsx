@@ -88,6 +88,31 @@ export const translations = {
     needMore: 'Need more? Get a custom plan',
     needMoreDesc: 'If you need more than 50 email accounts or want Private Email for more than 20 domains, reach out, and one of our team will create a custom plan for your business.',
 
+    servicesBadge: 'SERVICES',
+    aiDevTitle: 'AI Development: Cutting-Edge Solutions for Your Industry',
+    aiDevSub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+    seoOptimization: 'SEO Optimization',
+    seoOptDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+    socialEngagement: 'Social Engagement',
+    socialEngDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+    contentMarketing: 'Content Marketing',
+    contentMktDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+
+    companyTimelineBadge: 'COMPANY TIMELINE',
+    companyTimelineTitle: 'Company Timeline',
+    companyTimelineSub: 'Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo luctus nec ullamcorper.',
+
+    event1Title: 'Founded in USA',
+    event1Desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.',
+    event2Title: 'Opening New Office',
+    event2Desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.',
+    event3Title: 'Client Satisfaction',
+    event3Desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.',
+    event4Title: 'Improved Ourselves',
+    event4Desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.',
+
+    getInTouch: 'Get in touch',
+
     // Network & Servers Page Localization
     networkBadge: 'ENTERPRISE INFRASTRUCTURE',
     networkHeroTitle: 'High-Performance Network & Server Engineering',
@@ -293,6 +318,31 @@ export const translations = {
 
     needMore: 'تحتاج خطة مخصصة أكبر؟',
     needMoreDesc: 'إذا كنت بحاجة إلى أكثر من 50 حساب بريد إلكتروني أو تريد بريدًا خاصًا لأكثر من 20 نطاقًا، فتواصل معنا وسينشئ فريقنا خطة مخصصة لشركتك.',
+
+    servicesBadge: 'الخدمات المتقدمة',
+    aiDevTitle: 'تطوير الذكاء الاصطناعي: حلول متطورة لمجالك',
+    aiDevSub: 'نبتكر حلول ذكاء اصطناعي وأتمتة متطورة لدعم نمو وأداء نشاطك التجاري والمؤسسي.',
+    seoOptimization: 'تحسين محركات البحث (SEO)',
+    seoOptDesc: 'تصدر النتائج الأولى على محركات البحث وجلب عملاء مهتمين ومستهدفين لخدماتك.',
+    socialEngagement: 'التفاعل مع السوشيال ميديا',
+    socialEngDesc: 'استراتيجيات تفاعل ومحتوى يومي مبتكر لبناء مجتمع قوي وزيادة المبيعات.',
+    contentMarketing: 'التسويق بالمحتوى',
+    contentMktDesc: 'صياغة نصوص إعلانية ومحتوى تسويقي مؤثر يضاعف نسب التحويل والمبيعات.',
+
+    companyTimelineBadge: 'الجدول الزمني للشركة',
+    companyTimelineTitle: 'مسيرة وتاريخ الشركة',
+    companyTimelineSub: 'خطوات ومحطات نجاح وتوسع الشركة عبر السنوات لتقديم أفضل خدمة لعملائنا.',
+
+    event1Title: 'التأسيس في الولايات المتحدة',
+    event1Desc: 'بدء الانطلاقة الرسمية وتأسيس الخدمات التقنية والحلول السحابية الأولى.',
+    event2Title: 'افتتاح المكاتب الجديدة',
+    event2Desc: 'التوسع الدولي وافتتاح الفروع والمكاتب الجديدة لتغطية كافة متطلبات العملاء.',
+    event3Title: 'رضا العملاء والورش',
+    event3Desc: 'التفوق في تقديم خدمات دعم استثنائية وعقد ورش تطويرية عالية الكفاءة.',
+    event4Title: 'التطور المستمر والتوسع',
+    event4Desc: 'إعادة الابتكار وتطوير الخدمات ومواكبة أحدث تقنيات تكنولوجيا المعلومات.',
+
+    getInTouch: 'تواصل معنا الآن',
 
     // Network & Servers Page Localization
     networkBadge: 'البنية التحتية للمؤسسات',
@@ -500,6 +550,31 @@ export const translations = {
     needMore: 'Besoin de plus ? Obtenez un plan sur mesure',
     needMoreDesc: 'Si vous avez besoin de plus de 50 comptes e-mail, contactez notre équipe pour créer un plan personnalisé.',
 
+    servicesBadge: 'SERVICES',
+    aiDevTitle: 'Développement IA: Solutions de Pointe pour Votre Secteur',
+    aiDevSub: 'Solutions IA avancées pour stimuler la croissance de votre entreprise.',
+    seoOptimization: 'Optimisation SEO',
+    seoOptDesc: 'Améliorez votre classement et votre visibilité sur les moteurs de recherche.',
+    socialEngagement: 'Engagement Social',
+    socialEngDesc: 'Engagez votre audience sur tous les réseaux sociaux.',
+    contentMarketing: 'Marketing de Contenu',
+    contentMktDesc: 'Création de contenu captivant pour votre marque.',
+
+    companyTimelineBadge: 'CHRONOLOGIE',
+    companyTimelineTitle: 'Chronologie de l\'Entreprise',
+    companyTimelineSub: 'Découvrez notre parcours et nos étapes clés au fil des ans.',
+
+    event1Title: 'Fondé aux USA',
+    event1Desc: 'Création initiale et lancement des services informatiques.',
+    event2Title: 'Ouverture du Nouveaux Bureau',
+    event2Desc: 'Expansion internationale et ouverture de nouveaux bureaux.',
+    event3Title: 'Satisfaction Clients',
+    event3Desc: 'Excellence dans les services et retours positifs.',
+    event4Title: 'Amélioration Continue',
+    event4Desc: 'Innovation et adoption des nouvelles technologies.',
+
+    getInTouch: 'Entrer en contact',
+
     // Network & Servers Page Localization
     networkBadge: 'INFRASTRUCTURE D\'ENTREPRISE',
     networkHeroTitle: 'Ingénierie Réseau & Serveur Haute Performance',
@@ -665,7 +740,7 @@ export const translations = {
     planEnterpriseSuite: 'एंटरप्राइज सूट',
     planEnterpriseSuiteSub: 'बडे संगठन',
 
-    planStarterMarketing: 'स्टार्टर मार्केटिंग',
+    planStarterMarketing: 'स्टार्टر मार्केटिंग',
     planStarterMarketingSub: 'ब्रांड्स',
     planGrowthProMarketing: 'ग्रोथ प्रो मार्केटिंग',
     planGrowthProMarketingSub: 'ई-कॉमर्स',
@@ -705,6 +780,31 @@ export const translations = {
 
     needMore: 'कस्टम प्लान चाहिए?',
     needMoreDesc: 'यदि आपको 50 से अधिक ईमेल खातों की आवश्यकता है, तो संपर्क करें और हमारी टीम एक कस्टम प्लान तैयार करेगी।',
+
+    servicesBadge: 'सेवाएं',
+    aiDevTitle: 'एआई विकास: अत्याधुनिक समाधान',
+    aiDevSub: 'आपके उद्योग के लिए समाधान।',
+    seoOptimization: 'एसईओ ऑप्शंस',
+    seoOptDesc: 'सर्च इंजन रैंकिंग में सुधार।',
+    socialEngagement: 'सोशल मीडिया सहभागिता',
+    socialEngDesc: 'दर्शकों से जुड़ें।',
+    contentMarketing: 'कंटेंट मार्केटिंग',
+    contentMktDesc: 'आकर्षक कंटेंट बनाएं।',
+
+    companyTimelineBadge: 'कंपनी टाइमलाइन',
+    companyTimelineTitle: 'कंपनी टाइमलाइन',
+    companyTimelineSub: 'हमारी यात्रा देखें।',
+
+    event1Title: 'यूएसए में स्थापित',
+    event1Desc: 'प्रारंभिक शुरुआत।',
+    event2Title: 'नया कार्यालय खोलना',
+    event2Desc: 'अंतर्राष्ट्रीय विस्तार।',
+    event3Title: 'ग्राहक संतुष्टि',
+    event3Desc: 'उत्कृष्ट सेवाएं।',
+    event4Title: 'स्वयं को बेहतर बनाया',
+    event4Desc: 'निरंतर नवाचार।',
+
+    getInTouch: 'संपर्क में आएं',
 
     // Network & Servers Page Localization
     networkBadge: 'एंटरप्राइज इंफ्रास्ट्रक्चर',
@@ -771,7 +871,7 @@ export const translations = {
     processTitle: 'हमारी वेब डिजाइन प्रक्रिया',
     processSub: '4-चरणों की सिद्ध इंजीनियरिंग पद्धति।',
     startWebProject: 'अपना वेब प्रोजेक्ट शुरू करें',
-    viewShowcase: 'शोकेस देखें',
+    viewShowcase: 'शोकेس देखें',
     portfolioShowcaseBadge: 'पोर्टफोलियो शोकेस',
     methodologyBadge: 'कार्यप्रणाली',
     readyLaunchWebsite: 'क्या आप अपनी नई वेबसाइट लॉन्च करने के लिए तैयार हैं?',
@@ -837,7 +937,7 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('pom_app_lang', lang);
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'rtl';
   }, [lang]);
 
   const t = (key) => {

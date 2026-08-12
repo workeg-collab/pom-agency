@@ -1,39 +1,20 @@
-.page-header {
-  padding: 4.5rem 0 3.5rem 0;
-  text-align: center;
-  background: #ffffff !important;
-  border-bottom: 1px solid #e2e8f0;
+.mail-pro-page {
+  padding-bottom: 4rem;
 }
 
-/* Mail Professional Top Hero Section with Logo 12.png */
 .mail-hero-section {
-  padding: 4.5rem 0 4rem 0;
+  padding: 5rem 0 4rem 0;
   background: #ffffff !important;
-  border-bottom: 1px solid #e2e8f0;
 }
 
 .mail-hero-title {
   font-family: var(--font-heading);
-  font-size: 2.75rem;
+  font-size: 2.6rem;
   font-weight: 800;
-  color: #343f5a;
   line-height: 1.25;
-  margin-bottom: 1.25rem;
-}
-
-.hero-features-checklist {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.check-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
   color: #343f5a;
-  font-weight: 600;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
 }
 
 .mail-hero-visual {
@@ -43,168 +24,129 @@
 }
 
 .mail-logo-box {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: 0 15px 35px rgba(19, 136, 253, 0.1);
+  width: 100%;
+  max-width: 480px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: transform var(--transition-normal);
-}
-
-.mail-logo-box:hover {
-  transform: scale(1.03);
-  border-color: #1388fd;
+  align-items: center;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
 }
 
 .mail-official-logo-img {
   width: 100%;
-  max-width: 320px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(19, 136, 253, 0.15));
+  filter: drop-shadow(0 15px 30px rgba(19, 136, 253, 0.15));
+  transition: transform var(--transition-normal);
 }
 
-.page-header-sub {
-  color: #777777;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.mail-official-logo-img:hover {
+  transform: scale(1.02);
 }
 
+/* Steps Grid */
 .steps-grid {
-  margin-top: 2rem;
+  align-items: stretch;
 }
 
 .step-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
   border: 1px solid #e2e8f0;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.step-card:hover {
+  border-color: #1388fd;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(19, 136, 253, 0.12);
 }
 
 .step-num {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: rgba(19, 136, 253, 0.2);
-  position: absolute;
-  top: 1.25rem;
-  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1388fd;
+  margin-bottom: 0.75rem;
 }
 
 .step-icon {
   color: #1388fd;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .step-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.35;
+  font-size: 1.1rem;
   color: #343f5a;
+  margin-bottom: 0.5rem;
 }
 
 .step-card p {
   color: #777777;
-  font-size: 0.875rem;
+  font-size: 0.88rem;
   line-height: 1.6;
 }
 
+/* Custom Plan Banner */
 .custom-plan-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #f6f8ff 100%);
+  border: 1px solid #1388fd;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  background: #ffffff;
-  border: 1px solid rgba(19, 136, 253, 0.3);
-  box-shadow: 0 4px 20px rgba(19, 136, 253, 0.08);
 }
 
-.banner-text h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.5rem;
+.custom-plan-banner h3 {
+  font-size: 1.5rem;
   color: #343f5a;
-}
-
-.banner-text p {
-  color: #777777;
-  font-size: 0.9rem;
-  max-width: 720px;
-}
-
-.mt-5 { margin-top: 3rem; }
-
-.service-feature-card {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-}
-
-.service-feature-card h3 {
-  font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #343f5a;
 }
 
-.service-feature-card p {
+.custom-plan-banner p {
   color: #777777;
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
+  font-size: 0.95rem;
+  max-width: 680px;
 }
 
-.feature-check {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #30eab3;
-}
-
-/* Timeline Section */
+/* Timeline Cards */
 .timeline-grid {
-  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .timeline-card {
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  position: relative;
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
 }
 
-.timeline-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-  font-size: 0.8rem;
+.timeline-card:hover {
+  border-color: #1388fd;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(52, 63, 90, 0.08);
 }
 
 .timeline-date {
   font-weight: 800;
+  font-size: 0.9rem;
   color: #1388fd;
-  text-transform: uppercase;
-}
-
-.timeline-location {
-  color: #777777;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-weight: 600;
 }
 
 .timeline-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
   color: #343f5a;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-card p {
@@ -214,12 +156,6 @@
 }
 
 @media (max-width: 900px) {
-  .mail-hero-title {
-    font-size: 2.1rem;
-  }
-}
-
-@media (max-width: 768px) {
   .custom-plan-banner {
     flex-direction: column;
     text-align: center;
