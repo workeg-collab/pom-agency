@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useLanguage } from '../context/LanguageContext';
 import { 
   Mail, 
   Share2, 
@@ -20,9 +21,17 @@ import './HomePage.css';
 
 export default function HomePage() {
   const { addToCart } = useCart();
+  const { t, lang } = useLanguage();
 
-  // Animated Typography Rotating Effect (Matching original site Elementor Animated Headline)
-  const phrases = [
+  const phrases = lang === 'ar' ? [
+    'أنظمة البرمجيات',
+    'أنظمة الأجهزة',
+    'التحكم الذكي',
+    'بريد الشركات',
+    'الأنظمة المحاسبية',
+    'تصميم المواقع',
+    'التسويق الرقمي'
+  ] : [
     'Software Solutions',
     'Hardware Systems',
     'Smart Control',
@@ -38,20 +47,17 @@ export default function HomePage() {
   const [typingSpeed, setTypingSpeed] = useState(100);
 
   useEffect(() => {
-    const fullText = phrases[phraseIndex];
+    const fullText = phrases[phraseIndex] || phrases[0];
 
     const handleTyping = () => {
       if (!isDeleting) {
-        // Typing forward
         setCurrentText(fullText.substring(0, currentText.length + 1));
         setTypingSpeed(90);
 
         if (currentText === fullText) {
-          // Pause at full word before deleting
           setTimeout(() => setIsDeleting(true), 1800);
         }
       } else {
-        // Deleting backward
         setCurrentText(fullText.substring(0, currentText.length - 1));
         setTypingSpeed(45);
 
@@ -127,21 +133,21 @@ export default function HomePage() {
               <Sparkles size={14} /> DIGITAL PLATFORM
             </div>
             <h1 className="hero-title">
-              Turning Ideas Into{' '}
+              {t('heroHeading')}{' '}
               <span className="animated-typography-text">
                 {currentText}
                 <span className="animated-cursor">|</span>
               </span>
             </h1>
             <p className="hero-description">
-              We provide complete solutions in software, hardware, professional email, accounting systems, smart control, website development, and social media management — your business growth starts here.
+              {t('heroDesc')}
             </p>
             <div className="hero-actions">
               <Link to="/mail-professional" className="btn btn-primary">
-                Get Started <ArrowRight size={18} />
+                {t('getStarted')} <ArrowRight size={18} />
               </Link>
               <Link to="/about" className="btn btn-secondary">
-                Web Design & Services
+                {t('webDesign')} & Services
               </Link>
             </div>
             <div className="hero-stats">
@@ -175,9 +181,9 @@ export default function HomePage() {
       <section className="section bg-surface">
         <div className="container">
           <div className="badge-center"><Sparkles size={14} /> FEATURES</div>
-          <h2 className="section-title">Your All-in-One Tech Partner</h2>
+          <h2 className="section-title">{t('allInOneTitle')}</h2>
           <p className="section-subtitle">
-            From professional email and smart control to websites, accounting, and social media — our integrated services cover every step of your business growth.
+            {t('allInOneDesc')}
           </p>
 
           <div className="all-in-one-banner grid-2-col align-center">
@@ -237,61 +243,31 @@ export default function HomePage() {
           <div className="grid-4-col">
             <div className="card service-card">
               <div className="service-icon"><Mail size={28} /></div>
-              <h3>Professional Email</h3>
+              <h3>{t('mailPro')}</h3>
               <p>Secure, branded email services that enhance your business credibility.</p>
-              <Link to="/mail-professional" className="card-link">Learn More <ArrowRight size={14} /></Link>
+              <Link to="/mail-professional" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
 
             <div className="card service-card">
               <div className="service-icon"><Share2 size={28} /></div>
-              <h3>Social Media Management</h3>
+              <h3>{t('digitalMarketing')}</h3>
               <p>Engaging content and smart strategies to grow your audience and sales.</p>
-              <Link to="/digital-marketing" className="card-link">Learn More <ArrowRight size={14} /></Link>
+              <Link to="/digital-marketing" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
 
             <div className="card service-card">
               <div className="service-icon"><Calculator size={28} /></div>
-              <h3>Accounting Systems</h3>
+              <h3>{t('accounting')}</h3>
               <p>Easy-to-use solutions to track finances, manage invoices, and control expenses.</p>
-              <Link to="/accounting" className="card-link">Learn More <ArrowRight size={14} /></Link>
+              <Link to="/accounting" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
 
             <div className="card service-card">
               <div className="service-icon"><Server size={28} /></div>
-              <h3>Network & Servers</h3>
+              <h3>{t('networkServers')}</h3>
               <p>Reliable, high-speed networking and server solutions built for your business.</p>
-              <Link to="/network-servers" className="card-link">Learn More <ArrowRight size={14} /></Link>
+              <Link to="/network-servers" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Email Section */}
-      <section className="section bg-surface email-feature-section">
-        <div className="container grid-2-col">
-          <div className="email-feature-content">
-            <div className="badge"><Mail size={14} /> Mail Professional</div>
-            <h2>Professional Email Solutions: Power Your Business Communication</h2>
-            <p className="lead-text">
-              Secure, branded, and reliable email services that build trust and keep your business connected — anytime, anywhere.
-            </p>
-            <ul className="check-list">
-              <li><CheckCircle2 size={18} className="check-icon" /> Custom domain email addresses to enhance brand credibility</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> Secure, encrypted communication to protect your data</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> Easy integration with your devices and applications</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> Large mailbox storage and flexible plans</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> 24/7 technical support for uninterrupted service</li>
-            </ul>
-            <Link to="/mail-professional" className="btn btn-primary mt-4">
-              Learn More About Professional Email
-            </Link>
-          </div>
-          <div className="email-feature-graphic text-center">
-            <img 
-              src="/assets/iiii.png" 
-              alt="Professional Email Solutions" 
-              className="email-pro-official-img"
-            />
           </div>
         </div>
       </section>
@@ -299,8 +275,8 @@ export default function HomePage() {
       {/* Pricing Plans */}
       <section className="section">
         <div className="container">
-          <div className="badge-center"><Zap size={14} /> PRICING PLANS</div>
-          <h2 className="section-title">Pricing Plans</h2>
+          <div className="badge-center"><Zap size={14} /> {t('pricingPlans')}</div>
+          <h2 className="section-title">{t('pricingPlans')}</h2>
           <p className="section-subtitle">
             Choose the right professional email package for your business.
           </p>
@@ -334,67 +310,15 @@ export default function HomePage() {
                     })}
                     className={`btn ${plan.recommended ? 'btn-primary' : 'btn-secondary'} full-width`}
                   >
-                    Add to Cart
+                    {t('addToCart')}
                   </button>
                   <Link to={`/product/${plan.id}`} className="view-product-link">
-                    View Details
+                    {t('viewDetails')}
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* What We Do */}
-      <section className="section bg-surface">
-        <div className="container">
-          <div className="badge-center"><Cpu size={14} /> WHAT WE DO</div>
-          <h2 className="section-title">Tech Solutions Tailored to Your Business</h2>
-          <p className="section-subtitle">
-            We specialize in delivering high-impact services in professional email, social media, accounting, networking, and servers — built to keep your business running smarter and faster.
-          </p>
-
-          <div className="grid-4-col">
-            <div className="card feature-box">
-              <Monitor size={32} className="box-icon" />
-              <h3>Web Design</h3>
-              <p>Modern, responsive websites built to impress and convert visitors into customers.</p>
-              <Link to="/about" className="box-link">Learn More →</Link>
-            </div>
-
-            <div className="card feature-box">
-              <Shield size={32} className="box-icon" />
-              <h3>Smart Control</h3>
-              <p>Integrated smart control systems for homes and businesses.</p>
-              <Link to="/smart-control" className="box-link">Learn More →</Link>
-            </div>
-
-            <div className="card feature-box">
-              <Cpu size={32} className="box-icon" />
-              <h3>IT Services</h3>
-              <p>Complete IT support, networking, and system maintenance for your business.</p>
-              <Link to="/it" className="box-link">Learn More →</Link>
-            </div>
-
-            <div className="card feature-box">
-              <TrendingUp size={32} className="box-icon" />
-              <h3>Digital Marketing</h3>
-              <p>Targeted online strategies to grow your brand and increase sales.</p>
-              <Link to="/digital-marketing" className="box-link">Learn More →</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Worldwide Trust Banner */}
-      <section className="section trust-section text-center">
-        <div className="container">
-          <div className="badge-center"><Award size={14} /> WORLDWIDE TRUST</div>
-          <h2 className="section-title">Empowering Businesses with Professional Email Solutions</h2>
-          <p className="section-subtitle">
-            Trusted by companies worldwide for secure, branded, and reliable communication..
-          </p>
         </div>
       </section>
     </div>
