@@ -162,7 +162,7 @@ export default function HomePage() {
           <div className="hero-visual">
             <div className="hero-image-transparent">
               <img 
-                src="/assets/Home-3.jpg" 
+                src="/assets/Home-3.png" 
                 alt="POM Digital Platform Main Hero" 
                 className="hero-official-img"
               />
@@ -194,7 +194,7 @@ export default function HomePage() {
             </div>
             <div className="all-in-one-graphic">
               <img 
-                src="/assets/Illustration-2.jpg" 
+                src="/assets/Illustration-2.png" 
                 alt="All in One Tech Partner Graphic" 
                 className="all-in-one-img"
               />
