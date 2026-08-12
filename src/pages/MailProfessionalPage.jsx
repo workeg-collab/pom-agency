@@ -44,11 +44,11 @@ export default function MailProfessionalPage() {
       price: 99.99,
       image: '/assets/iiii.png',
       isSale: false,
-      features: [
-        '1 mailbox included',
-        '5GB for emails',
-        'Cloud infrastructure',
-        'Antivirus check'
+      featureKeys: [
+        'feat1Mailbox',
+        'feat5GB',
+        'featCloudInfra',
+        'featAntivirus'
       ]
     },
     {
@@ -58,12 +58,12 @@ export default function MailProfessionalPage() {
       price: 499.99,
       image: '/assets/bbbb-300x300.png',
       isSale: false,
-      features: [
-        '3 mailboxes included',
-        '30GB for emails',
-        'Cloud infrastructure',
-        'Antivirus check',
-        'Full mobile sync support'
+      featureKeys: [
+        'feat3Mailboxes',
+        'feat30GB',
+        'featCloudInfra',
+        'featAntivirus',
+        'featFullMobileSync'
       ]
     },
     {
@@ -73,59 +73,14 @@ export default function MailProfessionalPage() {
       price: 999.99,
       image: '/assets/pppp-300x300.png',
       isSale: true,
-      features: [
-        '5 mailboxes included',
-        '75GB for emails',
-        'Cloud infrastructure',
-        'Antivirus check',
-        'Full mobile sync support',
-        'Free domain'
+      featureKeys: [
+        'feat5Mailboxes',
+        'feat75GB',
+        'featCloudInfra',
+        'featAntivirus',
+        'featFullMobileSync',
+        'featFreeDomain'
       ]
-    }
-  ];
-
-  const aiServices = [
-    {
-      icon: Search,
-      title: 'SEO Optimization',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-    },
-    {
-      icon: Share2,
-      title: 'Social Engagement',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-    },
-    {
-      icon: FileText,
-      title: 'Content Marketing',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-    }
-  ];
-
-  const timelineEvents = [
-    {
-      date: 'March 2013',
-      location: 'LA, California',
-      title: 'Founded in USA',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.'
-    },
-    {
-      date: 'May 2015',
-      location: 'JP, Tokyo',
-      title: 'Opening New Office',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.'
-    },
-    {
-      date: 'Sept 2018',
-      location: 'Workshops',
-      title: 'Client Satisfaction',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.'
-    },
-    {
-      date: 'Jun 2022',
-      location: 'New Order',
-      title: 'Improved Ourselves',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima incidunt voluptates nemo.'
     }
   ];
 
@@ -208,8 +163,8 @@ export default function MailProfessionalPage() {
                   <span className="period">{t('perMonth')}</span>
                 </div>
                 <ul className="plan-features">
-                  {p.features.map((f, i) => (
-                    <li key={i}><CheckCircle2 size={16} className="check-icon" /> {f}</li>
+                  {p.featureKeys.map((fKey, i) => (
+                    <li key={i}><CheckCircle2 size={16} className="check-icon" /> {t(fKey)}</li>
                   ))}
                 </ul>
                 <div className="plan-actions">

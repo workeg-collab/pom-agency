@@ -95,11 +95,11 @@ export default function HomePage() {
       subtitleKey: 'planIndividualSub',
       price: 99.99,
       image: '/assets/iiii.png',
-      features: [
-        '1 mailbox included',
-        '5GB for emails',
-        'Cloud infrastructure',
-        'Antivirus check'
+      featureKeys: [
+        'feat1Mailbox',
+        'feat5GB',
+        'featCloudInfra',
+        'featAntivirus'
       ],
       recommended: false
     },
@@ -109,12 +109,12 @@ export default function HomePage() {
       subtitleKey: 'planBusinessSub',
       price: 499.99,
       image: '/assets/bbbb-300x300.png',
-      features: [
-        '3 mailboxes included',
-        '30GB for emails',
-        'Cloud infrastructure',
-        'Antivirus check',
-        'Full mobile sync support'
+      featureKeys: [
+        'feat3Mailboxes',
+        'feat30GB',
+        'featCloudInfra',
+        'featAntivirus',
+        'featFullMobileSync'
       ],
       recommended: true
     },
@@ -124,13 +124,13 @@ export default function HomePage() {
       subtitleKey: 'planProfessionalSub',
       price: 999.99,
       image: '/assets/pppp-300x300.png',
-      features: [
-        '5 mailboxes included',
-        '75GB for emails',
-        'Cloud infrastructure',
-        'Antivirus check',
-        'Full mobile sync support',
-        'Free domain'
+      featureKeys: [
+        'feat5Mailboxes',
+        'feat75GB',
+        'featCloudInfra',
+        'featAntivirus',
+        'featFullMobileSync',
+        'featFreeDomain'
       ],
       recommended: false
     }
@@ -309,8 +309,8 @@ export default function HomePage() {
                   <span className="period">{t('perMonth')}</span>
                 </div>
                 <ul className="plan-features">
-                  {plan.features.map((feat, idx) => (
-                    <li key={idx}><CheckCircle2 size={16} className="check-icon" /> {feat}</li>
+                  {plan.featureKeys.map((fKey, idx) => (
+                    <li key={idx}><CheckCircle2 size={16} className="check-icon" /> {t(fKey)}</li>
                   ))}
                 </ul>
                 <div className="plan-actions">

@@ -54,6 +54,18 @@ export const translations = {
     planEnterpriseDominance: 'Enterprise Dominance',
     planEnterpriseDominanceSub: 'Market Leaders & Multi-Brands',
 
+    // Pricing Features Bullet Points
+    feat1Mailbox: '1 mailbox included',
+    feat5GB: '5GB for emails',
+    featCloudInfra: 'Cloud infrastructure',
+    featAntivirus: 'Antivirus check',
+    feat3Mailboxes: '3 mailboxes included',
+    feat30GB: '30GB for emails',
+    featFullMobileSync: 'Full mobile sync support',
+    feat5Mailboxes: '5 mailboxes included',
+    feat75GB: '75GB for emails',
+    featFreeDomain: 'Free domain',
+
     // Home Page Full Localization
     digitalPlatform: 'DIGITAL PLATFORM',
     heroHeading: 'Turning Ideas Into',
@@ -149,6 +161,18 @@ export const translations = {
     planGrowthProMarketingSub: 'للمتاجر والشركات للتوسع السريع',
     planEnterpriseDominance: 'الهيمنة والتوسع الشامل',
     planEnterpriseDominanceSub: 'لكبرى العلامات والقنوات المتعددة',
+
+    // Pricing Features Bullet Points
+    feat1Mailbox: 'يتضمن صندوق بريد واحد',
+    feat5GB: 'مساحة 5 جيجابايت للبريد',
+    featCloudInfra: 'بنية تحتية سحابية فائقة الأمان',
+    featAntivirus: 'فحص دوري وحماية من الفيروسات',
+    feat3Mailboxes: 'يتضمن 3 صناديق بريد رسمية',
+    feat30GB: 'مساحة 30 جيجابايت للبريد',
+    featFullMobileSync: 'دعم المزامنة الكاملة مع الهواتف الذكية',
+    feat5Mailboxes: 'يتضمن 5 صناديق بريد رسمية',
+    feat75GB: 'مساحة 75 جيجابايت للبريد',
+    featFreeDomain: 'نطاق (دومين) خاص مجاني',
 
     // Home Page Full Localization
     digitalPlatform: 'منصة رقمية',
@@ -246,6 +270,18 @@ export const translations = {
     planEnterpriseDominance: 'Dominance Entreprise',
     planEnterpriseDominanceSub: 'Lois du Marché',
 
+    // Pricing Features Bullet Points
+    feat1Mailbox: '1 boîte aux lettres incluse',
+    feat5GB: '5 Go pour les e-mails',
+    featCloudInfra: 'Infrastructure Cloud sécurisée',
+    featAntivirus: 'Protection antivirus',
+    feat3Mailboxes: '3 boîtes aux lettres incluses',
+    feat30GB: '30 Go pour les e-mails',
+    featFullMobileSync: 'Synchronisation mobile complète',
+    feat5Mailboxes: '5 boîtes aux lettres incluses',
+    feat75GB: '75 Go pour les e-mails',
+    featFreeDomain: 'Nom de domaine gratuit',
+
     // Home Page Full Localization
     digitalPlatform: 'PLATEFORME NUMÉRIQUE',
     heroHeading: 'Transformer les idées en',
@@ -341,6 +377,18 @@ export const translations = {
     planGrowthProMarketingSub: 'ई-कॉमर्स',
     planEnterpriseDominance: 'एंटरप्राइज डोमिनेंस',
     planEnterpriseDominanceSub: 'मार्केट लीडर्स',
+
+    // Pricing Features Bullet Points
+    feat1Mailbox: '1 मेलबॉक्स शामिल',
+    feat5GB: 'ईमेल के लिए 5GB',
+    featCloudInfra: 'क्लाउड इंफ्रास्ट्रक्चर',
+    featAntivirus: 'एंटीवायरस सुरक्षा',
+    feat3Mailboxes: '3 मेलबॉक्स शामिल',
+    feat30GB: 'ईमेल के लिए 30GB',
+    featFullMobileSync: 'पूर्ण मोबाइल सिंक सहायता',
+    feat5Mailboxes: '5 मेलबॉक्स शामिल',
+    feat75GB: 'ईमेल के लिए 75GB',
+    featFreeDomain: 'मुफ्त डोमेन',
 
     // Home Page Full Localization
     digitalPlatform: 'डिजिटल प्लेटफॉर्म',
