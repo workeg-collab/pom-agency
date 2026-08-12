@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { 
@@ -20,6 +20,51 @@ import './HomePage.css';
 
 export default function HomePage() {
   const { addToCart } = useCart();
+
+  // Animated Typography Rotating Effect (Matching original site Elementor Animated Headline)
+  const phrases = [
+    'Software Solutions',
+    'Hardware Systems',
+    'Smart Control',
+    'Professional Email',
+    'Accounting Systems',
+    'Websites & Web Design',
+    'Social Media Marketing'
+  ];
+
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(100);
+
+  useEffect(() => {
+    const fullText = phrases[phraseIndex];
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing forward
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        setTypingSpeed(90);
+
+        if (currentText === fullText) {
+          // Pause at full word before deleting
+          setTimeout(() => setIsDeleting(true), 1800);
+        }
+      } else {
+        // Deleting backward
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        setTypingSpeed(45);
+
+        if (currentText === '') {
+          setIsDeleting(false);
+          setPhraseIndex((prev) => (prev + 1) % phrases.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
 
   const pricingPlans = [
     {
@@ -82,7 +127,11 @@ export default function HomePage() {
               <Sparkles size={14} /> DIGITAL PLATFORM
             </div>
             <h1 className="hero-title">
-              Turning Ideas Into Software Solutions, Hardware Systems, Smart Control, Professional Email, Accounting Systems, Websites, Social Media |
+              Turning Ideas Into{' '}
+              <span className="animated-typography-text">
+                {currentText}
+                <span className="animated-cursor">|</span>
+              </span>
             </h1>
             <p className="hero-description">
               We provide complete solutions in software, hardware, professional email, accounting systems, smart control, website development, and social media management — your business growth starts here.
