@@ -66,6 +66,21 @@ export const translations = {
     feat75GB: '75GB for emails',
     featFreeDomain: 'Free domain',
 
+    // Accounting Page Localization
+    accountingBadge: 'ERP & FINANCIAL SYSTEMS',
+    accountingHeroTitle: 'Smart Accounting & Odoo ERP Systems for Modern Enterprises',
+    accountingHeroSub: 'Take full control of your company financial health, electronic invoicing, inventory, and payroll with our certified Odoo ERP and custom accounting implementations.',
+    accountingCapabilities: 'CORE SYSTEM CAPABILITIES',
+    everythingAccounting: 'Everything Your Enterprise Needs for Complete Financial Control',
+    everythingAccountingSub: 'Streamline operations, automate tax reports, and eliminate manual errors with unified ERP software.',
+    accountingPlans: 'Accounting & ERP Pricing Plans',
+    accountingPlansSub: 'Flexible subscription tiers for startups, medium businesses, and large enterprise chains.',
+    integrationWorkflow: 'Seamless 3-Step System Integration',
+    integrationWorkflowSub: 'Our proven deployment roadmap ensuring 0% data loss and smooth staff adoption.',
+    requestErpConsultation: 'Request Free ERP Consultation',
+    exploreErpPlans: 'Explore ERP Plans',
+    certifiedOdooPartner: 'Official Certified Odoo Implementation Partner',
+
     // Digital Marketing Localization
     marketingBadge: 'DIGITAL MARKETING & GROWTH',
     marketingHeroTitle: 'Data-Driven Digital Marketing & Growth Engineering',
@@ -219,6 +234,21 @@ export const translations = {
     feat5Mailboxes: 'يتضمن 5 صناديق بريد رسمية',
     feat75GB: 'مساحة 75 جيجابايت للبريد',
     featFreeDomain: 'نطاق (دومين) خاص مجاني',
+
+    // Accounting Page Localization
+    accountingBadge: 'أنظمة ERP والحسابات',
+    accountingHeroTitle: 'الأنظمة المحاسبية الذكية وحلول Odoo ERP للمؤسسات الحديثة',
+    accountingHeroSub: 'سيطر بالكامل على الصحة المالية لشركتك والفاتورة الإلكترونية والمخازن والمرتبات مع حلول Odoo ERP المعتمدة.',
+    accountingCapabilities: 'قدرات وإمكانيات النظام المحاسبي',
+    everythingAccounting: 'كل ما تحتاجه مؤسستك لإدارة مالية متكاملة',
+    everythingAccountingSub: 'تسهيل العمليات التشغيلية، إصدار الإقرارات الضريبية تلقائياً، وإلغاء الأخطاء اليدوية بنظام ERP موحد.',
+    accountingPlans: 'خطط وأسعار الأنظمة المحاسبية والـ ERP',
+    accountingPlansSub: 'باقات اشتراك مرنة تناسب الشركات الناشئة، المتوسطة، والسلاسل التجارية الكبرى.',
+    integrationWorkflow: 'خطوات الربط والدمج الثلاثية',
+    integrationWorkflowSub: 'خطة عمل مجربة وموثوقة لضمان نقل البيانات بدون أي فقدان 0% وتدريب فريق عملك.',
+    requestErpConsultation: 'طلب استشارة ERP مجانية',
+    exploreErpPlans: 'استعراض باقات ERP',
+    certifiedOdooPartner: 'شريك معتمد رسمي لتطبيق وتنفيذ أنظمة Odoo',
 
     // Digital Marketing Localization
     marketingBadge: 'التسويق الرقمي والنمو',
@@ -374,6 +404,21 @@ export const translations = {
     feat75GB: '75 Go pour les e-mails',
     featFreeDomain: 'Nom de domaine gratuit',
 
+    // Accounting Page Localization
+    accountingBadge: 'SYSTÈMES ERP & COMPTABILITÉ',
+    accountingHeroTitle: 'Comptabilité Intelligente & Systèmes Odoo ERP',
+    accountingHeroSub: 'Prenez le contrôle total de la santé financière de votre entreprise, de la facturation électronique et de la paie avec Odoo ERP.',
+    accountingCapabilities: 'CAPACITÉS DU SYSTÈME',
+    everythingAccounting: 'Tout ce dont votre entreprise a besoin',
+    everythingAccountingSub: 'Simplifiez vos opérations et automatisez vos rapports fiscaux.',
+    accountingPlans: 'Plans Tarifs Comptabilité & ERP',
+    accountingPlansSub: 'Abonnements flexibles pour toutes les tailles d\'entreprises.',
+    integrationWorkflow: 'Intégration en 3 Étapes',
+    integrationWorkflowSub: 'Processus de déploiement garanti 0% perte de données.',
+    requestErpConsultation: 'Demander une Consultation ERP',
+    exploreErpPlans: 'Explorer les Plans ERP',
+    certifiedOdooPartner: 'Partenaire Officiel Certifié Odoo ERP',
+
     // Digital Marketing Localization
     marketingBadge: 'MARKETING DIGITAL & CROISSANCE',
     marketingHeroTitle: 'Marketing Digital Basé sur les Données & Croissance',
@@ -474,7 +519,7 @@ export const translations = {
     networkServers: 'नेटवर्क और सर्वर',
     smartControl: 'स्मार्ट कंट्रोल',
     it: 'आईटी सेवाएं',
-    mailPro: 'प्रोफیشنل ईमेल',
+    mailPro: 'प्रोफेशनल ईमेल',
     cart: 'कार्ट',
 
     // Actions & Buttons
@@ -527,6 +572,21 @@ export const translations = {
     feat5Mailboxes: '5 मेलबॉक्स शामिल',
     feat75GB: 'ईमेल के लिए 75GB',
     featFreeDomain: 'मुफ्त डोमेन',
+
+    // Accounting Page Localization
+    accountingBadge: 'ईआरपी और वित्तीय प्रणाली',
+    accountingHeroTitle: 'आधुनिक उद्यमों के लिए स्मार्ट अकाउंटिंग और ओडू ईआरपी सिस्टम',
+    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोल पर पूर्ण नियंत्रण पाएं।',
+    accountingCapabilities: 'सिस्टम क्षमताएं',
+    everythingAccounting: 'वित्तीय नियंत्रण के लिए सब कुछ',
+    everythingAccountingSub: 'ऑपरेशन्स को सुगम बनाएं।',
+    accountingPlans: 'अकाउंटिंग और ईआरपी योजनाएं',
+    accountingPlansSub: 'लचीली सदस्यता योजनाएं।',
+    integrationWorkflow: '3-चरण एकीकरण प्रक्रिया',
+    integrationWorkflowSub: '0% डेटा हानि गारंटी।',
+    requestErpConsultation: 'मुफ्त ईआरपी परामर्श लें',
+    exploreErpPlans: 'ईआरपी योजनाएं देखें',
+    certifiedOdooPartner: 'आधिकारिक प्रमाणित ओडू कार्यान्वयन भागीदार',
 
     // Digital Marketing Localization
     marketingBadge: 'डिजिटल मार्केटिंग और ग्रोथ',
