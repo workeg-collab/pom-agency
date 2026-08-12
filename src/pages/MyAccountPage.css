@@ -1,5 +1,6 @@
 .auth-page, .account-page {
   padding: 4rem 0;
+  background: var(--bg-surface);
 }
 
 .max-w-500 {
@@ -16,7 +17,7 @@
 .input-icon {
   position: absolute;
   left: 12px;
-  color: var(--text-dim);
+  color: #94a3b8;
 }
 
 .input-with-icon .form-input {
@@ -43,23 +44,25 @@
 .mt-3 { margin-top: 1rem; }
 .mt-4 { margin-top: 1.5rem; }
 .pt-3 { padding-top: 1rem; }
-.border-top { border-top: 1px solid var(--border-color); }
+.border-top { border-top: 1px solid #e2e8f0; }
 .font-size-sm { font-size: 0.85rem; }
-.text-primary { color: #60a5fa; }
+.text-primary { color: #1085fa; }
 .font-weight-bold { font-weight: 700; }
 
 .dash-tile {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
 .tile-icon {
-  color: #60a5fa;
+  color: #1085fa;
 }
 
 .dash-stat {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #ffffff;
+  color: #0f172a;
 }

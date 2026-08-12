@@ -4,7 +4,7 @@
 }
 
 .terms-content {
-  color: var(--text-muted);
+  color: #475569;
   line-height: 1.8;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 .terms-content h3 {
-  color: #ffffff;
+  color: #0f172a;
   margin-top: 1rem;
 }
 

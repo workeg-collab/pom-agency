@@ -6,20 +6,20 @@ import './AccountingPage.css';
 export default function AccountingPage() {
   const odooFeatures = [
     {
-      title: 'Ultra-Fast Performance (<90ms)',
-      desc: 'Experience true speed, reduced data entry, smart AI, and a lightning-fast UI. All operations complete in under 90ms.'
+      title: 'A Smooth and Easy Experience',
+      desc: 'Designed to ensure hassle-free user adoption across your entire company.'
     },
     {
-      title: 'Smooth & Easy User Adoption',
-      desc: 'Intuitive interface designed to eliminate complexity so your team can adapt seamlessly with zero friction.'
-    },
-    {
-      title: 'Fully Integrated Ecosystem',
-      desc: 'Seamlessly connects Accounting, Invoicing, Inventory, Sales, CRM, HR, and Point-of-Sale in one single platform.'
+      title: 'Full Integration for Complex Businesses',
+      desc: 'Odoo’s fluidity and full integration cover the needs of even the most complex enterprise workflows.'
     },
     {
       title: 'Modular & Scalable Growth',
-      desc: 'Start with accounting and add apps as your business scales — one app at a time as your customer base expands.'
+      desc: 'Allows you to add apps as your business grows, with one app added at a time as your customer base expands.'
+    },
+    {
+      title: 'Massive Developer Ecosystem',
+      desc: 'Thanks to its open-source release, Odoo effectively leverages a large developer base to deliver innovative solutions.'
     }
   ];
 
@@ -27,8 +27,8 @@ export default function AccountingPage() {
     <div className="accounting-page">
       <section className="page-header">
         <div className="container">
-          <div className="badge"><Calculator size={14} /> ACCOUNTING & ERP</div>
-          <h1>Odoo One Platform: All Your Business Accounting</h1>
+          <div className="badge"><Calculator size={14} /> ACCOUNTING PROGRAMS</div>
+          <h1>Odoo One Platform: All Your Business</h1>
           <p className="page-header-sub">
             Experience true speed, reduced data entry, smart AI, and a fast UI. All operations are done in less than 90ms — faster than a blink.
           </p>
@@ -37,14 +37,14 @@ export default function AccountingPage() {
 
       <section className="section bg-surface">
         <div className="container">
-          <div className="badge-center">WHY CHOOSE ODOO</div>
-          <h2 className="section-title">What Makes Odoo Accounting Special?</h2>
-          <p className="section-subtitle">The modern ERP solution trusted by millions of enterprises worldwide.</p>
+          <div className="badge-center">WHAT MAKES ODOO SPECIAL</div>
+          <h2 className="section-title">What Makes Odoo Special?</h2>
+          <p className="section-subtitle">The all-in-one management software trusted by millions of companies.</p>
 
           <div className="grid-2-col">
             {odooFeatures.map((item, idx) => (
               <div key={idx} className="card odoo-card">
-                <div className="odoo-badge"><Zap size={16} /> Fast Tech</div>
+                <div className="odoo-badge"><Zap size={16} /> Fast Performance</div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
@@ -57,27 +57,27 @@ export default function AccountingPage() {
         <div className="container grid-2-col align-center">
           <div>
             <div className="badge"><Layers size={14} /> IMPLEMENTATION</div>
-            <h2>Full Odoo Implementation & Local Support</h2>
+            <h2>Full Odoo Implementation & Consultation</h2>
             <p className="lead-text">
-              We handle end-to-end Odoo setup, chart of accounts customization, tax configuration, electronic invoicing compliance, and employee training.
+              We provide complete Odoo setup, customization, and local electronic invoicing integration tailored to your company needs.
             </p>
             <ul className="check-list">
-              <li><CheckCircle2 size={18} className="check-icon" /> Custom Chart of Accounts & Tax Rules</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> Automated Invoice & Payment Tracking</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> Multi-Currency & Bank Reconciliation</li>
-              <li><CheckCircle2 size={18} className="check-icon" /> Real-time Financial Reporting & Dashboards</li>
+              <li><CheckCircle2 size={18} className="check-icon" /> Customized Chart of Accounts</li>
+              <li><CheckCircle2 size={18} className="check-icon" /> Automated Invoicing & Expenses</li>
+              <li><CheckCircle2 size={18} className="check-icon" /> Multi-Currency & Bank Sync</li>
+              <li><CheckCircle2 size={18} className="check-icon" /> Real-time Financial Reports</li>
             </ul>
             <Link to="/mail-professional" className="btn btn-primary">
-              Consult Odoo Expert <ArrowRight size={18} />
+              Consult Odoo Specialist <ArrowRight size={18} />
             </Link>
           </div>
-          <div className="card text-center p-5">
+          <div className="card text-center p-4">
             <img 
-              src="https://pom-agency.online/wp-content/uploads/2025/08/Odoo-implementation.png" 
+              src="/assets/Odoo-implementation.png" 
               alt="Odoo Implementation" 
               className="img-fluid rounded"
               onError={(e) => {
-                e.target.src = 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600';
+                e.target.src = '/assets/odoo-image.png';
               }}
             />
           </div>

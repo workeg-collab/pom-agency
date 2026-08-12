@@ -1,26 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Server, Cpu, HardDrive, Printer, Fingerprint, PhoneCall, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Server, Cpu, HardDrive, Printer, Fingerprint, PhoneCall, CheckCircle2, ArrowRight } from 'lucide-react';
 import './NetworkServersPage.css';
 
 export default function NetworkServersPage() {
   const hardwareList = [
-    { icon: Server, title: 'Server Racks & Cabinets', desc: 'Professional server rack locking, termination, cable management, labeling, and airflow optimization.' },
-    { icon: Cpu, title: 'Enterprise Computers & Workstations', desc: 'Procurement, deployment, and maintenance of high-performance desktop PCs and laptops.' },
-    { icon: HardDrive, title: 'UPS Power Systems', desc: 'Uninterruptible power supplies to protect company servers and networking hardware against power cuts.' },
-    { icon: Printer, title: 'Office Printers & Scanners', desc: 'Networked multi-function printers, thermal barcode scanners, and printer fleet management.' },
-    { icon: PhoneCall, title: 'Central IP PBX Systems', desc: 'Modern VoIP telephony systems, internal extensions, call routing, and IVR setup.' },
-    { icon: Fingerprint, title: 'Fingerprint & Access Control', desc: 'Biometric attendance machines, card access control systems, and door lock integration.' }
+    { icon: Server, title: 'Network-Rack & Servers', desc: 'Rack locking, termination, cable extension and pulling, labeling, and test flow delivery.' },
+    { icon: Cpu, title: 'Computers & Workstations', desc: 'Hardware setup, OS installation, system maintenance, and workstation upgrades.' },
+    { icon: HardDrive, title: 'UPS Power Backups', desc: 'Uninterruptible power supply units to protect servers and active network gear.' },
+    { icon: Printer, title: 'Printers & Multi-function', desc: 'Network printer sharing, driver configuration, and office fleet management.' },
+    { icon: PhoneCall, title: 'Central IP PBX', desc: 'Internal telephony switchboard installations, extension extensions, and VoIP.' },
+    { icon: Fingerprint, title: 'Finger Print Access', desc: 'Biometric time attendance and door access control system installations.' }
   ];
 
   return (
     <div className="network-page">
       <section className="page-header">
         <div className="container">
-          <div className="badge"><Server size={14} /> HARDWARE & INFRASTRUCTURE</div>
-          <h1>Complete Network & Server Infrastructure Solutions</h1>
+          <div className="badge"><Server size={14} /> DIGITAL PLATFORM</div>
+          <h1>Network & Servers: Computers, Printers, Servers, UPS, IP PBX, Finger Print</h1>
           <p className="page-header-sub">
-            Networks, computers, printers, UPS, IP switchboard installations, rack locking, cable pulling, labeling, and test flow delivery — best quality & finish.
+            All solutions and consultations for your company in one location: Networks, computers, printers, UPS, IP switchboard installations, rack locking, termination, cable extension and pulling, labeling, and test flow delivery... the best quality and best finish.
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function NetworkServersPage() {
       <section className="section bg-surface">
         <div className="container">
           <div className="badge-center">HARDWARE & WIRING</div>
-          <h2 className="section-title">End-to-End Infrastructure Installation</h2>
+          <h2 className="section-title">Delivering AI-Powered Solutions for Your Business</h2>
           <p className="section-subtitle">All hardware equipment and consultations for your enterprise in one place.</p>
 
           <div className="grid-3-col">
@@ -37,7 +37,7 @@ export default function NetworkServersPage() {
                 <item.icon size={32} className="hw-icon" />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
-                <div className="hw-tag"><CheckCircle2 size={14} /> Full Installation & Support</div>
+                <div className="hw-tag"><CheckCircle2 size={14} /> Professional Finish</div>
               </div>
             ))}
           </div>
@@ -46,11 +46,11 @@ export default function NetworkServersPage() {
 
       <section className="section text-center">
         <div className="container">
-          <h2>Need a Full Network & Server Cabling Plan?</h2>
-          <p className="section-subtitle">Our network engineers are ready to design and execute your office cabling project.</p>
-          <Link to="/mail-professional" className="btn btn-primary">
-            Request Site Survey <ArrowRight size={18} />
-          </Link>
+          <h2 className="section-title">Enterprise Hardware Partners</h2>
+          <div className="brand-logos-row flex-center gap-4 mt-4">
+            <img src="/assets/IBM_logo_in.jpg" alt="IBM Partner" style={{ height: '50px', objectFit: 'contain' }} />
+            <img src="/assets/HP-Logo-1979-2048x1152.png" alt="HP Partner" style={{ height: '50px', objectFit: 'contain' }} />
+          </div>
         </div>
       </section>
     </div>

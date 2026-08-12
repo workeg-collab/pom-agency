@@ -1,33 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cpu, Bot, LineChart, Cloud, ShieldCheck, Wifi, ArrowRight } from 'lucide-react';
+import { Cpu, Bot, LineChart, Cloud, ShieldCheck, ArrowRight } from 'lucide-react';
 import './ITPage.css';
 
 export default function ITPage() {
   const itPillars = [
-    { icon: Bot, title: 'Automation AI', desc: 'Custom AI bots and automated workflows to streamline operations and response times.' },
-    { icon: LineChart, title: 'Analytics & Insights', desc: 'Deep data analytics, machine learning predictive models, and real-time business telemetry.' },
-    { icon: Cloud, title: 'Cloud Infrastructure', desc: 'Scalable cloud deployment, server migration, Kubernetes, and enterprise container hosting.' },
-    { icon: ShieldCheck, title: 'Fast & Secure Platform', desc: 'End-to-end encryption, firewall defense, vulnerability scanning, and 24/7 server monitoring.' }
+    { icon: Bot, title: 'Automation AI', desc: 'Ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.' },
+    { icon: LineChart, title: 'Analytics & Insights', desc: 'Ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.' },
+    { icon: Cloud, title: 'Cloud Infrastructure', desc: 'Ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.' },
+    { icon: ShieldCheck, title: 'Fast & Secure Platform', desc: 'Ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar.' }
   ];
 
   return (
     <div className="it-page">
       <section className="page-header">
         <div className="container">
-          <div className="badge"><Cpu size={14} /> IT SERVICES</div>
-          <h1>Turning Ideas Into Reality: Next-Gen IT Infrastructure</h1>
+          <div className="badge"><Cpu size={14} /> DIGITAL PLATFORM</div>
+          <h1>Turning Ideas Into Your Reality | Unreal Projects</h1>
           <p className="page-header-sub">
-            From cloud server deployment to automated AI systems and cybersecurity — we power your enterprise with cutting-edge IT engineering.
+            Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our.
           </p>
         </div>
       </section>
 
       <section className="section bg-surface">
         <div className="container">
-          <div className="badge-center">AI & CLOUD</div>
-          <h2 className="section-title">Delivering AI-Powered IT Solutions</h2>
-          <p className="section-subtitle">Scalable technology architecture tailored for enterprise performance.</p>
+          <div className="badge-center">FEATURES</div>
+          <h2 className="section-title">Delivering AI-Powered Solutions for Your Business</h2>
+          <p className="section-subtitle">Do play they miss give so up. Words to up style of since world. We leaf to snug on no need.</p>
 
           <div className="grid-4-col">
             {itPillars.map((p, idx) => (
@@ -43,10 +43,10 @@ export default function ITPage() {
 
       <section className="section text-center">
         <div className="container">
-          <h2>Empower Your Organization with Custom IT Support</h2>
-          <p className="section-subtitle">Get in touch for a comprehensive system audit and IT architecture plan.</p>
+          <h2>Unlock the Power of AI: Leading the Way in Digital Innovation</h2>
+          <p className="section-subtitle">Hear from our clients and stay up-to-date on AI trends and insights.</p>
           <Link to="/mail-professional" className="btn btn-primary">
-            Contact IT Specialist <ArrowRight size={18} />
+            Get Started <ArrowRight size={18} />
           </Link>
         </div>
       </section>

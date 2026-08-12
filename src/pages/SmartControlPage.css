@@ -1,20 +1,23 @@
 .sys-card {
   display: flex;
   flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
 .sys-icon {
-  color: #60a5fa;
+  color: #1085fa;
   margin-bottom: 1rem;
 }
 
 .sys-card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
+  color: #0f172a;
 }
 
 .sys-card p {
-  color: var(--text-muted);
+  color: #475569;
   font-size: 0.875rem;
   margin-bottom: 1.25rem;
   flex-grow: 1;

@@ -2,23 +2,23 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--bg-dark);
-  border-bottom: 1px solid var(--border-color);
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
   transition: all var(--transition-normal);
 }
 
 .navbar-header.scrolled {
-  background: rgba(9, 13, 22, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-top-bar {
-  background: #060a12;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.8rem;
   padding: 0.35rem 0;
-  color: var(--text-muted);
+  color: #cbd5e1;
 }
 
 .top-bar-content {
@@ -37,7 +37,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  color: var(--text-muted);
+  color: #cbd5e1;
 }
 
 .top-link:hover {
@@ -52,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 76px;
 }
 
 .navbar-brand {
@@ -62,10 +62,9 @@
 }
 
 .brand-official-logo {
-  height: 42px;
+  height: 44px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.4));
 }
 
 .brand-text {
@@ -78,11 +77,11 @@
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .brand-title .highlight {
-  color: #60a5fa;
+  color: #1085fa;
 }
 
 .brand-sub {
@@ -108,7 +107,7 @@
 .nav-link {
   font-size: 0.825rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: #334155;
   padding: 0.5rem 0.2rem;
   position: relative;
   text-transform: uppercase;
@@ -118,7 +117,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: #ffffff;
+  color: #1085fa;
 }
 
 .nav-link.active::after {
@@ -128,7 +127,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: #3b82f6;
+  background: #1085fa;
   border-radius: 2px;
 }
 
@@ -140,28 +139,28 @@
 
 .cart-btn {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #0f172a;
   transition: all var(--transition-fast);
 }
 
 .cart-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 
 .cart-badge {
   position: absolute;
   top: -4px;
   right: -4px;
-  background: #2563eb;
+  background: #1085fa;
   color: #ffffff;
   font-size: 0.7rem;
   font-weight: 800;
@@ -171,12 +170,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--bg-dark);
+  border: 2px solid #ffffff;
 }
 
 .mobile-toggle {
   display: none;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 /* Mobile Menu */
@@ -186,8 +185,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   z-index: 2000;
 }
 
@@ -195,8 +194,8 @@
   width: 85%;
   max-width: 320px;
   height: 100%;
-  background: var(--bg-surface);
-  border-right: 1px solid var(--border-color);
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -208,8 +207,8 @@
   align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-color);
-  color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  color: #0f172a;
 }
 
 .mobile-list {
@@ -226,19 +225,19 @@
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
-  color: var(--text-muted);
+  color: #334155;
   font-weight: 600;
 }
 
 .mobile-link:hover,
 .mobile-link.active {
-  background: rgba(37, 99, 235, 0.15);
-  color: #60a5fa;
+  background: rgba(16, 133, 250, 0.1);
+  color: #1085fa;
 }
 
 .mobile-divider {
   height: 1px;
-  background: var(--border-color);
+  background: #e2e8f0;
   margin: 0.75rem 0;
 }
 
