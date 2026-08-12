@@ -1,99 +1,112 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { ShoppingBag, User, Menu, X, Mail, Monitor, Calculator, Cpu, Server, ShieldAlert, TrendingUp } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { ShoppingBag, Menu, X, Globe } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { totalItems } = useCart();
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const { cartCount } = useCart();
+  const { lang, changeLanguage, t } = useLanguage();
   const location = useLocation();
 
-  const navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Web Design', path: '/about' },
-    { label: 'Mail Professional', path: '/mail-professional' },
-    { label: 'Accounting Systems', path: '/accounting' },
-    { label: 'IT', path: '/it' },
-    { label: 'Network & Servers', path: '/network-servers' },
-    { label: 'Smart Control', path: '/smart-control' },
-    { label: 'Digital Marketing', path: '/digital-marketing' },
+  const navLinks = [
+    { path: '/', label: t('home') },
+    { path: '/about', label: t('webDesign') },
+    { path: '/digital-marketing', label: t('digitalMarketing') },
+    { path: '/accounting', label: t('accounting') },
+    { path: '/network-servers', label: t('networkServers') },
+    { path: '/smart-control', label: t('smartControl') },
+    { path: '/it', label: t('it') },
+    { path: '/mail-professional', label: t('mailPro') }
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'ar', name: 'العربية', flag: '🇪🇬' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' }
+  ];
+
+  const currentLangObj = languages.find(l => l.code === lang) || languages[0];
 
   return (
-    <header className="site-header">
-      <div className="container header-container">
+    <header className="site-navbar">
+      <div className="container nav-container">
         {/* Brand Logo */}
-        <Link to="/" className="brand-logo-wrapper">
+        <Link to="/" className="nav-brand">
           <img 
             src="/assets/Untitled-1.png" 
-            alt="POM Agency" 
-            className="official-brand-logo" 
-            onError={(e) => {
-              e.target.src = '/assets/Logo-1.png';
-            }}
+            alt="POM Digital Engineering Logo" 
+            className="logo-img"
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="desktop-nav">
-          {navItems.map((item) => (
+        {/* Desktop Navigation Links */}
+        <nav className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
+          {navLinks.map((link) => (
             <Link
-              key={item.path}
-              to={item.path}
-              className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
+              key={link.path}
+              to={link.path}
+              className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
             >
-              {item.label}
+              {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Actions (Cart + Account) */}
-        <div className="header-actions">
-          <Link to="/cart" className="action-btn cart-btn" title="Shopping Cart">
+        {/* Right Actions: Language Switcher & Cart */}
+        <div className="nav-actions">
+          {/* Language Selector Dropdown */}
+          <div className="lang-switcher-container">
+            <button 
+              className="lang-switcher-btn"
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              title="Change Language"
+            >
+              <Globe size={16} className="globe-icon" />
+              <span className="lang-flag">{currentLangObj.flag}</span>
+              <span className="lang-code">{currentLangObj.code.toUpperCase()}</span>
+            </button>
+
+            {langDropdownOpen && (
+              <div className="lang-dropdown-menu">
+                {languages.map((l) => (
+                  <button
+                    key={l.code}
+                    className={`lang-option ${lang === l.code ? 'active' : ''}`}
+                    onClick={() => {
+                      changeLanguage(l.code);
+                      setLangDropdownOpen(false);
+                    }}
+                  >
+                    <span className="option-flag">{l.flag}</span>
+                    <span className="option-name">{l.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Cart Icon Button */}
+          <Link to="/cart" className="cart-icon-btn" title="View Cart">
             <ShoppingBag size={20} />
-            {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
-          </Link>
-          
-          <Link to="/my_account" className="action-btn account-btn" title="My Account">
-            <User size={20} />
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </Link>
 
+          {/* Mobile Menu Toggle */}
           <button 
-            className="mobile-toggle-btn"
+            className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="mobile-menu-overlay" onClick={() => setMobileMenuOpen(false)}>
-          <div className="mobile-menu-content" onClick={(e) => e.stopPropagation()}>
-            <div className="mobile-menu-header">
-              <img src="/assets/Untitled-1.png" alt="POM Agency" className="mobile-brand-logo" />
-              <button onClick={() => setMobileMenuOpen(false)}><X size={24} /></button>
-            </div>
-            <nav className="mobile-nav-list">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </div>
-      )}
     </header>
   );
 }
