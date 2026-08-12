@@ -8,7 +8,7 @@
 .hero-container {
   display: grid;
   grid-template-columns: 1.1fr 1.1fr;
-  gap: 3.5rem;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -91,7 +91,6 @@
   align-items: center;
 }
 
-/* Transparent wrapper without white background box */
 .hero-image-transparent {
   position: relative;
   width: 100%;
@@ -102,7 +101,7 @@
 
 .hero-official-img {
   width: 100%;
-  max-width: 580px;
+  max-width: 650px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -129,7 +128,7 @@
 
 .all-in-one-img {
   width: 100%;
-  max-width: 540px;
+  max-width: 580px;
   height: auto;
   object-fit: contain;
   display: block;
