@@ -5,18 +5,72 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-.page-header h1 {
+/* Mail Professional Top Hero Section with Logo 12.png */
+.mail-hero-section {
+  padding: 4.5rem 0 4rem 0;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mail-hero-title {
+  font-family: var(--font-heading);
   font-size: 2.75rem;
   font-weight: 800;
-  margin: 1rem 0;
   color: #343f5a;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.hero-features-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #343f5a;
+  font-weight: 600;
+}
+
+.mail-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mail-logo-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(19, 136, 253, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal);
+}
+
+.mail-logo-box:hover {
+  transform: scale(1.03);
+  border-color: #1388fd;
+}
+
+.mail-official-logo-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(19, 136, 253, 0.15));
 }
 
 .page-header-sub {
   color: #777777;
-  font-size: 1.1rem;
-  max-width: 680px;
-  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .steps-grid {
@@ -157,6 +211,12 @@
   color: #777777;
   font-size: 0.85rem;
   line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .mail-hero-title {
+    font-size: 2.1rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { Mail, CheckCircle2, ShieldCheck, ArrowRight, Settings, CreditCard, UserCheck, Star, Cpu, Layers, Sparkles, Calendar, MapPin, Search, Share2, FileText } from 'lucide-react';
+import { Mail, CheckCircle2, ShieldCheck, ArrowRight, Settings, CreditCard, UserCheck, Star, Cpu, Layers, Sparkles, Calendar, MapPin, Search, Share2, FileText, Zap } from 'lucide-react';
 import './MailProfessionalPage.css';
 
 export default function MailProfessionalPage() {
@@ -129,14 +129,38 @@ export default function MailProfessionalPage() {
 
   return (
     <div className="mail-pro-page">
-      {/* 1. Header Banner */}
-      <section className="page-header text-center">
-        <div className="container">
-          <div className="badge"><Mail size={14} /> FEATURES</div>
-          <h1>Create a professional email for your business</h1>
-          <p className="page-header-sub">
-            An email address that matches your custom domain to make your brand appear more credible.
-          </p>
+      {/* 1. Top Hero Header Banner with Logo 12.png and Formatted Description */}
+      <section className="mail-hero-section">
+        <div className="container grid-2-col align-center">
+          <div className="mail-hero-content">
+            <div className="badge"><Mail size={14} /> FEATURES</div>
+            <h1 className="mail-hero-title">Create a professional email for your business</h1>
+            <p className="page-header-sub text-left mb-4">
+              An email address that matches your custom domain to make your brand appear more credible. Boost team collaboration, enhance data security, and establish customer trust with custom domain email hosting.
+            </p>
+            <div className="hero-features-checklist mb-4">
+              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> Custom domain name email accounts</div>
+              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> Enterprise cloud infrastructure & antivirus protection</div>
+              <div className="check-item"><CheckCircle2 size={16} className="check-icon" /> Full smartphone & desktop sync support</div>
+            </div>
+            <div className="hero-actions">
+              <a href="#plans" className="btn btn-primary">
+                Choose Email Plan <ArrowRight size={16} />
+              </a>
+              <Link to="/terms-and-conditions" className="btn btn-secondary">
+                Get Custom Quote
+              </Link>
+            </div>
+          </div>
+          <div className="mail-hero-visual">
+            <div className="mail-logo-box">
+              <img 
+                src="/assets/12.png" 
+                alt="Mail Professional Logo" 
+                className="mail-official-logo-img"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -161,7 +185,7 @@ export default function MailProfessionalPage() {
       </section>
 
       {/* 3. Pricing Plans */}
-      <section className="section">
+      <section className="section" id="plans">
         <div className="container">
           <div className="badge-center"><Sparkles size={14} /> PRICING PLANS</div>
           <h2 className="section-title">Pricing Plans</h2>
