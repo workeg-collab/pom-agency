@@ -32,6 +32,24 @@ export const translations = {
     currency: 'EGP',
     perMonth: '/Month',
 
+    // Terms & Conditions Localization
+    legalBadge: 'LEGAL & PRIVACY',
+    termsTitle: 'Terms and Conditions & POM Privacy Policy',
+    lastUpdated: 'Last Updated: 2026',
+
+    termsSec1Title: '1. POM Privacy Policy',
+    termsSec1P1: 'This Privacy Policy (hereinafter referred to as "Policy") shall govern the manner in which POM Agency collects, uses, maintains, and discloses information obtained when you access POM\'s Website and digital services.',
+    termsSec1P2: 'This Policy may be subjected to change from time to time and such change shall be effective upon being posted on POM\'s Website. Continuous access and use of POM\'s services constitutes acceptance of all terms.',
+
+    termsSec2Title: '2. Professional Email & IT Service Terms',
+    termsSec2P1: 'POM Agency provides professional email hosting, server infrastructure, website design, smart control systems, and accounting software (Odoo ERP) implementations. All service subscriptions renew according to the chosen billing cycle.',
+    termsSec2Bullet1: 'Users must adhere to acceptable email usage policies and anti-spam standards.',
+    termsSec2Bullet2: 'Mailbox storage allocations are determined by the subscribed tier (Individual: 5GB, Business: 30GB, Professional: 75GB).',
+    termsSec2Bullet3: '24/7 technical support and network monitoring are available for active hosting and server clients.',
+
+    termsSec3Title: '3. Intellectual Property & Trademarks',
+    termsSec3P1: 'Copyright © 2021 – 2026 pomagency Operating Company, All Rights Reserved. The pomagency word mark and logo are registered trademarks.',
+
     // Pricing Plans Translation
     planIndividual: 'Individual',
     planIndividualSub: 'Single Use',
@@ -285,6 +303,24 @@ export const translations = {
     currency: 'ج.م',
     perMonth: '/شهرياً',
 
+    // Terms & Conditions Localization
+    legalBadge: 'الشروط القانونية والخصوصية',
+    termsTitle: 'الشروط والأحكام وسياسة الخصوصية لشركة POM',
+    lastUpdated: 'آخر تحديث: 2026',
+
+    termsSec1Title: '1. سياسة الخصوصية لشركة POM',
+    termsSec1P1: 'تحدد سياسة الخصوصية هذه (المشار إليها فيما يلي باسم "السياسة") الطريقة التي تجمع بها وكالة POM وتستخدم وتحافظ وتفصح عن المعلومات التي تم الحصول عليها عند وصولك إلى موقع POM وخدماتها الرقمية.',
+    termsSec1P2: 'قد تخضع هذه السياسة للتعديل والتغيير من وقت لآخر، ويكون هذا التعديل سارياً فور نشره على موقع POM. يعتبر استمرارك في استخدام خدمات POM بمثابة موافقة كاملة على جميع الشروط.',
+
+    termsSec2Title: '2. شروط البريد الإلكتروني والأنظمة المحاسبية والخدمات التقنية',
+    termsSec2P1: 'تقدم وكالة POM خدمات استضافة البريد الإلكتروني الاحترافي، البنية التحتية للسيرفرات، تصميم المواقع، أنظمة التحكم الذكي، وتطبيقات الأنظمة المحاسبية (Odoo ERP). تجدد جميع اشتراكات الخدمات وفقاً لدورة الفوترة المحددة.',
+    termsSec2Bullet1: 'يجب على المستخدمين الالتزام بسياسات استخدام البريد الإلكتروني القابلة ومكافحة الرسائل العشوائية (Anti-Spam).',
+    termsSec2Bullet2: 'تُحدد مساحات تخزين صناديق البريد وفقاً للباقة المشترك فيها (الفردية: 5GB، الأعمال: 30GB، الاحترافية: 75GB).',
+    termsSec2Bullet3: 'يتوفر الدعم الفني ومراقبة استقرار الشبكات على مدار 24/7 لعملاء الاستضافة والسيرفرات النشطين.',
+
+    termsSec3Title: '3. الملكية الفكرية والعلامات التجارية',
+    termsSec3P1: 'حقوق الطبع والنشر © 2021 – 2026 محفوظة لشركة POM Operating Company. تعتبر العلامة التجارية واللوجو الخاص بـ pomagency علامات تجارية مسجلة ومحمية بموجب القانون.',
+
     // Pricing Plans Translation
     planIndividual: 'باقة الفردي',
     planIndividualSub: 'استخدام فردي',
@@ -534,6 +570,24 @@ export const translations = {
     popularChoice: 'CHOIX POPULAIRE',
     sale: 'PROMOTION',
 
+    // Terms & Conditions Localization
+    legalBadge: 'LÉGAL & CONFIDENTIALITÉ',
+    termsTitle: 'Conditions Générales & Politique de Confidentialité POM',
+    lastUpdated: 'Dernière Mise à Jour: 2026',
+
+    termsSec1Title: '1. Politique de Confidentialité POM',
+    termsSec1P1: 'Cette politique régit la manière dont POM Agency collecte, utilise et protège vos informations lors de votre utilisation de nos services.',
+    termsSec1P2: 'Cette politique peut être modifiée de temps à autre. L\'utilisation continue de nos services vaut acceptation de ces termes.',
+
+    termsSec2Title: '2. Conditions des Services E-mail & Informatique',
+    termsSec2P1: 'POM Agency fournit des services d\'hébergement e-mail professionnel, d\'infrastructure serveur, de création web et de logiciels comptables (Odoo ERP).',
+    termsSec2Bullet1: 'Les utilisateurs doivent respecter les règles d\'utilisation acceptable des e-mails.',
+    termsSec2Bullet2: 'Le stockage est déterminé par le plan souscrit (Individuel: 5 Go, Business: 30 Go, Professionnel: 75 Go).',
+    termsSec2Bullet3: 'Un support technique 24/7 est disponible pour les clients actifs.',
+
+    termsSec3Title: '3. Propriété Intellectuelle',
+    termsSec3P1: 'Copyright © 2021 – 2026 pomagency Operating Company, Tous droits réservés.',
+
     // Pricing Labels
     currency: 'EGP',
     perMonth: '/Mois',
@@ -771,7 +825,7 @@ export const translations = {
     networkServers: 'नेटवर्क और सर्वर',
     smartControl: 'स्मार्ट कंट्रोल',
     it: 'आईटी सेवाएं',
-    mailPro: 'प्रोफیشنل ईमेल',
+    mailPro: 'प्रोफेशनल ईमेल',
     cart: 'कार्ट',
 
     // Actions & Buttons
@@ -786,6 +840,24 @@ export const translations = {
     requestQuote: 'कोटेशन मांगें',
     popularChoice: 'लोकप्रिय विकल्प',
     sale: 'सेल',
+
+    // Terms & Conditions Localization
+    legalBadge: 'कानूनी और गोपनीयता',
+    termsTitle: 'नियम और शर्तें और POM गोपनीयता नीति',
+    lastUpdated: 'अंतिम अद्यतन: 2026',
+
+    termsSec1Title: '1. POM गोपनीयता नीति',
+    termsSec1P1: 'यह गोपनीयता नीति उस तरीके को नियंत्रित करती है जिससे POM एजेंसी जानकारी एकत्र और उपयोग करती है।',
+    termsSec1P2: 'समय-समय पर इस नीति में संशोधन किया जा सकता है।',
+
+    termsSec2Title: '2. प्रोफेशनल ईमेल और आईटी सेवा शर्तें',
+    termsSec2P1: 'POM एजेंसी ईमेल होस्टिंग, सर्वर और ओडू ईआरपी सॉफ्टवेयर समाधान प्रदान करती है।',
+    termsSec2Bullet1: 'उपयोगकर्ताओं को ईमेल उपयोग नीतियों का पालन करना चाहिए।',
+    termsSec2Bullet2: 'मेलबॉक्स संग्रहण सदस्यता के आधार पर निर्धारित किया जाता है।',
+    termsSec2Bullet3: 'सक्रिय ग्राहकों के लिए 24/7 तकनीकी सहायता उपलब्ध है।',
+
+    termsSec3Title: '3. बौद्धिक संपदा',
+    termsSec3P1: 'कॉपीराइट © 2021 - 2026 pomagency ऑपरेटिंग कंपनी, सर्वाधिकार सुरक्षित।',
 
     // Pricing Labels
     currency: 'ईजीपी',
@@ -912,7 +984,7 @@ export const translations = {
     // Accounting Page Localization
     accountingBadge: 'ईआरपी और वित्तीय प्रणाली',
     accountingHeroTitle: 'आधुनिक उद्यमों के लिए स्मार्ट अकाउंटिंग और ओडू ईआरपी सिस्टम',
-    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोل पर पूर्ण नियंत्रण पाएं।',
+    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोल पर पूर्ण नियंत्रण पाएं।',
     accountingCapabilities: 'सिस्टम क्षमताएं',
     everythingAccounting: 'वित्तीय नियंत्रण के लिए सब कुछ',
     everythingAccountingSub: 'ऑपरेशन्स को सुगम बनाएं।',
@@ -929,7 +1001,7 @@ export const translations = {
     marketingHeroTitle: 'डेटा-ड्रिवन डिजिटल मार्केटिंग और ग्रोथ इंजीनियरिंग',
     marketingHeroSub: 'हम उच्च आरओआई डिजिटल मार्केटिंग अभियानों, सोशल मीडिया रणनीतियों और लक्षित विज्ञापनों के माध्यम से राजस्व बढ़ाते हैं।',
     coreMarketingPillars: 'मुख्य मार्केटिंग स्तंभ',
-    endToEndGrowth: 'आपके ब्रांड के लिए एंड-टू-إंड ग्रोथ इंजन',
+    endToEndGrowth: 'आपके ब्रांड के लिए एंड-टू-इंड ग्रोथ इंजन',
     endToEndSub: 'आपके ब्रांड को उच्च राजस्व प्राप्त करने के लिए सब कुछ।',
     marketingPackages: 'ग्रोथ मार्केटिंग पैकेज',
     marketingPackagesSub: 'लचीली मासिक योजनाएं।',
@@ -945,7 +1017,7 @@ export const translations = {
     allChannels: 'सभी चैनल',
     socialMediaAds: 'सोशल मीडिया विज्ञापन',
     seoSearchDominance: 'एसईओ और खोज',
-    performanceMarketing: 'परफॉर्मेंس मार्केटिंग',
+    performanceMarketing: 'परफॉर्मेंस मार्केटिंग',
 
     // Web Design Page Localization
     webDesignBadge: 'वेब डिजाइन और इंजीनियरिंग',
