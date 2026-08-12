@@ -1,36 +1,110 @@
+.digital-marketing-page {
+  padding-bottom: 2rem;
+}
+
+/* Main Top Hero Section */
+.marketing-hero-section {
+  padding: 4.5rem 0 4rem 0;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.marketing-hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #343f5a;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.marketing-hero-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.marketing-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marketing-img-box {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(19, 136, 253, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal);
+}
+
+.marketing-img-box:hover {
+  transform: scale(1.03);
+  border-color: #1388fd;
+}
+
+.marketing-official-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.marketing-floating-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #343f5a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* Pillar Cards */
 .marketing-pillar-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
 }
 
-.pillar-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.marketing-pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(19, 136, 253, 0.12);
+  border-color: #1388fd;
 }
 
-.pillar-icon {
-  color: #60a5fa;
+.marketing-pillar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #343f5a;
 }
 
-.pillar-header h3 {
-  font-size: 1.35rem;
+.marketing-pillar-card p {
+  color: #777777;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
 }
 
-.pillar-list {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.85rem;
-}
-
-.pillar-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--text-muted);
+@media (max-width: 900px) {
+  .marketing-hero-title {
+    font-size: 2.1rem;
+  }
 }
