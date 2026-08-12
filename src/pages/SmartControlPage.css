@@ -1,33 +1,238 @@
-.sys-card {
+.smart-page {
+  padding-bottom: 4rem;
+}
+
+.smart-hero-section {
+  padding: 5rem 0 4rem 0;
+  background: #ffffff !important;
+}
+
+.smart-hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #343f5a;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.smart-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.smart-img-wrapper {
+  width: 100%;
+  max-width: 580px;
+}
+
+.smart-hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(19, 136, 253, 0.12));
+  transition: transform var(--transition-normal);
+}
+
+.smart-hero-img:hover {
+  transform: scale(1.02);
+}
+
+/* CCTV Capabilities Grid */
+.cctv-grid {
+  align-items: stretch;
+}
+
+.cctv-card {
   display: flex;
   flex-direction: column;
   background: #ffffff;
   border: 1px solid #e2e8f0;
+  transition: all var(--transition-normal);
+}
+
+.cctv-card:hover {
+  border-color: #1388fd;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(19, 136, 253, 0.12);
+}
+
+.cctv-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(19, 136, 253, 0.08);
+  color: #1388fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.cctv-card h3 {
+  font-size: 1.2rem;
+  color: #343f5a;
+  margin-bottom: 0.6rem;
+}
+
+.cctv-card p {
+  color: #777777;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.cctv-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #30eab3;
+}
+
+/* Services 01 - 04 Cards */
+.services-01-04-grid {
+  align-items: stretch;
+}
+
+.service-num-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 2.25rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.service-num-card:hover {
+  border-color: #1388fd;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(52, 63, 90, 0.1);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.srv-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1388fd;
+  opacity: 0.85;
+  line-height: 1;
+}
+
+.srv-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(19, 136, 253, 0.08);
+  color: #1388fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.srv-title {
+  font-size: 1.4rem;
+  color: #343f5a;
+  margin-bottom: 0.35rem;
+}
+
+.srv-tagline {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1388fd;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.srv-desc {
+  color: #777777;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.srv-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bullet-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #343f5a;
+  font-weight: 500;
+}
+
+/* System Cards */
+.sys-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
 }
 
 .sys-icon {
-  color: #1085fa;
+  color: #1388fd;
   margin-bottom: 1rem;
 }
 
 .sys-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: #0f172a;
+  font-size: 1.15rem;
+  color: #343f5a;
+  margin-bottom: 0.5rem;
 }
 
 .sys-card p {
-  color: #475569;
-  font-size: 0.875rem;
+  color: #777777;
+  font-size: 0.88rem;
   margin-bottom: 1.25rem;
   flex-grow: 1;
 }
 
 .sys-tag {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #10b981;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1388fd;
+}
+
+/* Partner Logos */
+.partner-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: all var(--transition-fast);
+}
+
+.partner-logo-img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .smart-hero-title {
+    font-size: 2.1rem;
+  }
 }
