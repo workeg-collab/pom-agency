@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import { 
   Monitor, 
   Code, 
@@ -24,6 +25,7 @@ import {
 import './WebDesignPage.css';
 
 export default function WebDesignPage() {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('all');
 
   const webDesignPillars = [
@@ -133,17 +135,17 @@ export default function WebDesignPage() {
       <section className="webdesign-hero-section">
         <div className="container grid-2-col align-center">
           <div className="webdesign-hero-text">
-            <div className="badge"><Monitor size={14} /> WEB DESIGN & ENGINEERING</div>
-            <h1 className="webdesign-hero-title">Custom Web Design & Digital Engineering</h1>
+            <div className="badge"><Monitor size={14} /> {t('webDesignBadge')}</div>
+            <h1 className="webdesign-hero-title">{t('webDesignHeroTitle')}</h1>
             <p className="page-header-sub text-left">
-              We build high-performance, responsive websites and custom web applications designed to elevate your brand credibility, delight users, and drive maximum business conversions.
+              {t('webDesignHeroSub')}
             </p>
             <div className="hero-actions mt-4">
               <Link to="/mail-professional" className="btn btn-primary">
-                Start Your Web Project <ArrowRight size={18} />
+                {t('startWebProject')} <ArrowRight size={18} />
               </Link>
               <a href="#showcase" className="btn btn-secondary">
-                View Project Showcase
+                {t('viewShowcase')}
               </a>
             </div>
           </div>
@@ -166,8 +168,8 @@ export default function WebDesignPage() {
       {/* Pillars Overview Grid */}
       <section className="section bg-surface">
         <div className="container">
-          <div className="badge-center"><Sparkles size={14} /> CORE CAPABILITIES</div>
-          <h2 className="section-title">Everything Your Website Needs to Succeed</h2>
+          <div className="badge-center"><Sparkles size={14} /> {t('coreCapabilities')}</div>
+          <h2 className="section-title">{t('everythingNeeded')}</h2>
           <p className="section-subtitle">
             From initial UI/UX wireframes to full-stack engineering, performance tuning, and technical SEO.
           </p>
@@ -191,7 +193,7 @@ export default function WebDesignPage() {
       <section className="section" id="showcase">
         <div className="container">
           <div className="badge-center"><Layout size={14} /> PORTFOLIO SHOWCASE</div>
-          <h2 className="section-title">Explore Our Modern Website Showcase</h2>
+          <h2 className="section-title">{t('exploreShowcase')}</h2>
           <p className="section-subtitle">
             Discover some of our flagship website designs and interactive portal templates built for industry leaders.
           </p>
@@ -202,25 +204,25 @@ export default function WebDesignPage() {
               className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
               onClick={() => setActiveFilter('all')}
             >
-              All Projects
+              {t('allProjects')}
             </button>
             <button 
               className={`filter-btn ${activeFilter === 'ecommerce' ? 'active' : ''}`}
               onClick={() => setActiveFilter('ecommerce')}
             >
-              E-Commerce
+              {t('eCommerce')}
             </button>
             <button 
               className={`filter-btn ${activeFilter === 'corporate' ? 'active' : ''}`}
               onClick={() => setActiveFilter('corporate')}
             >
-              Corporate
+              {t('corporate')}
             </button>
             <button 
               className={`filter-btn ${activeFilter === 'saas' ? 'active' : ''}`}
               onClick={() => setActiveFilter('saas')}
             >
-              SaaS & Apps
+              {t('saasApps')}
             </button>
           </div>
 
@@ -245,13 +247,13 @@ export default function WebDesignPage() {
                   </div>
                   <p className="showcase-desc">{project.desc}</p>
                   <div className="showcase-tags">
-                    {project.tags.map((t, i) => (
-                      <span key={i} className="tech-badge">{t}</span>
+                    {project.tags.map((tItem, i) => (
+                      <span key={i} className="tech-badge">{tItem}</span>
                     ))}
                   </div>
                   <div className="showcase-actions mt-3">
                     <Link to="/mail-professional" className="btn btn-outline full-width">
-                      Consult Web Specialist
+                      {t('getStarted')}
                     </Link>
                   </div>
                 </div>
@@ -265,7 +267,7 @@ export default function WebDesignPage() {
       <section className="section bg-surface">
         <div className="container">
           <div className="badge-center"><Code size={14} /> METHODOLOGY</div>
-          <h2 className="section-title">Our Web Design Process</h2>
+          <h2 className="section-title">{t('processTitle')}</h2>
           <p className="section-subtitle">A proven 4-stage engineering methodology to turn your concept into a live website.</p>
 
           <div className="grid-4-col process-grid">
@@ -286,7 +288,7 @@ export default function WebDesignPage() {
           <h2>Ready to Launch Your Next-Gen Website?</h2>
           <p className="section-subtitle">Let our engineering and marketing experts build your company's next website.</p>
           <Link to="/mail-professional" className="btn btn-primary">
-            Start Your Web Project <ArrowRight size={18} />
+            {t('startWebProject')} <ArrowRight size={18} />
           </Link>
         </div>
       </section>
