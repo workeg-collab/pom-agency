@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="/terms-and-conditions" element={<TermsPage />} />
               </Routes>
             </main>
+            <WhatsAppButton />
             <Footer />
           </div>
         </Router>
