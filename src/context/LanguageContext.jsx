@@ -54,6 +54,13 @@ export const translations = {
     planEnterpriseDominance: 'Enterprise Dominance',
     planEnterpriseDominanceSub: 'Market Leaders & Multi-Brands',
 
+    planStarterIT: 'Starter IT Support',
+    planStarterITSub: 'Small Businesses & Remote Teams',
+    planManagedITPro: 'Managed IT Pro',
+    planManagedITProSub: 'Medium Companies & Offices',
+    planEnterpriseCareSLA: 'Enterprise Care SLA',
+    planEnterpriseCareSLASub: 'Large Corporations & Multi-Sites',
+
     // Pricing Features Bullet Points
     feat1Mailbox: '1 mailbox included',
     feat5GB: '5GB for emails',
@@ -65,6 +72,18 @@ export const translations = {
     feat5Mailboxes: '5 mailboxes included',
     feat75GB: '75GB for emails',
     featFreeDomain: 'Free domain',
+
+    // IT Services Page Localization
+    itBadge: 'MANAGED IT SERVICES',
+    itHeroTitle: 'Enterprise Managed IT Services & Infrastructure Support',
+    itHeroSub: 'We provide 24/7 managed IT support, cybersecurity protection, cloud infrastructure management, hardware maintenance, and SLA-guaranteed helpdesk support.',
+    coreITServices: 'CORE MANAGED IT SERVICES',
+    everythingIT: 'Complete Managed IT & Cybersecurity Support Built for Your Enterprise',
+    everythingITSub: 'Minimize downtime, secure your business data, and accelerate digital transformation with certified IT engineers.',
+    itPackages: 'Managed IT Support Packages',
+    itPackagesSub: 'Flexible SLA tiers offering remote helpdesk, on-site hardware maintenance, and proactive network monitoring.',
+    requestITAudit: 'Request Free IT Audit',
+    exploreITPackages: 'Explore IT Packages',
 
     // Mail Professional Page Localization
     mailBadge: 'FEATURES',
@@ -285,6 +304,13 @@ export const translations = {
     planEnterpriseDominance: 'الهيمنة والتوسع الشامل',
     planEnterpriseDominanceSub: 'لكبرى العلامات والقنوات المتعددة',
 
+    planStarterIT: 'الدعم الفني المبتدئ',
+    planStarterITSub: 'للشركات الناشئة وفرق العمل عن بُعد',
+    planManagedITPro: 'إدارة IT الاحترافية',
+    planManagedITProSub: 'للشركات المتوسطة والمكاتب',
+    planEnterpriseCareSLA: 'عقد اتفاقية المستوى SLA',
+    planEnterpriseCareSLASub: 'للمؤسسات الكبرى متعددة الفروع',
+
     // Pricing Features Bullet Points
     feat1Mailbox: 'يتضمن صندوق بريد واحد',
     feat5GB: 'مساحة 5 جيجابايت للبريد',
@@ -296,6 +322,18 @@ export const translations = {
     feat5Mailboxes: 'يتضمن 5 صناديق بريد رسمية',
     feat75GB: 'مساحة 75 جيجابايت للبريد',
     featFreeDomain: 'نطاق (دومين) خاص مجاني',
+
+    // IT Services Page Localization
+    itBadge: 'خدمات IT المُدارة',
+    itHeroTitle: 'خدمات إدارة تكنولوجيا المعلومات ودعم البنية التحتية للمؤسسات',
+    itHeroSub: 'نوفر خدمة الدعم الفني لتقنية المعلومات على مدار 24/7، الحماية والأمن السيبراني، إدارة البنية السحابية، صيانة الأجهزة، واتفاقيات مستوى الخدمة SLA.',
+    coreITServices: 'خدمات تقنية المعلومات الرئيسية',
+    everythingIT: 'دعم متكامل لتكنولوجيا المعلومات والأمن السيبراني لمؤسستك',
+    everythingITSub: 'تقليل فترات التوقف، حماية بيانات الشركة، وتسريع التحول الرقمي مع مهندسي IT معتمدين.',
+    itPackages: 'باقات دعم وتطوير تكنولوجيا المعلومات',
+    itPackagesSub: 'مستويات خدمة مرنة تضمن الدعم الفني الفوري، الصيانة الميدانية، ومراقبة استقرار الشبكات.',
+    requestITAudit: 'طلب فحص IT مجاني',
+    exploreITPackages: 'استعراض باقات IT',
 
     // Mail Professional Page Localization
     mailBadge: 'المميزات الرئيسية',
@@ -516,6 +554,13 @@ export const translations = {
     planEnterpriseDominance: 'Dominance Entreprise',
     planEnterpriseDominanceSub: 'Lois du Marché',
 
+    planStarterIT: 'Support IT Débutant',
+    planStarterITSub: 'Petites Entreprises',
+    planManagedITPro: 'IT Géré Pro',
+    planManagedITProSub: 'Moyennes Entreprises',
+    planEnterpriseCareSLA: 'SLA Entreprise',
+    planEnterpriseCareSLASub: 'Grandes Corporations',
+
     // Pricing Features Bullet Points
     feat1Mailbox: '1 boîte aux lettres incluse',
     feat5GB: '5 Go pour les e-mails',
@@ -527,6 +572,18 @@ export const translations = {
     feat5Mailboxes: '5 boîtes aux lettres incluses',
     feat75GB: '75 Go pour les e-mails',
     featFreeDomain: 'Nom de domaine gratuit',
+
+    // IT Services Page Localization
+    itBadge: 'SERVICES IT GÉRÉS',
+    itHeroTitle: 'Services IT Gérés & Support d\'Infrastructure',
+    itHeroSub: 'Support IT géré 24/7, cybersécurité, gestion d\'infrastructure cloud et maintenance matérielle.',
+    coreITServices: 'SERVICES IT PRINCIPAUX',
+    everythingIT: 'Support IT et Cybersécurité Complet pour Votre Entreprise',
+    everythingITSub: 'Minimisez les temps d\'arrêt et sécurisez vos données.',
+    itPackages: 'Packages de Support IT Géré',
+    itPackagesSub: 'Niveaux SLA flexibles avec helpdesk et maintenance.',
+    requestITAudit: 'Demander un Audit IT Gratuit',
+    exploreITPackages: 'Explorer les Packages IT',
 
     // Mail Professional Page Localization
     mailBadge: 'FONCTIONNALITÉS',
@@ -740,12 +797,19 @@ export const translations = {
     planEnterpriseSuite: 'एंटरप्राइज सूट',
     planEnterpriseSuiteSub: 'बडे संगठन',
 
-    planStarterMarketing: 'स्टार्टر मार्केटिंग',
+    planStarterMarketing: 'स्टार्टर मार्केटिंग',
     planStarterMarketingSub: 'ब्रांड्स',
     planGrowthProMarketing: 'ग्रोथ प्रो मार्केटिंग',
     planGrowthProMarketingSub: 'ई-कॉमर्स',
     planEnterpriseDominance: 'एंटरप्राइज डोमिनेंस',
     planEnterpriseDominanceSub: 'मार्केट लीडर्स',
+
+    planStarterIT: 'स्टार्टर आईटी सहायता',
+    planStarterITSub: 'छोटे व्यवसाय',
+    planManagedITPro: 'मैनेज्ड आईटी प्रो',
+    planManagedITProSub: 'मध्यम कंपनियां',
+    planEnterpriseCareSLA: 'एंटरप्राइज केयर एसएलए',
+    planEnterpriseCareSLASub: 'बड़े संगठन',
 
     // Pricing Features Bullet Points
     feat1Mailbox: '1 मेलबॉक्स शामिल',
@@ -758,6 +822,18 @@ export const translations = {
     feat5Mailboxes: '5 मेलबॉक्स शामिल',
     feat75GB: 'ईमेल के लिए 75GB',
     featFreeDomain: 'मुफ्त डोमेन',
+
+    // IT Services Page Localization
+    itBadge: 'मैनेज्ड आईटी सेवाएं',
+    itHeroTitle: 'एंटरप्राइज मैनेज्ड आईटी सेवाएं और इंफ्रास्ट्रक्चर सपोर्ट',
+    itHeroSub: 'हम 24/7 मैनेज्ड आईटी सपोर्ट, साइबर सुरक्षा, क्लाउड प्रबंधन और हार्डवेयर रखरखाव प्रदान करते हैं।',
+    coreITServices: 'मुख्य मैनेज्ड आईटी सेवाएं',
+    everythingIT: 'आपकी कंपनी के लिए संपूर्ण आईटी सपोर्ट',
+    everythingITSub: 'डाउनटाइम कम करें और अपने डेटा को सुरक्षित रखें।',
+    itPackages: 'मैनेज्ड आईटी सपोर्ट पैकेज',
+    itPackagesSub: 'लचीली एसएलए योजनाएं।',
+    requestITAudit: 'मुफ्त आईटी ऑडिट मांगें',
+    exploreITPackages: 'आईटी पैकेज देखें',
 
     // Mail Professional Page Localization
     mailBadge: 'विशेषताएं',
@@ -824,7 +900,7 @@ export const translations = {
     // Accounting Page Localization
     accountingBadge: 'ईआरपी और वित्तीय प्रणाली',
     accountingHeroTitle: 'आधुनिक उद्यमों के लिए स्मार्ट अकाउंटिंग और ओडू ईआरपी सिस्टम',
-    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोل पर पूर्ण नियंत्रण पाएं।',
+    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोल पर पूर्ण नियंत्रण पाएं।',
     accountingCapabilities: 'सिस्टम क्षमताएं',
     everythingAccounting: 'वित्तीय नियंत्रण के लिए सब कुछ',
     everythingAccountingSub: 'ऑपरेशन्स को सुगम बनाएं।',
@@ -843,11 +919,11 @@ export const translations = {
     coreMarketingPillars: 'मुख्य मार्केटिंग स्तंभ',
     endToEndGrowth: 'आपके ब्रांड के लिए एंड-टू-एंड ग्रोथ इंजन',
     endToEndSub: 'आपके ब्रांड को उच्च राजस्व प्राप्त करने के लिए सब कुछ।',
-    marketingPackages: 'ग्रोथ मार्केटिंग पैकेज',
+    marketingPackages: 'ग्रोث मार्केटिंग पैकेज',
     marketingPackagesSub: 'लचीली मासिक योजनाएं।',
     campaignShowcase: 'मल्टी-चैनल अभियान शोकेस',
     campaignShowcaseSub: 'फेसबुक, इंस्टाग्राम और गूगल पर हमारे सफल अभियान देखें।',
-    marketingWorkflow: 'ग्रोथ रणनीति वर्कफ़्लो',
+    marketingWorkflow: 'ग्रोث रणनीति वर्कफ़्लो',
     marketingWorkflowSub: 'डेटा-प्रथम प्रक्रिया।',
     startGrowthCampaign: 'ग्रोथ कैंपेन शुरू करें',
     explorePackages: 'पैकेज देखें',
@@ -857,7 +933,7 @@ export const translations = {
     allChannels: 'सभी चैनल',
     socialMediaAds: 'सोशल मीडिया विज्ञापन',
     seoSearchDominance: 'एसईओ और खोज',
-    performanceMarketing: 'परफॉर्मेंस मार्केटिंग',
+    performanceMarketing: 'परफॉर्मेंس मार्केटिंग',
 
     // Web Design Page Localization
     webDesignBadge: 'वेब डिजाइन और इंजीनियरिंग',
@@ -871,7 +947,7 @@ export const translations = {
     processTitle: 'हमारी वेब डिजाइन प्रक्रिया',
     processSub: '4-चरणों की सिद्ध इंजीनियरिंग पद्धति।',
     startWebProject: 'अपना वेब प्रोजेक्ट शुरू करें',
-    viewShowcase: 'शोकेس देखें',
+    viewShowcase: 'शोकेस देखें',
     portfolioShowcaseBadge: 'पोर्टफोलियो शोकेस',
     methodologyBadge: 'कार्यप्रणाली',
     readyLaunchWebsite: 'क्या आप अपनी नई वेबसाइट लॉन्च करने के लिए तैयार हैं?',
@@ -937,7 +1013,7 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('pom_app_lang', lang);
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'rtl';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   }, [lang]);
 
   const t = (key) => {
