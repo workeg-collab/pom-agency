@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Send, ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
 
 const FacebookIcon = ({ size = 18 }) => (
@@ -30,13 +29,11 @@ export default function Footer() {
       <div className="container footer-top">
         <div className="footer-col brand-col">
           <Link to="/" className="footer-brand">
-            <div className="brand-logo-icon">
-              <Sparkles size={22} />
-            </div>
+            <img src="/assets/Untitled-1.png" alt="POM Agency Logo" className="footer-official-logo" />
             <span className="brand-title">POM <span className="highlight">AGENCY</span></span>
           </Link>
           <p className="brand-desc">
-            POM (Power of Media) is a premier digital services agency. We help businesses grow through smart web design, marketing, custom software, accounting systems, and IT infrastructure solutions.
+            POM (Power of Media) is a digital services agency. We help businesses grow through smart web design, marketing, custom software, accounting systems, and IT infrastructure solutions.
           </p>
           <div className="social-links">
             <a href="https://www.facebook.com/powerofmediaagency/" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook">
@@ -90,7 +87,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container bottom-content">
           <p className="copyright">
-            Copyright © 2021 – 2025 pomagency Operating Company, All Rights Reserved. The pomagency word mark is a registered trademark.
+            Copyright © 2021 – 2025 pomagency Operating Company, All Rights Reserved. The pomagency word mark is a registered trademark
           </p>
           <div className="footer-legal-links">
             <Link to="/terms-and-conditions">Privacy Policy</Link>

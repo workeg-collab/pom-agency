@@ -12,9 +12,7 @@ import {
   Calculator, 
   Cpu, 
   Server, 
-  ShieldAlert, 
-  Sparkles,
-  ChevronDown
+  ShieldAlert
 } from 'lucide-react';
 import './Navbar.css';
 
@@ -52,7 +50,7 @@ export default function Navbar() {
       <div className="navbar-top-bar">
         <div className="container top-bar-content">
           <div className="top-info">
-            <span>⚡ Power of Media — Complete Software, IT & Media Agency</span>
+            <span>Power of Media — Complete Software, Hardware & Digital Agency</span>
           </div>
           <div className="top-actions">
             <Link to="/login" className="top-link"><User size={14} /> Login</Link>
@@ -66,9 +64,14 @@ export default function Navbar() {
 
       <div className="container navbar-main">
         <Link to="/" className="navbar-brand">
-          <div className="brand-logo-icon">
-            <Sparkles size={22} className="brand-icon" />
-          </div>
+          <img 
+            src="/assets/Untitled-1.png" 
+            alt="POM Agency Logo" 
+            className="brand-official-logo"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
           <div className="brand-text">
             <span className="brand-title">POM <span className="highlight">AGENCY</span></span>
             <span className="brand-sub">Power Of Media</span>
@@ -115,7 +118,7 @@ export default function Navbar() {
         <div className="mobile-menu-overlay">
           <nav className="mobile-nav">
             <div className="mobile-nav-header">
-              <span className="brand-title">POM <span className="highlight">AGENCY</span></span>
+              <img src="/assets/Untitled-1.png" alt="POM Agency" style={{ height: '32px' }} />
               <button onClick={() => setMobileOpen(false)}><X size={24} /></button>
             </div>
             <ul className="mobile-list">

@@ -38,10 +38,10 @@
   align-items: center;
   gap: 0.3rem;
   color: var(--text-muted);
+}
 
-  &:hover {
-    color: #ffffff;
-  }
+.top-link:hover {
+  color: #ffffff;
 }
 
 .divider {
@@ -61,16 +61,11 @@
   gap: 0.75rem;
 }
 
-.brand-logo-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #2563eb, #06b6d4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+.brand-official-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.4));
 }
 
 .brand-text {
@@ -106,15 +101,15 @@
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.825rem;
+  font-weight: 700;
   color: var(--text-muted);
-  padding: 0.5rem 0.25rem;
+  padding: 0.5rem 0.2rem;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.03em;
