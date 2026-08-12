@@ -137,14 +137,37 @@ export default function WebDesignPage() {
 
   return (
     <div className="web-design-page">
-      {/* Page Header */}
-      <section className="page-header text-center">
-        <div className="container">
-          <div className="badge"><Monitor size={14} /> WEB DESIGN & ENGINEERING</div>
-          <h1>Custom Web Design & Digital Engineering</h1>
-          <p className="page-header-sub">
-            We build high-performance, responsive websites and web applications designed to elevate your brand credibility and drive maximum conversions.
-          </p>
+      {/* Top Hero Section with Prominent Big Web Design Banner Image */}
+      <section className="webdesign-hero-section">
+        <div className="container grid-2-col align-center">
+          <div className="webdesign-hero-text">
+            <div className="badge"><Monitor size={14} /> WEB DESIGN & ENGINEERING</div>
+            <h1 className="webdesign-hero-title">Custom Web Design & Digital Engineering</h1>
+            <p className="page-header-sub text-left">
+              We build high-performance, responsive websites and custom web applications designed to elevate your brand credibility, delight users, and drive maximum business conversions.
+            </p>
+            <div className="hero-actions mt-4">
+              <Link to="/mail-professional" className="btn btn-primary">
+                Start Your Web Project <ArrowRight size={18} />
+              </Link>
+              <a href="#showcase" className="btn btn-secondary">
+                View Project Showcase
+              </a>
+            </div>
+          </div>
+          <div className="webdesign-hero-visual">
+            <div className="webdesign-big-image-box">
+              <img 
+                src="/assets/campaign-creators-771730-unsplash.jpg" 
+                alt="Web Design Engineering Team in Action" 
+                className="webdesign-big-hero-img"
+              />
+              <div className="hero-img-floating-badge">
+                <Sparkles size={16} className="text-primary" />
+                <span>100% Custom Responsive Design</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -172,8 +195,8 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Website Showcase Showcase Showcase Cards (Big Showcase Boxes) */}
-      <section className="section">
+      {/* Website Showcase Cards (Big Showcase Boxes) */}
+      <section className="section" id="showcase">
         <div className="container">
           <div className="badge-center"><Layout size={14} /> PORTFOLIO SHOWCASE</div>
           <h2 className="section-title">Explore Our Modern Website Showcase</h2>
