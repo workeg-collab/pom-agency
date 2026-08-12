@@ -91,10 +91,9 @@ export default function HomePage() {
   const pricingPlans = [
     {
       id: 'individual-mail',
-      title: 'Individual',
-      subtitle: 'Single Use',
+      titleKey: 'planIndividual',
+      subtitleKey: 'planIndividualSub',
       price: 99.99,
-      period: '/Month',
       image: '/assets/iiii.png',
       features: [
         '1 mailbox included',
@@ -106,10 +105,9 @@ export default function HomePage() {
     },
     {
       id: 'business-mail',
-      title: 'Business',
-      subtitle: 'Multiple Users',
+      titleKey: 'planBusiness',
+      subtitleKey: 'planBusinessSub',
       price: 499.99,
-      period: '/Month',
       image: '/assets/bbbb-300x300.png',
       features: [
         '3 mailboxes included',
@@ -122,10 +120,9 @@ export default function HomePage() {
     },
     {
       id: 'professional-mail',
-      title: 'Professional',
-      subtitle: 'Multiple Users',
+      titleKey: 'planProfessional',
+      subtitleKey: 'planProfessionalSub',
       price: 999.99,
-      period: '/Month',
       image: '/assets/pppp-300x300.png',
       features: [
         '5 mailboxes included',
@@ -302,14 +299,14 @@ export default function HomePage() {
               <div key={plan.id} className={`card pricing-card ${plan.recommended ? 'recommended' : ''}`}>
                 {plan.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
                 <div className="plan-img-box mb-3">
-                  <img src={plan.image} alt={plan.title} className="plan-thumb" />
+                  <img src={plan.image} alt={t(plan.titleKey)} className="plan-thumb" />
                 </div>
-                <h3 className="plan-title">{plan.title}</h3>
-                <span className="plan-subtitle">{plan.subtitle}</span>
+                <h3 className="plan-title">{t(plan.titleKey)}</h3>
+                <span className="plan-subtitle">{t(plan.subtitleKey)}</span>
                 <div className="plan-price">
-                  <span className="currency">EGP</span>
+                  <span className="currency">{t('currency')}</span>
                   <span className="amount">{plan.price}</span>
-                  <span className="period">{plan.period}</span>
+                  <span className="period">{t('perMonth')}</span>
                 </div>
                 <ul className="plan-features">
                   {plan.features.map((feat, idx) => (
@@ -320,7 +317,7 @@ export default function HomePage() {
                   <button 
                     onClick={() => addToCart({
                       id: plan.id,
-                      title: `${plan.title} Mail Plan`,
+                      title: `${t(plan.titleKey)} Mail Plan`,
                       price: plan.price,
                       image: plan.image
                     })}

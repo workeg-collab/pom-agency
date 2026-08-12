@@ -28,6 +28,32 @@ export const translations = {
     popularChoice: 'POPULAR CHOICE',
     sale: 'SALE',
 
+    // Pricing Labels
+    currency: 'EGP',
+    perMonth: '/Month',
+
+    // Pricing Plans Translation
+    planIndividual: 'Individual',
+    planIndividualSub: 'Single Use',
+    planBusiness: 'Business',
+    planBusinessSub: 'Multiple Users',
+    planProfessional: 'Professional',
+    planProfessionalSub: 'Multiple Users',
+
+    planStarterAccounting: 'Starter Accounting',
+    planStarterAccountingSub: 'Small Businesses & Startups',
+    planBusinessERP: 'Business ERP',
+    planBusinessERPSub: 'Growing Companies',
+    planEnterpriseSuite: 'Enterprise Suite',
+    planEnterpriseSuiteSub: 'Large Scale Organizations',
+
+    planStarterMarketing: 'Starter Marketing',
+    planStarterMarketingSub: 'Small Businesses & Launching Brands',
+    planGrowthProMarketing: 'Growth Pro Marketing',
+    planGrowthProMarketingSub: 'Scaling Companies & E-Commerce',
+    planEnterpriseDominance: 'Enterprise Dominance',
+    planEnterpriseDominanceSub: 'Market Leaders & Multi-Brands',
+
     // Home Page Full Localization
     digitalPlatform: 'DIGITAL PLATFORM',
     heroHeading: 'Turning Ideas Into',
@@ -97,6 +123,32 @@ export const translations = {
     requestQuote: 'طلب عرض سعر',
     popularChoice: 'الأكثر طلباً',
     sale: 'خصم خاص',
+
+    // Pricing Labels
+    currency: 'ج.م',
+    perMonth: '/شهرياً',
+
+    // Pricing Plans Translation
+    planIndividual: 'باقة الفردي',
+    planIndividualSub: 'استخدام فردي',
+    planBusiness: 'باقة الأعمال',
+    planBusinessSub: 'مستخدمين متعددين',
+    planProfessional: 'الباقة الاحترافية',
+    planProfessionalSub: 'مستخدمين متعددين',
+
+    planStarterAccounting: 'المحاسبة المبتدئة',
+    planStarterAccountingSub: 'للشركات الناشئة والمحلات',
+    planBusinessERP: 'إدارة المؤسسات ERP',
+    planBusinessERPSub: 'للشركات المتنامية والمتوسطة',
+    planEnterpriseSuite: 'جناح الشركات الكبرى',
+    planEnterpriseSuiteSub: 'للمؤسسات الكبرى متعددة الفروع',
+
+    planStarterMarketing: 'التسويق المبتدئ',
+    planStarterMarketingSub: 'للشركات الناشئة والعلامات الجديدة',
+    planGrowthProMarketing: 'باقة نمو التسويق الاحترافي',
+    planGrowthProMarketingSub: 'للمتاجر والشركات للتوسع السريع',
+    planEnterpriseDominance: 'الهيمنة والتوسع الشامل',
+    planEnterpriseDominanceSub: 'لكبرى العلامات والقنوات المتعددة',
 
     // Home Page Full Localization
     digitalPlatform: 'منصة رقمية',
@@ -168,6 +220,32 @@ export const translations = {
     popularChoice: 'CHOIX POPULAIRE',
     sale: 'PROMOTION',
 
+    // Pricing Labels
+    currency: 'EGP',
+    perMonth: '/Mois',
+
+    // Pricing Plans Translation
+    planIndividual: 'Individuel',
+    planIndividualSub: 'Usage Unique',
+    planBusiness: 'Business',
+    planBusinessSub: 'Utilisateurs Multiples',
+    planProfessional: 'Professionnel',
+    planProfessionalSub: 'Utilisateurs Multiples',
+
+    planStarterAccounting: 'Comptabilité Débutant',
+    planStarterAccountingSub: 'Petites Entreprises',
+    planBusinessERP: 'ERP Entreprise',
+    planBusinessERPSub: 'Entreprises en Croissance',
+    planEnterpriseSuite: 'Suite Entreprise',
+    planEnterpriseSuiteSub: 'Grandes Organisations',
+
+    planStarterMarketing: 'Marketing Débutant',
+    planStarterMarketingSub: 'Marques en Lancement',
+    planGrowthProMarketing: 'Marketing Croissance Pro',
+    planGrowthProMarketingSub: 'E-Commerce & Scalabilité',
+    planEnterpriseDominance: 'Dominance Entreprise',
+    planEnterpriseDominanceSub: 'Lois du Marché',
+
     // Home Page Full Localization
     digitalPlatform: 'PLATEFORME NUMÉRIQUE',
     heroHeading: 'Transformer les idées en',
@@ -237,6 +315,32 @@ export const translations = {
     requestQuote: 'कोटेशन मांगें',
     popularChoice: 'लोकप्रिय विकल्प',
     sale: 'सेल',
+
+    // Pricing Labels
+    currency: 'ईजीपी',
+    perMonth: '/माह',
+
+    // Pricing Plans Translation
+    planIndividual: 'व्यक्तिगत',
+    planIndividualSub: 'एकल उपयोग',
+    planBusiness: 'बिजनेस',
+    planBusinessSub: 'अनेक उपयोगकर्ता',
+    planProfessional: 'प्रोफेशनल',
+    planProfessionalSub: 'अनेक उपयोगकर्ता',
+
+    planStarterAccounting: 'स्टार्टर अकाउंटिंग',
+    planStarterAccountingSub: 'छोटे व्यवसाय',
+    planBusinessERP: 'बिजनेस ईआरपी',
+    planBusinessERPSub: 'बढ़ती कंपनियां',
+    planEnterpriseSuite: 'एंटरप्राइज सूट',
+    planEnterpriseSuiteSub: 'बडे संगठन',
+
+    planStarterMarketing: 'स्टार्टर मार्केटिंग',
+    planStarterMarketingSub: 'ब्रांड्स',
+    planGrowthProMarketing: 'ग्रोथ प्रो मार्केटिंग',
+    planGrowthProMarketingSub: 'ई-कॉमर्स',
+    planEnterpriseDominance: 'एंटरप्राइज डोमिनेंस',
+    planEnterpriseDominanceSub: 'मार्केट लीडर्स',
 
     // Home Page Full Localization
     digitalPlatform: 'डिजिटल प्लेटफॉर्म',
