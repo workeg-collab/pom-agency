@@ -56,7 +56,7 @@ export default function MailProfessionalPage() {
       titleKey: 'planBusiness',
       subtitleKey: 'planBusinessSub',
       price: 499.99,
-      image: '/assets/bbbb-300x300.png',
+      image: '/assets/bbbb.png',
       isSale: false,
       featureKeys: [
         'feat3Mailboxes',
@@ -71,7 +71,7 @@ export default function MailProfessionalPage() {
       titleKey: 'planProfessional',
       subtitleKey: 'planProfessionalSub',
       price: 999.99,
-      image: '/assets/pppp-300x300.png',
+      image: '/assets/pppp.png',
       isSale: true,
       featureKeys: [
         'feat5Mailboxes',
