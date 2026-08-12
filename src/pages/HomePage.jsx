@@ -119,7 +119,7 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* Top Hero Section with Official Home-3.jpg Main Hero Image */}
+      {/* Top Hero Section */}
       <section className="hero-section">
         <div className="container hero-container">
           <div className="hero-content">
@@ -160,7 +160,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="hero-image-wrapper">
+            <div className="hero-image-transparent">
               <img 
                 src="/assets/Home-3.jpg" 
                 alt="POM Digital Platform Main Hero" 
@@ -171,7 +171,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Your All-in-One Tech Partner Section (with Illustration-2.jpg graphic directly below) */}
+      {/* Your All-in-One Tech Partner Section */}
       <section className="section bg-surface">
         <div className="container">
           <div className="badge-center"><Sparkles size={14} /> FEATURES</div>
@@ -180,7 +180,7 @@ export default function HomePage() {
             From professional email and smart control to websites, accounting, and social media — our integrated services cover every step of your business growth.
           </p>
 
-          <div className="all-in-one-banner grid-2-col align-center mt-4 mb-5">
+          <div className="all-in-one-banner grid-2-col align-center">
             <div className="all-in-one-text">
               <h3 className="mb-3" style={{ fontSize: '1.75rem', color: '#343f5a' }}>Integrated Digital Engineering & Infrastructure</h3>
               <p className="text-muted mb-4">
@@ -192,14 +192,12 @@ export default function HomePage() {
                 <div><CheckCircle2 size={16} className="check-icon" /> High-Performance Web & ERP Solutions</div>
               </div>
             </div>
-            <div className="all-in-one-graphic text-center">
-              <div className="hero-image-wrapper">
-                <img 
-                  src="/assets/Illustration-2.jpg" 
-                  alt="All in One Tech Partner Graphic" 
-                  className="hero-official-img"
-                />
-              </div>
+            <div className="all-in-one-graphic">
+              <img 
+                src="/assets/Illustration-2.jpg" 
+                alt="All in One Tech Partner Graphic" 
+                className="all-in-one-img"
+              />
             </div>
           </div>
 

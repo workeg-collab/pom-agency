@@ -7,7 +7,7 @@
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.1fr 1.1fr;
   gap: 3.5rem;
   align-items: center;
 }
@@ -86,22 +86,59 @@
 
 .hero-visual {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-image-wrapper {
+/* Transparent wrapper without white background box */
+.hero-image-transparent {
   position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 12px 35px rgba(52, 63, 90, 0.09);
-  border: 1px solid #e2e8f0;
-  background: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-official-img {
   width: 100%;
+  max-width: 580px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  filter: drop-shadow(0 15px 30px rgba(19, 136, 253, 0.15));
+  transition: transform var(--transition-normal);
+}
+
+.hero-official-img:hover {
+  transform: scale(1.02);
+}
+
+/* All in One section graphic */
+.all-in-one-banner {
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.all-in-one-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-in-one-img {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 15px 30px rgba(52, 63, 90, 0.12));
+  transition: transform var(--transition-normal);
+}
+
+.all-in-one-img:hover {
+  transform: scale(1.02);
 }
 
 /* Feature pills grid */
@@ -188,10 +225,9 @@
 }
 
 .email-pro-official-img {
-  max-width: 85%;
+  max-width: 90%;
   height: auto;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  filter: drop-shadow(0 15px 30px rgba(52, 63, 90, 0.12));
 }
 
 .lead-text {
