@@ -59,14 +59,14 @@ export default function HomePage() {
       subtitle: 'Multiple Users',
       price: 999.99,
       period: '/Month',
-      image: '/assets/iiii.png',
+      image: '/assets/pppp-300x300.png',
       features: [
         '5 mailboxes included',
         '75GB for emails',
         'Cloud infrastructure',
         'Antivirus check',
         'Full mobile sync support',
-        'Free domain included'
+        'Free domain'
       ],
       recommended: false
     }
@@ -82,7 +82,7 @@ export default function HomePage() {
               <Sparkles size={14} /> DIGITAL PLATFORM
             </div>
             <h1 className="hero-title">
-              Turning Ideas Into <span className="highlight">Software Solutions</span> Hardware Systems Smart Control Professional Email Accounting Systems Websites Social Media |
+              Turning Ideas Into Software Solutions, Hardware Systems, Smart Control, Professional Email, Accounting Systems, Websites, Social Media |
             </h1>
             <p className="hero-description">
               We provide complete solutions in software, hardware, professional email, accounting systems, smart control, website development, and social media management — your business growth starts here.
@@ -114,11 +114,8 @@ export default function HomePage() {
             <div className="hero-image-wrapper">
               <img 
                 src="/assets/Illustration-2.jpg" 
-                alt="POM Digital Platform Illustration" 
+                alt="POM Digital Platform" 
                 className="hero-official-img"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
               />
             </div>
           </div>
@@ -138,27 +135,27 @@ export default function HomePage() {
             <div className="tech-pill">
               <Zap size={20} className="pill-icon" />
               <h4>Smart & Scalable Tech</h4>
-              <p>Smart & scalable tech solutions for growing brands.</p>
+              <p>Smart & scalable tech solutions</p>
             </div>
             <div className="tech-pill">
               <Mail size={20} className="pill-icon" />
-              <h4>Secure Professional Email</h4>
-              <p>Secure professional email matching your domain.</p>
+              <h4>Secure Email</h4>
+              <p>Secure professional email</p>
             </div>
             <div className="tech-pill">
               <Monitor size={20} className="pill-icon" />
               <h4>Modern Websites</h4>
-              <p>Modern websites that convert visitors into clients.</p>
+              <p>Modern websites that convert</p>
             </div>
             <div className="tech-pill">
               <Calculator size={20} className="pill-icon" />
               <h4>Accounting Systems</h4>
-              <p>Accounting & business tracking via Odoo platform.</p>
+              <p>Accounting & business tracking</p>
             </div>
             <div className="tech-pill">
               <TrendingUp size={20} className="pill-icon" />
               <h4>Social Media</h4>
-              <p>Social media management that drives sales.</p>
+              <p>Social media that drives sales</p>
             </div>
           </div>
         </div>

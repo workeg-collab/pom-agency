@@ -1,75 +1,94 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, Share2, Target, BarChart2, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
+import { TrendingUp, Share2, Target, BarChart2, MessageSquare, CheckCircle2, ArrowRight, Layers, Sliders, Sparkles, Users } from 'lucide-react';
 import './DigitalMarketingPage.css';
 
 export default function DigitalMarketingPage() {
-  const pillars = [
-    {
-      icon: Share2,
-      title: 'Social Media Management',
-      desc: 'Creative visual production, daily campaign management, and audience growth across Facebook, Instagram, TikTok & LinkedIn.'
-    },
-    {
-      icon: Target,
-      title: 'Targeted Advertising',
-      desc: 'High-converting Meta Ads, Google PPC campaigns, and re-targeting pipelines designed for maximum ROI.'
-    },
-    {
-      icon: BarChart2,
-      title: 'Performance & Analytics',
-      desc: 'Real-time conversion tracking, funnel optimization, and data analytics dashboards.'
-    },
-    {
-      icon: MessageSquare,
-      title: 'Content Strategy & Copywriting',
-      desc: 'Persuasive sales scripts, visual storytelling, and brand voice positioning that convert followers into customers.'
-    }
+  const services = [
+    { title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' },
+    { title: 'SEO Optimization', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' },
+    { title: 'Market Analysis', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' },
+    { title: 'Email Marketing', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' },
+    { title: 'Digital Marketing', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' }
+  ];
+
+  const team = [
+    { name: 'Angel Sweeney', role: 'Head of Web Development', image: '/assets/Team-1.jpg' },
+    { name: 'Nathanael Riley', role: 'Lead SEO Specialist', image: '/assets/Team-2.jpg' },
+    { name: 'Chai Maldonado', role: 'UI/UX Brand Designer', image: '/assets/Team-3.jpg' },
+    { name: 'Carlo Terrell', role: 'Senior Full Stack Developer', image: '/assets/pic-20.jpg' }
   ];
 
   return (
     <div className="digital-marketing-page">
       <section className="page-header">
         <div className="container">
-          <div className="badge"><TrendingUp size={14} /> DIGITAL MARKETING</div>
-          <h1>Social Media & Digital Growth That Drives Sales</h1>
+          <div className="badge"><TrendingUp size={14} /> About</div>
+          <h1>AI Experts Dedicated to Your Success</h1>
           <p className="page-header-sub">
-            Data-driven online marketing strategies, compelling visual content, and targeted ad campaigns tailored to expand your client base.
+            Case read they must it of cold that. Speaking trifling an to unpacked moderate debating learning. An particular contrasted he excellence favourable on.
           </p>
         </div>
       </section>
 
+      {/* Key Feature Highlights */}
+      <section className="section">
+        <div className="container grid-3-col">
+          <div className="card text-center p-4">
+            <Layers size={32} className="text-primary mb-3" />
+            <h3>Feature List</h3>
+            <p className="text-muted font-size-sm">Add multiple feature items, set different icons or images for each feature and also give custom links if needed.</p>
+          </div>
+          <div className="card text-center p-4">
+            <Sliders size={32} className="text-primary mb-3" />
+            <h3>Key Features</h3>
+            <p className="text-muted font-size-sm">Choose your style from three different layouts and two unique icon background shapes.</p>
+          </div>
+          <div className="card text-center p-4">
+            <Sparkles size={32} className="text-primary mb-3" />
+            <h3>Connector Line</h3>
+            <p className="text-muted font-size-sm">Show a connector line between each icon, changes its color and style to fit your unique design.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services grid */}
       <section className="section bg-surface">
         <div className="container">
           <div className="badge-center">WHAT WE DO</div>
-          <h2 className="section-title">Core Marketing Solutions</h2>
-          <p className="section-subtitle">Empowering brands with high engagement and predictable lead generation.</p>
+          <h2 className="section-title">AI Services We Provide To Our Clients</h2>
+          <p className="section-subtitle">In to am attended desirous raptures declared diverted confined at. Collected instantly remaining up certainly to necessary as.</p>
 
-          <div className="grid-2-col">
-            {pillars.map((item, idx) => (
+          <div className="grid-3-col">
+            {services.map((s, idx) => (
               <div key={idx} className="card marketing-pillar-card">
-                <div className="pillar-header">
-                  <item.icon size={28} className="pillar-icon" />
-                  <h3>{item.title}</h3>
-                </div>
-                <p>{item.desc}</p>
-                <ul className="pillar-list">
-                  <li><CheckCircle2 size={16} className="check-icon" /> Customized Strategy</li>
-                  <li><CheckCircle2 size={16} className="check-icon" /> Weekly Performance Reports</li>
-                </ul>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+                <div className="feature-check"><CheckCircle2 size={16} /> Included Feature</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section text-center">
+      {/* Team Section */}
+      <section className="section">
         <div className="container">
-          <h2>Ready to Scale Your Brand's Digital Presence?</h2>
-          <p className="section-subtitle">Get in touch with our marketing strategists to create your custom campaign.</p>
-          <Link to="/mail-professional" className="btn btn-primary">
-            Request Marketing Plan <ArrowRight size={18} />
-          </Link>
+          <div className="badge-center"><Users size={14} /> Company Team</div>
+          <h2 className="section-title">Our Amazing Team</h2>
+          <p className="section-subtitle">A multidisciplinary team of developers, designers, and marketing strategists.</p>
+
+          <div className="grid-4-col">
+            {team.map((member, idx) => (
+              <div key={idx} className="card team-card text-center">
+                <div className="team-avatar-box">
+                  <img src={member.image} alt={member.name} className="team-avatar" />
+                </div>
+                <h3 className="member-name">{member.name}</h3>
+                <span className="member-role">{member.role}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
