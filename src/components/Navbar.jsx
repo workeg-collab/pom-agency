@@ -30,8 +30,6 @@ export default function Navbar() {
     { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' }
   ];
 
-  const currentLangObj = languages.find(l => l.code === lang) || languages[0];
-
   return (
     <header className="site-navbar">
       <div className="container nav-container">
@@ -58,18 +56,17 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right Actions: Language Switcher & Cart */}
+        {/* Right Actions: Tiny Language Switcher Icon & Cart */}
         <div className="nav-actions">
-          {/* Language Selector Dropdown */}
+          {/* Very Small Globe Language Button */}
           <div className="lang-switcher-container">
             <button 
-              className="lang-switcher-btn"
+              className="tiny-lang-btn"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              title="Change Language"
+              title="Select Language / اختيار اللغة"
+              aria-label="Language selector"
             >
-              <Globe size={16} className="globe-icon" />
-              <span className="lang-flag">{currentLangObj.flag}</span>
-              <span className="lang-code">{currentLangObj.code.toUpperCase()}</span>
+              <Globe size={18} className="tiny-globe-icon" />
             </button>
 
             {langDropdownOpen && (
