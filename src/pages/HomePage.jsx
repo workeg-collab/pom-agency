@@ -31,6 +31,22 @@ export default function HomePage() {
     'الأنظمة المحاسبية',
     'تصميم المواقع',
     'التسويق الرقمي'
+  ] : lang === 'fr' ? [
+    'Solutions Logicielles',
+    'Systèmes Matériels',
+    'Contrôle Intelligent',
+    'E-mail Professionnel',
+    'Systèmes Comptables',
+    'Sites Web',
+    'Marketing Digital'
+  ] : lang === 'hi' ? [
+    'सॉफ्टवेयर समाधान',
+    'हार्डवेयर सिस्टम',
+    'स्मार्ट कंट्रोल',
+    'प्रोफेशनल ईमेल',
+    'अकाउंटिंग सिस्टम',
+    'वेबसाइट डिजाइनिंग',
+    'डिजिटल मार्केटिंग'
   ] : [
     'Software Solutions',
     'Hardware Systems',
@@ -130,7 +146,7 @@ export default function HomePage() {
         <div className="container hero-container">
           <div className="hero-content">
             <div className="badge">
-              <Sparkles size={14} /> DIGITAL PLATFORM
+              <Sparkles size={14} /> {t('digitalPlatform')}
             </div>
             <h1 className="hero-title">
               {t('heroHeading')}{' '}
@@ -147,21 +163,21 @@ export default function HomePage() {
                 {t('getStarted')} <ArrowRight size={18} />
               </Link>
               <Link to="/about" className="btn btn-secondary">
-                {t('webDesign')} & Services
+                {t('webDesignAndServices')}
               </Link>
             </div>
             <div className="hero-stats">
               <div className="stat-item">
                 <span className="stat-num">99.9%</span>
-                <span className="stat-label">Uptime Guarantee</span>
+                <span className="stat-label">{t('uptimeGuarantee')}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-num">24/7</span>
-                <span className="stat-label">Technical Support</span>
+                <span className="stat-label">{t('techSupport')}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-num">500+</span>
-                <span className="stat-label">Global Clients</span>
+                <span className="stat-label">{t('globalClients')}</span>
               </div>
             </div>
           </div>
@@ -180,7 +196,7 @@ export default function HomePage() {
       {/* Your All-in-One Tech Partner Section */}
       <section className="section bg-surface">
         <div className="container">
-          <div className="badge-center"><Sparkles size={14} /> FEATURES</div>
+          <div className="badge-center"><Sparkles size={14} /> {t('featuresBadge')}</div>
           <h2 className="section-title">{t('allInOneTitle')}</h2>
           <p className="section-subtitle">
             {t('allInOneDesc')}
@@ -188,14 +204,14 @@ export default function HomePage() {
 
           <div className="all-in-one-banner grid-2-col align-center">
             <div className="all-in-one-text">
-              <h3 className="mb-3" style={{ fontSize: '1.75rem', color: '#343f5a' }}>Integrated Digital Engineering & Infrastructure</h3>
+              <h3 className="mb-3" style={{ fontSize: '1.75rem', color: '#343f5a' }}>{t('integratedDigitalEngineering')}</h3>
               <p className="text-muted mb-4">
-                We bring together software engineering, hardware installations, smart control systems, and enterprise accounting into a single unified partner for your organization.
+                {t('integratedDesc')}
               </p>
               <div className="check-list">
-                <div><CheckCircle2 size={16} className="check-icon" /> Certified Low-Current & Network Installations</div>
-                <div><CheckCircle2 size={16} className="check-icon" /> Automated Cloud Email & Domain Management</div>
-                <div><CheckCircle2 size={16} className="check-icon" /> High-Performance Web & ERP Solutions</div>
+                <div><CheckCircle2 size={16} className="check-icon" /> {t('lowCurrentCert')}</div>
+                <div><CheckCircle2 size={16} className="check-icon" /> {t('cloudEmailCert')}</div>
+                <div><CheckCircle2 size={16} className="check-icon" /> {t('webErpCert')}</div>
               </div>
             </div>
             <div className="all-in-one-graphic">
@@ -210,28 +226,28 @@ export default function HomePage() {
           <div className="grid-5-col mt-4">
             <div className="tech-pill">
               <Zap size={20} className="pill-icon" />
-              <h4>Smart & Scalable Tech</h4>
-              <p>Smart & scalable tech solutions</p>
+              <h4>{t('smartScalableTech')}</h4>
+              <p>{t('smartScalableTechDesc')}</p>
             </div>
             <div className="tech-pill">
               <Mail size={20} className="pill-icon" />
-              <h4>Secure Email</h4>
-              <p>Secure professional email</p>
+              <h4>{t('secureEmail')}</h4>
+              <p>{t('secureEmailDesc')}</p>
             </div>
             <div className="tech-pill">
               <Monitor size={20} className="pill-icon" />
-              <h4>Modern Websites</h4>
-              <p>Modern websites that convert</p>
+              <h4>{t('modernWebsites')}</h4>
+              <p>{t('modernWebsitesDesc')}</p>
             </div>
             <div className="tech-pill">
               <Calculator size={20} className="pill-icon" />
-              <h4>Accounting Systems</h4>
-              <p>Accounting & business tracking</p>
+              <h4>{t('accountingSystems')}</h4>
+              <p>{t('accountingSystemsDesc')}</p>
             </div>
             <div className="tech-pill">
               <TrendingUp size={20} className="pill-icon" />
-              <h4>Social Media</h4>
-              <p>Social media that drives sales</p>
+              <h4>{t('socialMedia')}</h4>
+              <p>{t('socialMediaDesc')}</p>
             </div>
           </div>
         </div>
@@ -244,28 +260,28 @@ export default function HomePage() {
             <div className="card service-card">
               <div className="service-icon"><Mail size={28} /></div>
               <h3>{t('mailPro')}</h3>
-              <p>Secure, branded email services that enhance your business credibility.</p>
+              <p>{t('proEmailCardDesc')}</p>
               <Link to="/mail-professional" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
 
             <div className="card service-card">
               <div className="service-icon"><Share2 size={28} /></div>
               <h3>{t('digitalMarketing')}</h3>
-              <p>Engaging content and smart strategies to grow your audience and sales.</p>
+              <p>{t('socialCardDesc')}</p>
               <Link to="/digital-marketing" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
 
             <div className="card service-card">
               <div className="service-icon"><Calculator size={28} /></div>
               <h3>{t('accounting')}</h3>
-              <p>Easy-to-use solutions to track finances, manage invoices, and control expenses.</p>
+              <p>{t('accCardDesc')}</p>
               <Link to="/accounting" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
 
             <div className="card service-card">
               <div className="service-icon"><Server size={28} /></div>
               <h3>{t('networkServers')}</h3>
-              <p>Reliable, high-speed networking and server solutions built for your business.</p>
+              <p>{t('networkCardDesc')}</p>
               <Link to="/network-servers" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
             </div>
           </div>
@@ -278,13 +294,13 @@ export default function HomePage() {
           <div className="badge-center"><Zap size={14} /> {t('pricingPlans')}</div>
           <h2 className="section-title">{t('pricingPlans')}</h2>
           <p className="section-subtitle">
-            Choose the right professional email package for your business.
+            {t('pricingSub')}
           </p>
 
           <div className="grid-3-col pricing-grid">
             {pricingPlans.map((plan) => (
               <div key={plan.id} className={`card pricing-card ${plan.recommended ? 'recommended' : ''}`}>
-                {plan.recommended && <div className="popular-badge">POPULAR CHOICE</div>}
+                {plan.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
                 <div className="plan-img-box mb-3">
                   <img src={plan.image} alt={plan.title} className="plan-thumb" />
                 </div>
@@ -319,6 +335,58 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="section bg-surface">
+        <div className="container">
+          <div className="badge-center"><Cpu size={14} /> {t('whatWeDo')}</div>
+          <h2 className="section-title">{t('techSolutionsTitle')}</h2>
+          <p className="section-subtitle">
+            {t('techSolutionsSub')}
+          </p>
+
+          <div className="grid-4-col">
+            <div className="card feature-box">
+              <Monitor size={32} className="box-icon" />
+              <h3>{t('webDesign')}</h3>
+              <p>{t('modernWebsitesDesc')}</p>
+              <Link to="/about" className="box-link">{t('learnMore')} →</Link>
+            </div>
+
+            <div className="card feature-box">
+              <Shield size={32} className="box-icon" />
+              <h3>{t('smartControl')}</h3>
+              <p>{t('smartScalableTechDesc')}</p>
+              <Link to="/smart-control" className="box-link">{t('learnMore')} →</Link>
+            </div>
+
+            <div className="card feature-box">
+              <Cpu size={32} className="box-icon" />
+              <h3>{t('it')}</h3>
+              <p>{t('techSupport')}</p>
+              <Link to="/it" className="box-link">{t('learnMore')} →</Link>
+            </div>
+
+            <div className="card feature-box">
+              <TrendingUp size={32} className="box-icon" />
+              <h3>{t('digitalMarketing')}</h3>
+              <p>{t('socialMediaDesc')}</p>
+              <Link to="/digital-marketing" className="box-link">{t('learnMore')} →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Worldwide Trust Banner */}
+      <section className="section trust-section text-center">
+        <div className="container">
+          <div className="badge-center"><Award size={14} /> {t('worldwideTrust')}</div>
+          <h2 className="section-title">{t('worldwideTrustTitle')}</h2>
+          <p className="section-subtitle">
+            {t('worldwideTrustSub')}
+          </p>
         </div>
       </section>
     </div>
