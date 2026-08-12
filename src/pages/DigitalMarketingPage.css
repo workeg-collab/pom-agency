@@ -1,0 +1,36 @@
+.marketing-pillar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pillar-icon {
+  color: #60a5fa;
+}
+
+.pillar-header h3 {
+  font-size: 1.35rem;
+}
+
+.pillar-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.pillar-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+}

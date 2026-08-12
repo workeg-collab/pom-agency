@@ -1,0 +1,30 @@
+.hw-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.hw-icon {
+  color: #60a5fa;
+  margin-bottom: 1rem;
+}
+
+.hw-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.hw-card p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.hw-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #10b981;
+}

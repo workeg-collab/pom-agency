@@ -1,0 +1,20 @@
+.it-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.it-icon {
+  color: #60a5fa;
+  margin-bottom: 1.25rem;
+}
+
+.it-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.it-card p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
