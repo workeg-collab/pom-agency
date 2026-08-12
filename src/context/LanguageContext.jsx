@@ -66,6 +66,21 @@ export const translations = {
     feat75GB: '75GB for emails',
     featFreeDomain: 'Free domain',
 
+    // Network & Servers Page Localization
+    networkBadge: 'ENTERPRISE INFRASTRUCTURE',
+    networkHeroTitle: 'High-Performance Network & Server Engineering',
+    networkHeroSub: 'We design, install, and secure high-speed enterprise networks, dedicated servers, Active Directory domains, and automated backup infrastructure.',
+    coreNetworkServices: 'CORE INFRASTRUCTURE SERVICES',
+    everythingNetwork: 'Certified Network & Server Solutions Built for Maximum Uptime',
+    everythingNetworkSub: 'Engineered for 99.99% network reliability, zero data loss, and ironclad firewall security.',
+    serverArchitectures: 'Custom Enterprise Server Architectures',
+    serverArchitecturesSub: 'High-capacity server hardware engineered for virtualization, storage, and domain control.',
+    requestNetworkConsultation: 'Request Network Consultation',
+    exploreServerSolutions: 'Explore Server Solutions',
+    customBlueprintBadge: 'CUSTOM BLUEPRINT',
+    needCustomBlueprint: 'Need a Custom Enterprise Network Blueprint?',
+    needCustomBlueprintSub: 'Contact our certified network engineers for an on-site network audit and architecture proposal.',
+
     // Accounting Page Localization
     accountingBadge: 'ERP & FINANCIAL SYSTEMS',
     accountingHeroTitle: 'Smart Accounting & Odoo ERP Systems for Modern Enterprises',
@@ -234,6 +249,21 @@ export const translations = {
     feat5Mailboxes: 'يتضمن 5 صناديق بريد رسمية',
     feat75GB: 'مساحة 75 جيجابايت للبريد',
     featFreeDomain: 'نطاق (دومين) خاص مجاني',
+
+    // Network & Servers Page Localization
+    networkBadge: 'البنية التحتية للمؤسسات',
+    networkHeroTitle: 'هندسة وتأسيس الشبكات والسيرفرات عالية الأداء',
+    networkHeroSub: 'نقوم بتصميم وتثبيت وتأمين الشبكات فائقة السرعة، السيرفرات المخصصة، نطاقات Active Directory، وأنظمة النسخ الاحتياطي التلقائي.',
+    coreNetworkServices: 'خدمات البنية التحتية الرئيسية',
+    everythingNetwork: 'حلول شبكات وسيرفرات معتمدة تضمن أقصى استقرار',
+    everythingNetworkSub: 'مصممة لضمان استقرار الشبكة بنسبة 99.99% بدون أي فقدان للبيانات وحماية كاملة بجدران نارية.',
+    serverArchitectures: 'أنظمة وهياكل السيرفرات المؤسسية',
+    serverArchitecturesSub: 'أجهزة سيرفرات فائقة القدرة مجهزة لتقنيات المحاكاة الافتراضية، التخزين، وإدارة النطاقات.',
+    requestNetworkConsultation: 'طلب استشارة شبكات',
+    exploreServerSolutions: 'استعراض حلول السيرفرات',
+    customBlueprintBadge: 'مخطط مخصص',
+    needCustomBlueprint: 'هل تحتاج مخطط شبكات وسيرفرات مخصص لشركتك؟',
+    needCustomBlueprintSub: 'تواصل مع مهندسي الشبكات المعتمدين لدينا للحصول على معاينة ميدانية ومخطط هندسي متكامل.',
 
     // Accounting Page Localization
     accountingBadge: 'أنظمة ERP والحسابات',
@@ -404,6 +434,21 @@ export const translations = {
     feat75GB: '75 Go pour les e-mails',
     featFreeDomain: 'Nom de domaine gratuit',
 
+    // Network & Servers Page Localization
+    networkBadge: 'INFRASTRUCTURE D\'ENTREPRISE',
+    networkHeroTitle: 'Ingénierie Réseau & Serveur Haute Performance',
+    networkHeroSub: 'Nous concevons, installons et sécurisons des réseaux haute vitesse, des serveurs dédiés et des sauvegardes automatisées.',
+    coreNetworkServices: 'SERVICES D\'INFRASTRUCTURE',
+    everythingNetwork: 'Solutions Réseaux Certifiées pour Disponibilité Maximale',
+    everythingNetworkSub: 'Conçu pour une fiabilité réseau de 99.99% et zéro perte de données.',
+    serverArchitectures: 'Architectures Serveurs d\'Entreprise',
+    serverArchitecturesSub: 'Matériel serveur haute capacité pour la virtualisation et le stockage.',
+    requestNetworkConsultation: 'Demander une Consultation Réseau',
+    exploreServerSolutions: 'Explorer les Solutions Serveurs',
+    customBlueprintBadge: 'PLAN SUR MESURE',
+    needCustomBlueprint: 'Besoin d\'un Plan Réseau sur Mesure ?',
+    needCustomBlueprintSub: 'Contactez nos ingénieurs réseau certifiés dès aujourd\'hui.',
+
     // Accounting Page Localization
     accountingBadge: 'SYSTÈMES ERP & COMPTABILITÉ',
     accountingHeroTitle: 'Comptabilité Intelligente & Systèmes Odoo ERP',
@@ -573,10 +618,25 @@ export const translations = {
     feat75GB: 'ईमेल के लिए 75GB',
     featFreeDomain: 'मुफ्त डोमेन',
 
+    // Network & Servers Page Localization
+    networkBadge: 'एंटरप्राइज इंफ्रास्ट्रक्चर',
+    networkHeroTitle: 'उच्च प्रदर्शन नेटवर्क और सर्वर इंजीनियरिंग',
+    networkHeroSub: 'हम उच्च गति नेटवर्क, सर्वर और स्वचालित बैकअप का निर्माण करते हैं।',
+    coreNetworkServices: 'मुख्य इंफ्रास्ट्रक्चर सेवाएं',
+    everythingNetwork: 'अधिकतम अपटाइम के लिए प्रमाणित नेटवर्क समाधान',
+    everythingNetworkSub: '99.99% नेटवर्क विश्वसनीयता।',
+    serverArchitectures: 'कस्टम एंटरप्राइज सर्वर आर्किटेक्चर',
+    serverArchitecturesSub: 'वर्चुअलाइजेशन और स्टोरेज।',
+    requestNetworkConsultation: 'नेटवर्क परामर्श मांगें',
+    exploreServerSolutions: 'सर्वर समाधान देखें',
+    customBlueprintBadge: 'कस्टम ब्लूप्रिंट',
+    needCustomBlueprint: 'क्या आपको कस्टम नेटवर्क ब्लूप्रिंट चाहिए?',
+    needCustomBlueprintSub: 'प्रमाणित नेटवर्क इंजीनियरों से संपर्क करें।',
+
     // Accounting Page Localization
     accountingBadge: 'ईआरपी और वित्तीय प्रणाली',
     accountingHeroTitle: 'आधुनिक उद्यमों के लिए स्मार्ट अकाउंटिंग और ओडू ईआरपी सिस्टम',
-    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोल पर पूर्ण नियंत्रण पाएं।',
+    accountingHeroSub: 'हमारे प्रमाणित ओडू ईआरपी कार्यान्वयन के साथ कंपनी के वित्तीय स्वास्थ्य, ई-इनवॉइसिंग और पेरोل पर पूर्ण नियंत्रण पाएं।',
     accountingCapabilities: 'सिस्टम क्षमताएं',
     everythingAccounting: 'वित्तीय नियंत्रण के लिए सब कुछ',
     everythingAccountingSub: 'ऑपरेशन्स को सुगम बनाएं।',
@@ -645,7 +705,7 @@ export const translations = {
     featuresBadge: 'विशेषताएं',
     allInOneTitle: 'आपका ऑल-इन-वन टेक पार्टनर',
     allInOneDesc: 'प्रोफेशनल ईमेल से लेकर स्मार्ट कंट्रोल, वेब पोर्टल और अकाउंटिंग तक — हमारी सेवाएं आपके व्यवसाय को बढ़ाती हैं।',
-    integratedDigitalEngineering: 'एकीकृत डिजिटल इंजीनियरिंग और इंफ्रास्ट्रक्चर',
+    integratedDigitalEngineering: 'एकीकृत डिजिटल इंजीनियरिंग और इंफ्राструкक्चर',
     integratedDesc: 'हम सॉफ्टवेयर, नेटवर्क, स्मार्ट कंट्रोल और ईआरपी को एक साथ लाते हैं।',
     lowCurrentCert: 'प्रमाणित नेटवर्क इंस्टॉलेशन',
     cloudEmailCert: 'क्लाउड ईमेल और डोमेन प्रबंधन',
