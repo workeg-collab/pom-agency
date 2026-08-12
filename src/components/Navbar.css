@@ -4,7 +4,7 @@
   z-index: 1000;
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2e8f0;
-  height: 80px;
+  height: 75px;
   display: flex;
   align-items: center;
   box-shadow: var(--shadow-sm);
@@ -18,7 +18,7 @@
 }
 
 .logo-img {
-  height: 48px;
+  height: 44px;
   width: auto;
   object-fit: contain;
 }
@@ -26,16 +26,17 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.95rem; /* Reduced gap to bring navigation links closer together */
 }
 
 .nav-link {
   color: #343f5a;
-  font-size: 0.9rem;
+  font-size: 0.825rem; /* Sleek, smaller font size */
   font-weight: 600;
   transition: color var(--transition-fast);
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -56,7 +57,7 @@
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 /* Very Small Language Switcher Button */
@@ -65,8 +66,8 @@
 }
 
 .tiny-lang-btn {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -136,8 +137,8 @@
 /* Cart Icon Button */
 .cart-icon-btn {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -175,13 +176,13 @@
   color: #343f5a;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .mobile-toggle {
     display: block;
   }
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 75px;
     left: 0;
     right: 0;
     background: #ffffff;
