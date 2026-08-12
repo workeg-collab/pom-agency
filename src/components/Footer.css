@@ -1,5 +1,5 @@
 .site-footer {
-  background-color: #f6f8ff;
+  background-color: #ffffff !important;
   border-top: 1px solid #e2e8f0;
   padding-top: 4rem;
   color: #343f5a;
@@ -99,7 +99,7 @@
   padding: 1.5rem 0;
   font-size: 0.85rem;
   color: #777777;
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .footer-bottom-container {
