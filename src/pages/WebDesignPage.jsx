@@ -7,7 +7,6 @@ import {
   BarChart3, 
   Mail, 
   TrendingUp, 
-  Users, 
   ArrowRight, 
   CheckCircle2, 
   Sparkles, 
@@ -124,20 +123,13 @@ export default function WebDesignPage() {
     { num: '04', title: 'Testing & Official Launch', desc: 'Rigorous cross-browser QA testing, SEO audit, security checks, and official deployment.' }
   ];
 
-  const team = [
-    { name: 'Angel Sweeney', role: 'Head of Web Development', image: '/assets/Team-1.jpg' },
-    { name: 'Nathanael Riley', role: 'Lead SEO Specialist', image: '/assets/Team-2.jpg' },
-    { name: 'Chai Maldonado', role: 'UI/UX Brand Designer', image: '/assets/Team-3.jpg' },
-    { name: 'Carlo Terrell', role: 'Senior Full Stack Developer', image: '/assets/pic-20.jpg' }
-  ];
-
   const filteredShowcases = activeFilter === 'all' 
     ? showcases 
     : showcases.filter(s => s.category === activeFilter);
 
   return (
     <div className="web-design-page">
-      {/* Top Hero Section with Prominent Big Web Design Banner Image */}
+      {/* Top Hero Section */}
       <section className="webdesign-hero-section">
         <div className="container grid-2-col align-center">
           <div className="webdesign-hero-text">
@@ -195,7 +187,7 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Website Showcase Cards (Big Showcase Boxes) */}
+      {/* Website Showcase Cards */}
       <section className="section" id="showcase">
         <div className="container">
           <div className="badge-center"><Layout size={14} /> PORTFOLIO SHOWCASE</div>
@@ -282,27 +274,6 @@ export default function WebDesignPage() {
                 <span className="process-num">{step.num}</span>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="section">
-        <div className="container">
-          <div className="badge-center"><Users size={14} /> WEB DESIGN EXPERTS</div>
-          <h2 className="section-title">Meet Our Web Design Team</h2>
-          <p className="section-subtitle">A multidisciplinary team of developers, designers, and SEO strategists.</p>
-
-          <div className="grid-4-col">
-            {team.map((member, idx) => (
-              <div key={idx} className="card team-card text-center">
-                <div className="team-avatar-box">
-                  <img src={member.image} alt={member.name} className="team-avatar" />
-                </div>
-                <h3 className="member-name">{member.name}</h3>
-                <span className="member-role">{member.role}</span>
               </div>
             ))}
           </div>
