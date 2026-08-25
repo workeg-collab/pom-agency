@@ -23,6 +23,7 @@ import {
   Sliders,
   Award,
   Headphones,
+  Building2,
   Monitor
 } from 'lucide-react';
 import './NetworkServersPage.css';
