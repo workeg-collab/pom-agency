@@ -1,84 +1,168 @@
 .home-page {
   padding-bottom: 3rem;
-  background-color: #ffffff;
+  background-color: #0b0f19;
+  color: #f8fafc;
 }
 
 /* -------------------------------------------------------------
-   Full-Width Immersive Light Hero Banner with Overlaid Animation
+   Hostinger-Style Ambient Tech Hero (No Box, Text Directly on Background)
 ------------------------------------------------------------- */
-.home-hero-section {
+.hostinger-hero-section {
   position: relative;
-  min-height: 82vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5.5rem 1rem 4.5rem 1rem;
-  background: 
-    linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(240, 253, 244, 0.90) 50%, rgba(255, 255, 255, 0.92) 100%),
-    url('/assets/web-hero-multidevice.jpg') center/cover no-repeat;
-  background-attachment: scroll;
-  border-bottom: 1px solid #e2e8f0;
-  text-align: center;
+  padding: 6rem 1.5rem 5rem 1.5rem;
+  background: #090d16;
   overflow: hidden;
+  text-align: center;
 }
 
-.home-hero-glass-box {
-  max-width: 1060px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 25px 60px rgba(16, 185, 129, 0.14), 0 4px 20px rgba(0, 0, 0, 0.03);
-  border-radius: 28px;
-  padding: 3.5rem 2.5rem;
-  position: relative;
+/* Ambient Moving Video / Glowing Mesh Background */
+.hero-ambient-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.hero-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  -webkit-filter: blur(90px);
+  opacity: 0.45;
+  animation: floatOrb 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #10b981 0%, rgba(16, 185, 129, 0) 70%);
+  top: -100px;
+  left: 15%;
+  animation-duration: 14s;
+}
+
+.orb-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #06b6d4 0%, rgba(6, 182, 212, 0) 70%);
+  bottom: -150px;
+  right: 10%;
+  animation-duration: 18s;
+}
+
+.orb-3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #6366f1 0%, rgba(99, 102, 241, 0) 70%);
+  top: 30%;
+  right: 25%;
+  animation-duration: 10s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.1); }
+  100% { transform: translate(-30px, 40px) scale(0.95); }
+}
+
+.hero-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
   z-index: 2;
+  pointer-events: none;
 }
 
-.home-platform-pills {
+.hero-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 40%, #090d16 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Text directly on background (NO BOX) */
+.hostinger-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
   padding: 0.5rem 1.4rem;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #1e293b;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
 }
 
-.home-hero-title {
+.badge-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+.hostinger-hero-title {
   font-family: var(--font-heading);
-  font-size: 3.4rem;
+  font-size: 3.6rem;
   font-weight: 900;
-  color: #0f172a;
+  color: #ffffff;
   line-height: 1.25;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
 }
 
-.animated-dynamic-word {
-  color: #059669;
+.hostinger-animated-word {
+  color: #34d399;
   display: inline-block;
   position: relative;
-  background: linear-gradient(120deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(90deg, #34d399 0%, #22d3ee 50%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-bottom: 2px;
   font-weight: 900;
+  text-shadow: none;
 }
 
 .animated-cursor {
   display: inline-block;
   font-weight: 300;
-  color: #10b981;
-  -webkit-text-fill-color: #10b981;
+  color: #34d399;
+  -webkit-text-fill-color: #34d399;
   animation: blinkCursor 0.8s infinite;
 }
 
@@ -87,59 +171,101 @@
   50% { opacity: 0; }
 }
 
-.home-hero-subtitle {
-  color: #334155;
-  font-size: 1.18rem;
+.hostinger-hero-subtitle {
+  color: #94a3b8;
+  font-size: 1.2rem;
   line-height: 1.8;
   margin: 0 auto 2.5rem auto;
-  max-width: 820px;
-  font-weight: 500;
+  max-width: 780px;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.home-hero-actions {
+.hostinger-hero-actions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
-/* Floating Hero Highlights */
-.home-hero-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 1rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(226, 232, 240, 0.8);
+.btn-hostinger-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.4rem;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #042f2e;
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  border: none;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.45);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.home-highlight-item {
+.btn-hostinger-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 45px rgba(16, 185, 129, 0.65);
+  color: #022c22;
+}
+
+.btn-hostinger-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.4rem;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-hostinger-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Hostinger Trust Highlights (Directly on Background) */
+.hostinger-trust-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #e2e8f0;
-  padding: 0.85rem 1.25rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  gap: 2.5rem;
+  flex-wrap: wrap;
 }
 
-.home-highlight-item span {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #1e293b;
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.trust-item-icon {
+  color: #34d399;
 }
 
 /* -------------------------------------------------------------
-   Trust Stats Bar
+   Trust Stats Bar (Dark/Sleek)
 ------------------------------------------------------------- */
 .home-stats-section {
   padding: 2.5rem 0;
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
 }
 
 .home-stats-grid {
@@ -158,8 +284,8 @@
 
 .home-stat-num {
   font-size: 2.5rem;
-  font-weight: 800;
-  color: #10b981;
+  font-weight: 900;
+  color: #34d399;
   line-height: 1.1;
   font-family: var(--font-heading);
 }
@@ -167,18 +293,18 @@
 .home-stat-label {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #475569;
+  color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-top: 0.35rem;
 }
 
 /* -------------------------------------------------------------
-   The 7 Core Business Pillars Showcase (Rich Cards with Images)
+   The 7 Core Business Pillars (Hostinger Sleek Dark Cards)
 ------------------------------------------------------------- */
 .home-services-section {
-  padding: 5.5rem 0;
-  background: #f8fafc;
+  padding: 6rem 0;
+  background: #0b0f19;
 }
 
 .home-services-grid {
@@ -188,28 +314,29 @@
 }
 
 .home-service-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #111827;
+  border: 1px solid #1f2937;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .home-service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   border-color: #10b981;
-  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 20px 45px rgba(16, 185, 129, 0.2);
 }
 
 .home-service-img-wrapper {
   position: relative;
   height: 220px;
   overflow: hidden;
-  background: #f1f5f9;
+  background: #090d16;
 }
 
 .home-service-img {
@@ -218,24 +345,26 @@
   object-fit: cover;
   display: block;
   transition: transform var(--transition-normal);
+  opacity: 0.92;
 }
 
 .home-service-card:hover .home-service-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  opacity: 1;
 }
 
 .home-service-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(8px);
-  color: #ffffff;
+  color: #34d399;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.35rem 0.75rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(52, 211, 153, 0.4);
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -247,18 +376,19 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
+  background: #111827;
 }
 
 .home-service-body h3 {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff;
   margin-bottom: 0.6rem;
   line-height: 1.3;
 }
 
 .home-service-body p {
-  color: #64748b;
+  color: #9ca3af;
   font-size: 0.885rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -278,7 +408,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.825rem;
-  color: #334155;
+  color: #d1d5db;
   font-weight: 600;
 }
 
@@ -288,31 +418,32 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.85rem 1rem;
   border-radius: 12px;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #047857;
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   transition: all var(--transition-fast);
   text-decoration: none;
 }
 
 .home-service-btn:hover {
   background: #10b981;
-  color: #ffffff;
+  color: #042f2e;
   border-color: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
 }
 
 /* -------------------------------------------------------------
    Interactive Central Operations Hub (4 Tabs)
 ------------------------------------------------------------- */
 .home-console-section {
-  background: #ffffff;
-  padding: 5.5rem 0;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background: #090d16;
+  padding: 6rem 0;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
 }
 
 .home-tab-buttons {
@@ -332,23 +463,23 @@
   border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 700;
-  background: #f1f5f9;
-  color: #475569;
-  border: 1px solid #e2e8f0;
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .home-tab-btn:hover {
-  background: #e2e8f0;
-  color: #0f172a;
+  background: #334155;
+  color: #ffffff;
 }
 
 .home-tab-btn.active {
   background: #10b981;
-  color: #ffffff;
+  color: #042f2e;
   border-color: #10b981;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
 }
 
 /* Console Mockup Window */
@@ -357,7 +488,7 @@
   border: 1px solid #334155;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
   color: #ffffff;
 }
 
@@ -458,9 +589,9 @@
    Certified Brand Partners Showcase
 ------------------------------------------------------------- */
 .home-partners-section {
-  padding: 3.5rem 0;
-  background: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 4rem 0;
+  background: #0d1322;
+  border-bottom: 1px solid #1f2937;
   text-align: center;
 }
 
@@ -470,7 +601,7 @@
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .home-partner-logo {
@@ -478,15 +609,14 @@
   width: auto;
   max-width: 140px;
   object-fit: contain;
-  filter: grayscale(100%);
+  filter: brightness(0) invert(1);
   opacity: 0.65;
   transition: all var(--transition-normal);
 }
 
 .home-partner-logo:hover {
-  filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 /* -------------------------------------------------------------
@@ -494,27 +624,28 @@
 ------------------------------------------------------------- */
 .home-cta-card {
   background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 24px;
-  padding: 3.5rem 2.5rem;
+  padding: 4rem 2.5rem;
   color: #ffffff;
   text-align: center;
   max-width: 980px;
   margin: 0 auto;
-  box-shadow: 0 20px 40px rgba(6, 78, 59, 0.25);
+  box-shadow: 0 20px 50px rgba(6, 78, 59, 0.4);
 }
 
 .home-cta-card h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: 2.35rem;
+  font-weight: 900;
   margin-bottom: 0.75rem;
   color: #ffffff;
 }
 
 .home-cta-card p {
   color: #a7f3d0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   max-width: 680px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2.25rem auto;
   line-height: 1.65;
 }
 
@@ -533,26 +664,26 @@
   .home-kpis-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .home-hero-title {
-    font-size: 2.8rem;
+  .hostinger-hero-title {
+    font-size: 2.85rem;
   }
 }
 
 @media (max-width: 900px) {
-  .home-hero-title {
-    font-size: 2.25rem;
+  .hostinger-hero-title {
+    font-size: 2.35rem;
   }
-  .home-hero-glass-box {
-    padding: 2.5rem 1.5rem;
-  }
-  .home-hero-highlights {
-    grid-template-columns: 1fr;
+  .hostinger-trust-row {
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 600px) {
-  .home-hero-title {
+  .hostinger-hero-title {
     font-size: 1.85rem;
+  }
+  .hostinger-hero-subtitle {
+    font-size: 1rem;
   }
   .home-services-grid {
     grid-template-columns: 1fr;

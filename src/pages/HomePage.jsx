@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -25,7 +25,8 @@ import {
   Database,
   Smartphone,
   Video,
-  ShoppingBag
+  ShoppingBag,
+  Check
 } from 'lucide-react';
 import './HomePage.css';
 
@@ -33,12 +34,13 @@ export default function HomePage() {
   const { addToCart } = useCart();
   const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('cloud');
+  const canvasRef = useRef(null);
 
   const phrases = lang === 'ar' ? [
     'الأنظمة المحاسبية (Odoo ERP)',
     'الشبكات والسيرفرات المؤسسية',
     'التحكم الذكي والتيار الخفيف',
-    'التسويق الرقمي ومضاعفة المبيعات',
+    'التسويق الرقمي ونمو المبيعات',
     'تصميم وتطوير المواقع الحديثة',
     'خدمات تكنولوجيا المعلومات 24/7',
     'البريد الإلكتروني المهني السحابي'
@@ -57,6 +59,7 @@ export default function HomePage() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(90);
 
+  // Dynamic Typing Animation
   useEffect(() => {
     const fullText = phrases[phraseIndex] || phrases[0];
 
@@ -66,7 +69,7 @@ export default function HomePage() {
         setTypingSpeed(80);
 
         if (currentText === fullText) {
-          setTimeout(() => setIsDeleting(true), 2200);
+          setTimeout(() => setIsDeleting(true), 2400);
         }
       } else {
         setCurrentText(fullText.substring(0, currentText.length - 1));
@@ -82,6 +85,85 @@ export default function HomePage() {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
+
+  // Ambient 60FPS Canvas Background Motion Effect (Hostinger Style)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', handleResize);
+
+    const particleCount = 45;
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        radius: Math.random() * 2 + 1,
+        color: i % 3 === 0 ? 'rgba(52, 211, 153, 0.4)' : i % 3 === 1 ? 'rgba(34, 211, 238, 0.35)' : 'rgba(129, 140, 248, 0.3)'
+      });
+    }
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw connection lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 140) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(52, 211, 153, ${0.12 * (1 - dist / 140)})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   // The 7 Core Activities (Guaranteed verified image assets)
   const coreActivities = [
@@ -180,64 +262,69 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 1. Full-Width Immersive Light Hero Banner with Overlaid Animation */}
-      <section className="home-hero-section">
-        <div className="container">
-          <div className="home-hero-glass-box">
-            <div className="home-platform-pills">
-              <span style={{ color: '#10b981', fontWeight: 800 }}>POM Agency</span> &bull; 
-              <span>ERP & Odoo</span> &bull; 
-              <span>Servers & Networks</span> &bull; 
-              <span>Smart Control BMS</span> &bull; 
-              <span>Digital Marketing</span> &bull; 
-              <span>Web Apps</span> &bull; 
-              <span>Managed IT 24/7</span>
+      {/* 1. Hostinger-Style Ambient Tech Hero (Text Directly Over Ambient Moving Canvas) */}
+      <section className="hostinger-hero-section">
+        {/* Animated 60FPS Ambient Canvas */}
+        <canvas ref={canvasRef} className="hero-ambient-canvas" />
+
+        {/* Ambient Glowing Orbs */}
+        <div className="hero-ambient-orb orb-1" />
+        <div className="hero-ambient-orb orb-2" />
+        <div className="hero-ambient-orb orb-3" />
+        <div className="hero-grid-overlay" />
+        <div className="hero-vignette" />
+
+        {/* Content Directly on Background (NO BOX) */}
+        <div className="container hostinger-hero-content">
+          <div className="hero-badge-pill">
+            <span className="badge-pulse-dot" />
+            <span>{lang === 'ar' ? 'منصة الحلول التقنية والهندسية المتكاملة' : 'Integrated Technology & Engineering Agency'}</span>
+          </div>
+
+          <h1 className="hostinger-hero-title">
+            {lang === 'ar' ? 'شريكك الهندسي والتقني الموثوق في' : 'Your Trusted Technology & Engineering Partner for'}{' '}
+            <br />
+            <span className="hostinger-animated-word">
+              {currentText}
+              <span className="animated-cursor">|</span>
+            </span>
+          </h1>
+          
+          <p className="hostinger-hero-subtitle">
+            {lang === 'ar'
+              ? 'نبني وندير بنيتك التحتية من الصفر: أنظمة ERP المحاسبية، السيرفرات والشبكات السحابية، التحكم الذكي بالمباني، والتسويق الرقمي عالي العائد لمضاعفة أرباح منشأتك.'
+              : 'End-to-end enterprise solutions: certified Odoo ERP accounting, high-availability datacenter servers, low-current building automation, and high-ROI performance marketing.'}
+          </p>
+
+          <div className="hostinger-hero-actions">
+            <Link to="/contact" className="btn-hostinger-primary">
+              <span>{lang === 'ar' ? 'ابدأ الآن واحجز استشارتك المجانية' : 'Get Started & Book Free Audit'}</span>
+              <ArrowRight size={18} />
+            </Link>
+            <a href="#services" className="btn-hostinger-ghost">
+              <span>{lang === 'ar' ? 'استكشف كافة الخدمات الـ 7' : 'Explore All 7 Services'}</span>
+            </a>
+          </div>
+
+          {/* Hostinger-style Direct Trust Highlights Row */}
+          <div className="hostinger-trust-row">
+            <div className="trust-item">
+              <CheckCircle2 size={18} className="trust-item-icon" />
+              <span>{lang === 'ar' ? 'ضمان استقرار السيرفرات 99.99% SLA' : '99.99% Server Uptime SLA'}</span>
             </div>
-
-            <h1 className="home-hero-title">
-              {lang === 'ar' ? 'شريكك التقني والهندسي المتكامل لـ' : 'Your Complete Tech & Engineering Partner for'}{' '}
-              <br />
-              <span className="animated-dynamic-word">
-                {currentText}
-                <span className="animated-cursor">|</span>
-              </span>
-            </h1>
-            
-            <p className="home-hero-subtitle">
-              {lang === 'ar'
-                ? 'وكالة رائدة تجمع بين هندسة البنية التحتية لتكنولوجيا المعلومات، الأنظمة المحاسبية المتطورة، حلول التحكم الذكي، والتسويق الرقمي عالي العائد لبناء وتوسيع أعمالك بأعلى المعايير العالمية.'
-                : 'A premier multidisciplinary technology powerhouse delivering enterprise IT infrastructure, certified Odoo ERP accounting, building automation, and high-ROI digital marketing to scale your enterprise seamlessly.'}
-            </p>
-
-            <div className="home-hero-actions">
-              <Link to="/contact" className="btn btn-primary" style={{ padding: '0.95rem 2.2rem', fontSize: '1rem' }}>
-                {lang === 'ar' ? 'طلب استشارة هندسية وتقنية مجانية' : 'Book Free Tech Consultation'} <ArrowRight size={18} />
-              </Link>
-              <a href="#services" className="btn btn-secondary" style={{ padding: '0.95rem 2.2rem', fontSize: '1rem' }}>
-                {lang === 'ar' ? 'استكشف كافة خدمات الشركة الـ 7' : 'Explore All 7 Services'}
-              </a>
+            <div className="trust-item">
+              <CheckCircle2 size={18} className="trust-item-icon" />
+              <span>{lang === 'ar' ? 'دعم فني واستجابة فورية 24/7/365' : '24/7/365 Dedicated Live Support'}</span>
             </div>
-
-            {/* Overlaid Highlights Row */}
-            <div className="home-hero-highlights">
-              <div className="home-highlight-item">
-                <Award size={20} color="#10b981" />
-                <span>{lang === 'ar' ? '500+ مشروع تم تنفيذه بنجاح' : '500+ Delivered Projects'}</span>
-              </div>
-              <div className="home-highlight-item">
-                <Shield size={20} color="#3b82f6" />
-                <span>{lang === 'ar' ? '99.99% ضمان استقرار البنية السحابية' : '99.99% Cloud Uptime SLA'}</span>
-              </div>
-              <div className="home-highlight-item">
-                <Zap size={20} color="#f59e0b" />
-                <span>{lang === 'ar' ? 'دعم فني واستجابة فورية 24/7' : '24/7 Managed Fast Support'}</span>
-              </div>
+            <div className="trust-item">
+              <CheckCircle2 size={18} className="trust-item-icon" />
+              <span>{lang === 'ar' ? '500+ مؤسسة وعميل معتمد في مصر والخليج' : '500+ Delivered Enterprise Projects'}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Enterprise Trust & SLA Metrics Bar */}
+      {/* 2. Enterprise Trust & SLA Metrics Bar (Sleek Dark) */}
       <section className="home-stats-section">
         <div className="container">
           <div className="home-stats-grid">
@@ -261,16 +348,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. The 7 Core Business Pillars Showcase (Rich Cards with Images) */}
+      {/* 3. The 7 Core Business Pillars Showcase (Hostinger Dark Cards) */}
       <section className="home-services-section" id="services">
         <div className="container">
-          <div className="badge-center" style={{ color: '#10b981', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+          <div className="badge-center" style={{ color: '#34d399', borderColor: 'rgba(52, 211, 153, 0.4)', background: 'rgba(16, 185, 129, 0.1)' }}>
             <Layers size={14} /> {lang === 'ar' ? 'منظومة خدماتنا المتكاملة' : 'Core Business Pillars'}
           </div>
-          <h2 className="section-title">
+          <h2 className="section-title" style={{ color: '#ffffff' }}>
             {lang === 'ar' ? '7 قطاعات هندسية وتقنية تقود أعمالك نحو المستقبل' : '7 Comprehensive Pillars Powering Your Digital Evolution'}
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle" style={{ color: '#94a3b8' }}>
             {lang === 'ar' 
               ? 'نقدم حلولاً متكاملة من البداية وحتى النهاية: من البنية التحتية والشبكات وحتى البرمجيات المحاسبية والتسويق الرقمي.' 
               : 'End-to-end expertise spanning low-current engineering, server clustering, ERP accounting, modern web, and revenue marketing.'}
@@ -293,7 +380,7 @@ export default function HomePage() {
                     <ul className="home-service-checklist">
                       {act.features.map((feat, idx) => (
                         <li key={idx}>
-                          <CheckCircle2 size={15} color="#10b981" />
+                          <CheckCircle2 size={15} color="#34d399" />
                           <span>{feat}</span>
                         </li>
                       ))}
@@ -313,13 +400,13 @@ export default function HomePage() {
       {/* 4. Interactive Central Operations Hub (4 Tabs) */}
       <section className="home-console-section">
         <div className="container">
-          <div className="badge-center" style={{ color: '#10b981', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+          <div className="badge-center" style={{ color: '#34d399', borderColor: 'rgba(52, 211, 153, 0.4)', background: 'rgba(16, 185, 129, 0.1)' }}>
             <Activity size={14} /> {lang === 'ar' ? 'مركز مراقبة العمليات المركزية' : 'Central Enterprise Command'}
           </div>
-          <h2 className="section-title">
+          <h2 className="section-title" style={{ color: '#ffffff' }}>
             {lang === 'ar' ? 'منصة موحدة لمتابعة استقرار وتكامل كافة قطاعات شركتك' : 'Unified Telemetry Across Your Entire Digital Estate'}
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle" style={{ color: '#94a3b8' }}>
             {lang === 'ar' 
               ? 'مؤشرات لحظية دقيقة تغطي السيرفرات السحابية، المعاملات المحاسبية، كفاءة الطاقة، وعائد الإعلانات.' 
               : 'Real-time telemetry monitoring server load, ERP transactional throughput, building energy, and digital ad ROAS.'}
@@ -484,8 +571,10 @@ export default function HomePage() {
       {/* 5. Certified Brand Partners & Global Vendors */}
       <section className="home-partners-section">
         <div className="container">
-          <div className="badge-center"><Award size={14} /> {lang === 'ar' ? 'التوكيلات والشراكات العالمية المعتمدة' : 'Certified Global Brand Partners'}</div>
-          <h3 className="section-title" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
+          <div className="badge-center" style={{ color: '#34d399', borderColor: 'rgba(52, 211, 153, 0.4)', background: 'rgba(16, 185, 129, 0.1)' }}>
+            <Award size={14} /> {lang === 'ar' ? 'التوكيلات والشراكات العالمية المعتمدة' : 'Certified Global Brand Partners'}
+          </div>
+          <h3 className="section-title" style={{ fontSize: '1.5rem', marginTop: '0.5rem', color: '#ffffff' }}>
             {lang === 'ar' ? 'نعتمد على أفضل التقنيات والماركات العالمية لضمان أعلى جودة' : 'Built on Leading Global Hardware & Software Technologies'}
           </h3>
 
@@ -499,7 +588,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Bottom Master CTA Banner */}
-      <section className="section text-center" style={{ paddingTop: '2rem' }}>
+      <section className="section text-center" style={{ paddingTop: '3rem', background: '#0b0f19' }}>
         <div className="container">
           <div className="home-cta-card">
             <h2>
@@ -513,10 +602,10 @@ export default function HomePage() {
                 : 'Schedule a comprehensive consultation with our senior systems, network, and software engineers.'}
             </p>
             <div className="home-cta-btns">
-              <Link to="/contact" className="btn btn-primary" style={{ padding: '0.95rem 2.2rem', background: '#10b981', borderColor: '#10b981' }}>
+              <Link to="/contact" className="btn-hostinger-primary" style={{ padding: '1rem 2.5rem' }}>
                 {lang === 'ar' ? 'طلب استشارة ومقترح هندسي' : 'Request Engineering Proposal'} <ArrowRight size={18} />
               </Link>
-              <a href="https://wa.me/201093706027" target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ padding: '0.95rem 2.2rem', color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.1)' }}>
+              <a href="https://wa.me/201093706027" target="_blank" rel="noreferrer" className="btn-hostinger-ghost" style={{ padding: '1rem 2.5rem' }}>
                 {lang === 'ar' ? 'محادثة مباشرة عبر واتساب' : 'Chat on WhatsApp'}
               </a>
             </div>
