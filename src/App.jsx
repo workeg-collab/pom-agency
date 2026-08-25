@@ -40,6 +40,10 @@ export default function App() {
                 <Route path="/network" element={<NetworkServersPage />} />
                 <Route path="/servers" element={<NetworkServersPage />} />
                 <Route path="/smart-control" element={<SmartControlPage />} />
+                <Route path="/smart" element={<SmartControlPage />} />
+                <Route path="/smart-home" element={<SmartControlPage />} />
+                <Route path="/cctv" element={<SmartControlPage />} />
+                <Route path="/bms" element={<SmartControlPage />} />
                 <Route path="/it" element={<ITPage />} />
                 <Route path="/mail-professional" element={<MailProfessionalPage />} />
                 <Route path="/cart" element={<CartPage />} />
