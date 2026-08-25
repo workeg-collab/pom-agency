@@ -164,7 +164,7 @@ export default function RefundPolicyPage() {
                 </div>
                 <div className="legal-contact-item">
                   <strong>Direct Line</strong>
-                  <span>+20 100 000 0000</span>
+                  <span>+20 109 370 6027</span>
                 </div>
                 <div className="legal-contact-item">
                   <strong>Resolution SLA</strong>

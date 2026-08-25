@@ -97,7 +97,8 @@
   color: #1388fd;
 }
 
-.footer-privacy-link {
+.footer-privacy-link,
+.footer-contact-link {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -107,7 +108,8 @@
   text-decoration: none;
 }
 
-.footer-privacy-link:hover {
+.footer-privacy-link:hover,
+.footer-contact-link:hover {
   color: #1388fd;
 }
 

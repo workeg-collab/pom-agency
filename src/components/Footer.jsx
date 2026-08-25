@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, ShieldCheck, Headphones } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -74,18 +74,33 @@ export default function Footer() {
               <span>Cairo, Egypt</span>
             </li>
             <li>
-              <Phone size={18} className="contact-icon" />
-              <span>+20 100 000 0000</span>
+              <a href="tel:+201093706027" className="footer-contact-link">
+                <Phone size={18} className="contact-icon" />
+                <span>+20 109 370 6027</span>
+              </a>
             </li>
             <li>
-              <Mail size={18} className="contact-icon" />
-              <span>info@pom-agency.online</span>
+              <a href="mailto:info@pom-agency.online" className="footer-contact-link">
+                <Mail size={18} className="contact-icon" />
+                <span>info@pom-agency.online</span>
+              </a>
             </li>
             <li className="footer-privacy-item">
               <Link to="/privacy-policy" className="footer-privacy-link">
                 <ShieldCheck size={18} className="contact-icon" />
                 <span>Privacy Policy</span>
               </Link>
+            </li>
+            <li className="footer-contact-us-item">
+              <a 
+                href="https://wa.me/201093706027?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20POM%20Agency%20services" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="footer-contact-link"
+              >
+                <Headphones size={18} className="contact-icon" />
+                <span>Contact Us</span>
+              </a>
             </li>
           </ul>
         </div>
