@@ -309,6 +309,17 @@ export default function HomePage() {
     }
   ];
 
+  // Client Logos Showcase
+  const clientLogos = [
+    { id: 'ego', name: 'Ego', src: '/assets/clients/Ego.svg' },
+    { id: 'emergancy', name: 'Emergency', src: '/assets/clients/Emergancy.svg' },
+    { id: 'eyes', name: 'Eyes', src: '/assets/clients/Eyes.svg' },
+    { id: 'client-1', name: 'Partner 1', src: '/assets/clients/Artboard-1-copy-3.png' },
+    { id: 'client-2', name: 'Partner 2', src: '/assets/clients/Artboard-1-copy-13.png' },
+    { id: 'client-3', name: 'Partner 3', src: '/assets/clients/Artboard-1-copy-15.png' },
+    { id: 'client-4', name: 'Partner 4', src: '/assets/clients/Artboard-1-copy-17.png' }
+  ];
+
   return (
     <div className="home-page">
       {/* 1. Real Master Showreel Video Hero (100% Mobile Autoplay & Pure Clarity) */}
@@ -380,7 +391,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Enterprise Trust & SLA Metrics Bar (Clean White) */}
+      {/* 2. Client Logos Ribbon Directly Under Video */}
+      <section className="home-clients-ribbon-section">
+        <div className="container">
+          <div className="clients-ribbon-header">
+            <span className="clients-ribbon-title">
+              <Award size={14} style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '6px' }} />
+              {lang === 'ar' ? 'شركاء النجاح والعملاء الذين نعتز بخدمتهم' : 'Trusted by Leading Brands & Clients'}
+            </span>
+          </div>
+          <div className="clients-ribbon-track">
+            {clientLogos.map((client) => (
+              <div key={client.id} className="client-logo-item">
+                <img src={client.src} alt={client.name} className="client-logo-img" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Enterprise Trust & SLA Metrics Bar (Clean White) */}
       <section className="home-stats-section">
         <div className="container">
           <div className="home-stats-grid">
