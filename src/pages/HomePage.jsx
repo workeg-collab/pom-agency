@@ -25,7 +25,13 @@ import {
   Database,
   Smartphone,
   Video,
-  ShoppingBag
+  ShoppingBag,
+  Star,
+  ChevronDown,
+  Headphones,
+  FileCheck,
+  Clock,
+  Check
 } from 'lucide-react';
 import './HomePage.css';
 
@@ -33,6 +39,11 @@ export default function HomePage() {
   const { addToCart } = useCart();
   const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('cloud');
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const toggleFaq = (idx) => {
+    setOpenFaq(openFaq === idx ? null : idx);
+  };
 
   const phrases = lang === 'ar' ? [
     'الأنظمة المحاسبية (Odoo ERP)',
@@ -179,9 +190,89 @@ export default function HomePage() {
     }
   ];
 
+  // Guarantees Data
+  const guarantees = [
+    {
+      icon: <Clock size={28} />,
+      title: lang === 'ar' ? 'عقود صيانة رسمية و SLA معتمد' : 'Guaranteed SLA & Rapid Helpdesk',
+      desc: lang === 'ar' ? 'استجابة هندسية فورية في أقل من 15 دقيقة مع ضمان جاهزية السيرفرات والشبكات 99.99%.' : 'Sub-15m response SLA with 99.99% infrastructure uptime guaranteed by contract.'
+    },
+    {
+      icon: <FileCheck size={28} />,
+      title: lang === 'ar' ? 'ضمان الامتثال الضريبي 100%' : '100% ETA Tax Compliance',
+      desc: lang === 'ar' ? 'ربط رسمي ومعتمد لنظام Odoo ERP مع منظومة الفاتورة والإيصال الإلكتروني بدون أخطاء.' : 'Fully certified Egyptian Tax Authority integration for e-invoicing and e-receipts.'
+    },
+    {
+      icon: <Shield size={28} />,
+      title: lang === 'ar' ? 'توكيلات وأجهزة أصلية معتمدة' : 'Certified Enterprise Hardware',
+      desc: lang === 'ar' ? 'ضمان رسمي مباشر من الشركات العالمية (Hikvision, Hochiki, Dell, Fortinet, Bose).' : 'Official direct warranty on all low-current, datacenter servers, and security cameras.'
+    },
+    {
+      icon: <Headphones size={28} />,
+      title: lang === 'ar' ? 'مدير حسابات هندسي مخصص' : 'Dedicated Technical Lead',
+      desc: lang === 'ar' ? 'مهندس متخصص يتابع مشروعك لحظة بلحظة لضمان أعلى معايير الجودة والسرعة في التنفيذ.' : 'Direct point of contact for all your enterprise low-current, ERP, and marketing initiatives.'
+    }
+  ];
+
+  // Testimonials Data
+  const testimonials = [
+    {
+      name: lang === 'ar' ? 'م. أحمد الشناوي' : 'Eng. Ahmed El-Shennawy',
+      role: lang === 'ar' ? 'الرئيس التنفيذي &bull; شركة الصرح للتطوير العقاري' : 'CEO &bull; Al-Sarh Real Estate Dev',
+      rating: 5,
+      quote: lang === 'ar' 
+        ? 'نفذت شركة POM Agency نظام إدارة المباني BMS والتحكم الذكي لكامل المقر الإداري مع شبكات السيرفرات. دقة متناهية والتزام بالجدول الزمني.'
+        : 'POM Agency delivered our full BMS automation and server infrastructure on schedule with outstanding precision.'
+    },
+    {
+      name: lang === 'ar' ? 'أ. طارق عبد العزيز' : 'Tarek Abdelaziz',
+      role: lang === 'ar' ? 'المدير المالي &bull; مجموعة الدلتا للصناعات الغذائية' : 'CFO &bull; Delta Food Industries',
+      rating: 5,
+      quote: lang === 'ar' 
+        ? 'الربط المحاسبي مع Odoo ERP والفاتورة الإلكترونية نقل كفاءة المخازن والحسابات لمستوى آخر تماماً. الدعم الفني متواجد دائماً.'
+        : 'The Odoo ERP tax integration streamlined our inventory and ledger operations with 100% compliance.'
+    },
+    {
+      name: lang === 'ar' ? 'د. سارة المنصوري' : 'Dr. Sara Al-Mansouri',
+      role: lang === 'ar' ? 'مديرة التسويق &bull; سلسلة مراكز ريادة الطبية' : 'Marketing Director &bull; Reyada Medical Group',
+      rating: 5,
+      quote: lang === 'ar' 
+        ? 'حملات التسويق الرقمي وتطوير الموقع الإلكتروني حققت لنا عائداً إعلانياً تجاوز 5.2x وتصدرنا الصفحة الأولى في بحث جوجل.'
+        : 'Our digital ad funnels and new React portal generated over 5.2x ROAS with top-tier Google search rankings.'
+    }
+  ];
+
+  // FAQ Data
+  const faqs = [
+    {
+      q: lang === 'ar' ? 'ما هي المدة اللازمة لتنفيذ وتطبيق نظام Odoo ERP وربطه بالفاتورة الإلكترونية؟' : 'How long does Odoo ERP deployment and ETA tax integration take?',
+      a: lang === 'ar' 
+        ? 'يستغرق التطبيق النموذجي من أسبوعين إلى 6 أسابيع حسب حجم المؤسسة وعدد الفروع، ويشمل ذلك تهيئة شجرة الحسابات، دورات المخازن، تدريب المحاسبين، والربط الرسمي مع بوابة الضرائب ETA.'
+        : 'Typical implementations range from 2 to 6 weeks based on branch count, including chart of accounts setup, inventory workflows, cashier training, and official ETA portal sync.'
+    },
+    {
+      q: lang === 'ar' ? 'هل تقدمون عقود صيانة ودعم فني دوري للشبكات وكاميرات المراقبة وأنظمة التيار الخفيف؟' : 'Do you provide SLA maintenance contracts for low-current systems and networks?',
+      a: lang === 'ar' 
+        ? 'نعم، نوفر عقود صيانة سنوية (SLA) تشمل زيارات وقائية شهرية، ودعماً طارئاً على مدار الساعة 24/7 مع استبدال فوري للقطع التالفة من التوكيلات المعتمدة.'
+        : 'Yes, we offer comprehensive annual SLA agreements covering preventative monthly audits, 24/7 rapid emergency dispatch, and direct OEM hardware replacements.'
+    },
+    {
+      q: lang === 'ar' ? 'هل يمكن ربط فروع الشركة ومخازنها في شبكة واحدة مشفرة وآمنة تماماً؟' : 'Can you connect multi-branch locations with private encrypted networks?',
+      a: lang === 'ar' 
+        ? 'بالتأكيد، نقوم بتصميم وربط شبكات الفروع عبر تقنيات VPN المشفرة و SD-WAN وجدران الحماية Fortinet لضمان سرعة نقل البيانات وحمايتها من الاختراق.'
+        : 'Yes, we implement hardware-accelerated IPsec VPNs, SD-WAN topologies, and Fortinet firewalls for high-throughput, secure inter-branch connectivity.'
+    },
+    {
+      q: lang === 'ar' ? 'كيف تضمنون وصول البريد الإلكتروني المهني لصندوق الوارد (Inbox) بدون الذهاب للـ Spam؟' : 'How do you guarantee custom domain email deliverability to Inbox?',
+      a: lang === 'ar' 
+        ? 'نقوم بتهيئة سجلات التوثيق الأمني المتقدمة (DMARC, DKIM, SPF, PTR) على خوادمنا المعتمدة ونقوم بتدفئة النطاق (Domain Warmup) لضمان أعلى سمعة بريدية لدى Google و Microsoft.'
+        : 'We enforce strict cryptographic DNS policies (DMARC p=reject, DKIM 2048-bit, SPF, PTR records) paired with dedicated enterprise IP warming.'
+    }
+  ];
+
   return (
     <div className="home-page">
-      {/* 1. Real Master Showreel Video Hero (Combined 6-Clip Professional Action Video) */}
+      {/* 1. Real Master Showreel Video Hero (100% Pure Clarity & Sharp Animated Badge) */}
       <section className="live-video-hero-section">
         {/* Continuous Master Showreel Video */}
         <video 
@@ -273,7 +364,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. The 7 Core Business Pillars Showcase (Clean Light Cards with Verified Images) */}
+      {/* 3. The 7 Core Business Pillars Showcase */}
       <section className="home-services-section" id="services">
         <div className="container">
           <div className="badge-center" style={{ color: '#10b981', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
@@ -510,28 +601,140 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Bottom Master CTA Banner */}
-      <section className="section text-center" style={{ paddingTop: '3rem' }}>
+      {/* 6. REDESIGNED: Light Wide Rectangular Master Action Banner */}
+      <section className="home-light-cta-section">
         <div className="container">
-          <div className="home-cta-card">
-            <h2>
-              {lang === 'ar' 
-                ? 'هل أنت مستعد لنقل أعمالك ومنشأتك إلى أحدث المعايير التقنية؟' 
-                : 'Ready to Transform Your Enterprise with Next-Gen Technology?'}
-            </h2>
-            <p>
-              {lang === 'ar' 
-                ? 'تواصل مع فريق مهندسينا اليوم للحصول على استشارة متخصصة ودراسة شاملة لمتطلبات مشروعك.' 
-                : 'Schedule a comprehensive consultation with our senior systems, network, and software engineers.'}
-            </p>
-            <div className="home-cta-btns">
-              <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2.5rem', background: '#10b981', borderColor: '#10b981' }}>
-                {lang === 'ar' ? 'طلب استشارة ومقترح هندسي' : 'Request Engineering Proposal'} <ArrowRight size={18} />
+          <div className="home-cta-card-light">
+            <div className="cta-light-text-side">
+              <div className="cta-light-badge">
+                <Sparkles size={15} />
+                <span>{lang === 'ar' ? 'استشارة ودراسة هندسية متكاملة' : 'Free Engineering Consultation'}</span>
+              </div>
+              <h2 className="cta-light-title">
+                {lang === 'ar' 
+                  ? 'هل أنت مستعد لنقل أعمالك ومنشأتك إلى أحدث المعايير التقنية؟' 
+                  : 'Ready to Transform Your Enterprise with Next-Gen Technology?'}
+              </h2>
+              <p className="cta-light-desc">
+                {lang === 'ar'
+                  ? 'تواصل مع فريق مهندسينا اليوم للحصول على دراسة فنية شاملة وعرض سعر مفصل يناسب حجم وطبيعة أعمالك مع ضمان استجابة فورية.'
+                  : 'Connect with our senior systems, network, and software engineers for a comprehensive technical roadmap tailored to your operations.'}
+              </p>
+              <ul className="cta-light-features">
+                <li><CheckCircle2 size={18} color="#059669" /> {lang === 'ar' ? 'دراسة موقعية ومعاينة مجانية' : 'Complimentary Site Audit'}</li>
+                <li><CheckCircle2 size={18} color="#059669" /> {lang === 'ar' ? 'عقود صيانة رسمية وضمان معتمد' : 'Certified SLA Agreements'}</li>
+                <li><CheckCircle2 size={18} color="#059669" /> {lang === 'ar' ? 'تنفيذ وتسليم بمواصفات عالمية' : 'Zero-Downtime Delivery'}</li>
+              </ul>
+            </div>
+
+            <div className="cta-light-btn-side">
+              <Link to="/contact" className="btn-cta-primary-light">
+                <span>{lang === 'ar' ? 'طلب استشارة ومقترح هندسي' : 'Request Engineering Proposal'}</span>
+                <ArrowRight size={18} />
               </Link>
-              <a href="https://wa.me/201093706027" target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ padding: '1rem 2.5rem', color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.1)' }}>
-                {lang === 'ar' ? 'محادثة مباشرة عبر واتساب' : 'Chat on WhatsApp'}
+              <a href="https://wa.me/201093706027" target="_blank" rel="noreferrer" className="btn-cta-secondary-light">
+                <span>{lang === 'ar' ? 'محادثة فورية عبر واتساب' : 'Chat on WhatsApp (Instant)'}</span>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. NEW: Enterprise SLA Guarantees & Why Choose POM */}
+      <section className="home-guarantees-section">
+        <div className="container">
+          <div className="badge-center" style={{ color: '#059669', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+            <Shield size={14} /> {lang === 'ar' ? 'لماذا تختار وكالة POM؟' : 'The POM Advantage'}
+          </div>
+          <h2 className="section-title">
+            {lang === 'ar' ? 'ضمانات تنفيذ وتشغيل معتمدة تحمي استثمارك التقني' : 'Enterprise Guarantees Safeguarding Your Digital Estate'}
+          </h2>
+          <p className="section-subtitle">
+            {lang === 'ar' 
+              ? 'نلتزم بأعلى معايير الجودة العالمية في التصميم والتوريد والبرمجة مع دعم فني مستمر على مدار الساعة.' 
+              : 'End-to-end engineering governance delivering verified hardware, certified tax compliance, and sub-15m support.'}
+          </p>
+
+          <div className="guarantees-grid">
+            {guarantees.map((g, idx) => (
+              <div key={idx} className="guarantee-card">
+                <div className="guarantee-icon-box">{g.icon}</div>
+                <h4>{g.title}</h4>
+                <p>{g.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. NEW: Client Success Stories & Testimonials */}
+      <section className="home-testimonials-section">
+        <div className="container">
+          <div className="badge-center" style={{ color: '#059669', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+            <Star size={14} /> {lang === 'ar' ? 'شهادات وقصص نجاح العملاء' : 'Client Success Stories'}
+          </div>
+          <h2 className="section-title">
+            {lang === 'ar' ? 'شركاء النجاح يشهدون بتميز وجودة حلولنا الهندسية' : 'Trusted by Leading Enterprises Across Egypt & The GCC'}
+          </h2>
+          <p className="section-subtitle">
+            {lang === 'ar' 
+              ? 'أكثر من 500 مؤسسة وشركة اعتمدت على POM لتطوير شبكاتها، أنظمتها المحاسبية، وبنيتها التحتية.' 
+              : 'Over 500 corporations rely on POM Agency to power their cloud servers, BMS automation, and business systems.'}
+          </p>
+
+          <div className="testimonials-grid">
+            {testimonials.map((item, idx) => (
+              <div key={idx} className="testimonial-card">
+                <div>
+                  <div className="testimonial-rating">
+                    {[...Array(item.rating)].map((_, i) => (
+                      <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
+                    ))}
+                  </div>
+                  <p className="testimonial-quote">"{item.quote}"</p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-avatar">{item.name.charAt(0)}</div>
+                  <div className="author-info">
+                    <h5>{item.name}</h5>
+                    <span dangerouslySetInnerHTML={{ __html: item.role }} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. NEW: Interactive FAQ Accordion */}
+      <section className="home-faq-section">
+        <div className="container">
+          <div className="badge-center" style={{ color: '#059669', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+            <Sparkles size={14} /> {lang === 'ar' ? 'الأسئلة الأكثر شيوعاً' : 'Frequently Asked Questions'}
+          </div>
+          <h2 className="section-title">
+            {lang === 'ar' ? 'كل ما تود معرفته حول خدماتنا وكيفية بدء مشروعك' : 'Everything You Need to Know About Working with POM'}
+          </h2>
+          <p className="section-subtitle">
+            {lang === 'ar' 
+              ? 'إجابات مباشرة وواضحة على أهم الاستفسارات التقنية والتنفيذية لشركائنا وعملائنا.' 
+              : 'Clear, transparent answers to the most common questions regarding our ERP, IT, low-current, and marketing services.'}
+          </p>
+
+          <div className="faq-container">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className={`faq-item ${openFaq === idx ? 'open' : ''}`}>
+                <button className="faq-question" onClick={() => toggleFaq(idx)}>
+                  <span>{faq.q}</span>
+                  <ChevronDown size={20} className="faq-icon-toggle" />
+                </button>
+                {openFaq === idx && (
+                  <div className="faq-answer">
+                    <p>{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
