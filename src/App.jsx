@@ -37,6 +37,8 @@ export default function App() {
                 <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
                 <Route path="/accounting" element={<AccountingPage />} />
                 <Route path="/network-servers" element={<NetworkServersPage />} />
+                <Route path="/network" element={<NetworkServersPage />} />
+                <Route path="/servers" element={<NetworkServersPage />} />
                 <Route path="/smart-control" element={<SmartControlPage />} />
                 <Route path="/it" element={<ITPage />} />
                 <Route path="/mail-professional" element={<MailProfessionalPage />} />

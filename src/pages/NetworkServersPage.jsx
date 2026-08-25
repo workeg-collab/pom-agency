@@ -20,13 +20,9 @@ import {
   Database,
   Terminal,
   Radio,
-  Share2,
   Sliders,
   Award,
   Headphones,
-  Check,
-  ShieldAlert,
-  Router,
   Monitor
 } from 'lucide-react';
 import './NetworkServersPage.css';
@@ -298,7 +294,7 @@ export default function NetworkServersPage() {
               <span className="net-stat-label">{lang === 'ar' ? 'غرفة سيرفرات وداتا سنتر' : 'Data Centers Deployed'}</span>
             </div>
             <div className="net-stat-item">
-              <span className="net-stat-num">&lt; 15 min</span>
+              <span className="net-stat-num">{"< 15 min"}</span>
               <span className="net-stat-label">{lang === 'ar' ? 'زمن الاستجابة للطوارئ' : 'Emergency Response Time'}</span>
             </div>
           </div>
@@ -518,7 +514,7 @@ export default function NetworkServersPage() {
                     </div>
                     <div className="net-kpi-card">
                       <span className="net-kpi-title">{lang === 'ar' ? 'زمن استعادة البيانات (RTO)' : 'Recovery Time Objective'}</span>
-                      <span className="net-kpi-value">&lt; 30 Mins</span>
+                      <span className="net-kpi-value">{"< 30 Mins"}</span>
                       <span className="net-kpi-badge-neutral"><Zap size={14} /> Instant Failback</span>
                     </div>
                   </div>
