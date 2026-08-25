@@ -454,21 +454,21 @@
 }
 
 .home-console-window {
-  background: #0f172a;
-  border: 1px solid #334155;
-  border-radius: 20px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
-  color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  color: #0f172a;
 }
 
 .home-window-header {
-  background: #1e293b;
-  padding: 0.9rem 1.5rem;
+  background: #f8fafc;
+  padding: 1rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .home-window-dots {
@@ -483,27 +483,27 @@
 }
 
 .home-window-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #475569;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .home-window-badge {
-  font-size: 0.75rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.3);
-  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  font-weight: 800;
 }
 
 .home-window-body {
-  padding: 2rem;
-  background: #0f172a;
+  padding: 2.25rem;
+  background: #ffffff;
 }
 
 .home-kpis-grid {
@@ -513,32 +513,40 @@
 }
 
 .home-kpi-card {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 14px;
-  padding: 1.25rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.35rem;
   display: flex;
   flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.home-kpi-card:hover {
+  background: #ffffff;
+  border-color: #10b981;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.1);
 }
 
 .home-kpi-title {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
   margin-bottom: 0.4rem;
 }
 
 .home-kpi-value {
   font-size: 1.6rem;
-  font-weight: 800;
-  color: #ffffff;
+  font-weight: 900;
+  color: #0f172a;
   font-family: var(--font-heading);
 }
 
 .home-kpi-badge-gain {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #34d399;
+  color: #059669;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
@@ -548,7 +556,7 @@
 .home-kpi-badge-neutral {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #38bdf8;
+  color: #0284c7;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;

@@ -345,7 +345,6 @@ export default function HomePage() {
             <br />
             <span className="animated-service-word">
               {currentText}
-              <span className="animated-cursor">|</span>
             </span>
           </h1>
           
@@ -515,22 +514,22 @@ export default function HomePage() {
                 <div className="home-kpis-grid">
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'جاهزية السيرفرات السحابية' : 'Cloud Server Uptime'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>99.99% SLA</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>99.99% SLA</span>
                     <span className="home-kpi-badge-gain"><CheckCircle2 size={14} /> High Availability</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'سرعة استجابة الدعم الفني' : 'Helpdesk Response SLA'}</span>
-                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>8.4 Mins</span>
+                    <span className="home-kpi-value" style={{ color: '#0284c7' }}>8.4 Mins</span>
                     <span className="home-kpi-badge-gain"><Zap size={14} /> Guaranteed &lt; 15m</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'حالة جدران الحماية والأمان' : 'Cybersecurity EDR'}</span>
-                    <span className="home-kpi-value">ARMED (100%)</span>
+                    <span className="home-kpi-value" style={{ color: '#0f172a' }}>ARMED (100%)</span>
                     <span className="home-kpi-badge-neutral"><Shield size={14} /> Zero-Trust Fortinet</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'النسخ الاحتياطي المعزول' : 'Immutable Cloud Backups'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>DAILY (Verified)</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>DAILY (Verified)</span>
                     <span className="home-kpi-badge-gain"><Database size={14} /> RPO 15m / RTO &lt; 30m</span>
                   </div>
                 </div>
@@ -541,22 +540,22 @@ export default function HomePage() {
                 <div className="home-kpis-grid">
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'ربط الفاتورة الإلكترونية ETA' : 'ETA e-Invoice Sync'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>CONNECTED</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>CONNECTED</span>
                     <span className="home-kpi-badge-gain"><CheckCircle2 size={14} /> 100% Tax Compliant</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'سرعة معاملات نقاط البيع POS' : 'POS Cashier Latency'}</span>
-                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>0.08s</span>
+                    <span className="home-kpi-value" style={{ color: '#0284c7' }}>0.08s</span>
                     <span className="home-kpi-badge-gain"><Zap size={14} /> Offline Mode Active</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'دقة الجرد ومطابقة المخازن' : 'Inventory Accuracy'}</span>
-                    <span className="home-kpi-value">99.98%</span>
+                    <span className="home-kpi-value" style={{ color: '#0f172a' }}>99.98%</span>
                     <span className="home-kpi-badge-neutral"><Sliders size={14} /> Barcode Multi-Warehouse</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'التقارير المالية والأرباح' : 'Financial Statement Sync'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>AUTOMATED</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>AUTOMATED</span>
                     <span className="home-kpi-badge-gain"><Award size={14} /> Live Trial Balance</span>
                   </div>
                 </div>
@@ -567,22 +566,22 @@ export default function HomePage() {
                 <div className="home-kpis-grid">
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'توفير استهلاك الطاقة الكهربائية' : 'Building Energy Reduction'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>-34.8%</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>-34.8%</span>
                     <span className="home-kpi-badge-gain"><Zap size={14} /> Smart Chiller Logic</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'كاميرات المراقبة بالذكاء الاصطناعي' : 'AI CCTV Stream Streams'}</span>
-                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>64 4K Feeds</span>
+                    <span className="home-kpi-value" style={{ color: '#0284c7' }}>64 4K Feeds</span>
                     <span className="home-kpi-badge-gain"><Video size={14} /> ANPR + Face Recognition</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'حالة شبكة إنذار الحريق' : 'Fire Alarm Safety Loops'}</span>
-                    <span className="home-kpi-value">NORMAL (100%)</span>
+                    <span className="home-kpi-value" style={{ color: '#0f172a' }}>NORMAL (100%)</span>
                     <span className="home-kpi-badge-neutral"><Shield size={14} /> Hochiki Addressable</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'استجابة بوابات الدخول Speed Gates' : 'Access Gate Throughput'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>0.2s Facial</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>0.2s Facial</span>
                     <span className="home-kpi-badge-gain"><CheckCircle2 size={14} /> 45 Persons / Min</span>
                   </div>
                 </div>
@@ -593,22 +592,22 @@ export default function HomePage() {
                 <div className="home-kpis-grid">
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'متوسط العائد الإعلاني (ROAS)' : 'Omnichannel ROAS'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>4.8x ROAS</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>4.8x ROAS</span>
                     <span className="home-kpi-badge-gain"><TrendingUp size={14} /> Meta, Google & TikTok</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'تصدر بحث جوجل (Google SEO)' : 'Top #1 Google Keywords'}</span>
-                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>142 Keywords</span>
+                    <span className="home-kpi-value" style={{ color: '#0284c7' }}>142 Keywords</span>
                     <span className="home-kpi-badge-gain"><Award size={14} /> 785K Organic Visits</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'سرعة فتح مواقع الويب' : 'Web Speed (Lighthouse)'}</span>
-                    <span className="home-kpi-value">99 / 100</span>
+                    <span className="home-kpi-value" style={{ color: '#0f172a' }}>99 / 100</span>
                     <span className="home-kpi-badge-neutral"><Zap size={14} /> React 19 & Next.js</span>
                   </div>
                   <div className="home-kpi-card">
                     <span className="home-kpi-title">{lang === 'ar' ? 'تسليم البريد في صندوق الوارد' : 'Mail Deliverability (DMARC)'}</span>
-                    <span className="home-kpi-value" style={{ color: '#34d399' }}>100% INBOX</span>
+                    <span className="home-kpi-value" style={{ color: '#047857' }}>100% INBOX</span>
                     <span className="home-kpi-badge-gain"><Mail size={14} /> Zero Spam Placement</span>
                   </div>
                 </div>
