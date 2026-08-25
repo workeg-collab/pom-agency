@@ -52,6 +52,9 @@ export default function App() {
                 <Route path="/cctv" element={<SmartControlPage />} />
                 <Route path="/bms" element={<SmartControlPage />} />
                 <Route path="/it" element={<ITPage />} />
+                <Route path="/it-services" element={<ITPage />} />
+                <Route path="/helpdesk" element={<ITPage />} />
+                <Route path="/managed-it" element={<ITPage />} />
                 <Route path="/mail-professional" element={<MailProfessionalPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/contact" element={<ContactPage />} />
