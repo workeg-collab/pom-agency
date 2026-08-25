@@ -50,28 +50,34 @@ export default function HomePage() {
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
-    video.setAttribute('playsinline', 'true');
-    video.setAttribute('webkit-playsinline', 'true');
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
 
-    const tryPlay = () => {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // If browser policy blocks unprompted autoplay, start on first touch/scroll
-          const playOnInteraction = () => {
+    const playVideo = () => {
+      const p = video.play();
+      if (p !== undefined) {
+        p.catch(() => {
+          // If iOS low power mode blocks unprompted play, kick off on scroll/touch
+          const unlockPlay = () => {
             video.play().catch(() => {});
-            window.removeEventListener('touchstart', playOnInteraction);
-            window.removeEventListener('scroll', playOnInteraction);
-            window.removeEventListener('click', playOnInteraction);
+            window.removeEventListener('touchstart', unlockPlay);
+            window.removeEventListener('scroll', unlockPlay);
           };
-          window.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
-          window.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
-          window.addEventListener('click', playOnInteraction, { once: true, passive: true });
+          window.addEventListener('touchstart', unlockPlay, { once: true, passive: true });
+          window.addEventListener('scroll', unlockPlay, { once: true, passive: true });
         });
       }
     };
 
-    tryPlay();
+    video.addEventListener('loadedmetadata', playVideo);
+    video.addEventListener('canplay', playVideo);
+    playVideo();
+
+    return () => {
+      video.removeEventListener('loadedmetadata', playVideo);
+      video.removeEventListener('canplay', playVideo);
+    };
   }, []);
 
   const toggleFaq = (idx) => {
@@ -79,20 +85,20 @@ export default function HomePage() {
   };
 
   const phrases = lang === 'ar' ? [
-    'الأنظمة المحاسبية (Odoo ERP)',
+    'الأنظمة المحاسبية Odoo ERP',
     'الشبكات والسيرفرات المؤسسية',
     'التحكم الذكي والتيار الخفيف',
     'التسويق الرقمي ونمو المبيعات',
     'تصميم وتطوير المواقع الحديثة',
-    'خدمات تكنولوجيا المعلومات 24/7',
-    'البريد الإلكتروني المهني السحابي'
+    'خدمات الدعم الفني المدار 24/7',
+    'البريد السحابي المهني'
   ] : [
     'Integrated Accounting (Odoo ERP)',
     'Enterprise Networks & Servers',
-    'Smart Control & Low-Current BMS',
-    'Data-Driven Digital Marketing',
+    'Smart Automation & Low-Current',
+    'Data-Driven Growth Marketing',
     'Modern Web & UI/UX Development',
-    '24/7 Managed IT & Helpdesk',
+    '24/7 Managed IT Support',
     'Enterprise Cloud Mailboxes'
   ];
 
@@ -311,6 +317,7 @@ export default function HomePage() {
         <video 
           ref={videoRef}
           className="hero-live-video"
+          src="/assets/pom-showreel.mp4"
           autoPlay 
           loop 
           muted 
