@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   padding: 6.5rem 1.5rem 5.5rem 1.5rem;
-  background: #0b1120;
+  background: #0f172a;
   overflow: hidden;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
@@ -30,11 +30,11 @@
   object-fit: cover;
   z-index: 1;
   opacity: 1;
-  filter: contrast(1.08) saturate(1.15) brightness(1.0);
+  filter: contrast(1.06) saturate(1.12) brightness(1.0);
   pointer-events: none;
 }
 
-/* Ultra-light Transparent Protective Scrim (Zero Fading / Zero Washed Out Look) */
+/* Light Translucent Protective Overlay */
 .hero-video-overlay {
   position: absolute;
   top: 0;
@@ -43,9 +43,9 @@
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.22) 100%
+    rgba(255, 255, 255, 0.20) 0%,
+    rgba(255, 255, 255, 0.10) 50%,
+    rgba(255, 255, 255, 0.28) 100%
   );
   z-index: 2;
   pointer-events: none;
@@ -77,8 +77,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
+  background: #ffffff;
   border: 1.5px solid #10b981;
   color: #065f46;
   padding: 0.55rem 1.5rem;
@@ -86,7 +85,7 @@
   font-size: 0.9rem;
   font-weight: 800;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .pill-dot {
@@ -94,7 +93,7 @@
   height: 9px;
   border-radius: 50%;
   background: #10b981;
-  box-shadow: 0 0 12px #10b981;
+  box-shadow: 0 0 10px #10b981;
   animation: pulseDot 1.5s infinite;
 }
 
@@ -107,35 +106,32 @@
   font-family: var(--font-heading);
   font-size: 3.6rem;
   font-weight: 900;
-  color: #020617;
-  line-height: 1.25;
+  color: #0f172a;
+  line-height: 1.35;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
-  text-shadow: 
-    0 0 35px #ffffff,
-    0 0 20px #ffffff,
-    0 0 10px #ffffff,
-    0 2px 4px rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.95), 0 0 40px #ffffff;
 }
 
-/* Deep Vivid Emerald High-Contrast Text */
+/* Razor-Sharp Solid Emerald Animated Typography (No Blurry Gradient or Drop-Shadow Cloud) */
 .animated-service-word {
   color: #047857;
   display: inline-block;
   position: relative;
   font-weight: 900;
-  background: linear-gradient(135deg, #065f46 0%, #047857 50%, #0284c7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-bottom: 3px;
-  filter: drop-shadow(0 0 25px #ffffff) drop-shadow(0 0 12px #ffffff);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.15rem 1rem;
+  border-radius: 16px;
+  border: 2px solid #10b981;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+  margin-top: 0.4rem;
 }
 
 .animated-cursor {
   display: inline-block;
   font-weight: 900;
-  color: #047857;
-  -webkit-text-fill-color: #047857;
+  color: #059669;
   animation: blinkCursor 0.8s infinite;
   margin-right: 4px;
 }
@@ -146,16 +142,13 @@
 }
 
 .hero-main-subtitle {
-  color: #090d16;
+  color: #0f172a;
   font-size: 1.25rem;
   line-height: 1.85;
-  margin: 0 auto 2.5rem auto;
+  margin: 1.5rem auto 2.5rem auto;
   max-width: 860px;
-  font-weight: 800;
-  text-shadow: 
-    0 0 30px #ffffff,
-    0 0 15px #ffffff,
-    0 0 8px #ffffff;
+  font-weight: 700;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.95), 0 0 30px #ffffff;
 }
 
 .hero-main-actions {
@@ -201,10 +194,9 @@
   font-size: 1.05rem;
   font-weight: 800;
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  border: 1.5px solid #64748b;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-normal);
   text-decoration: none;
   cursor: pointer;
@@ -230,10 +222,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #090d16;
+  color: #0f172a;
   font-size: 0.95rem;
   font-weight: 800;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 0.45rem 1.1rem;
   border-radius: 50px;
