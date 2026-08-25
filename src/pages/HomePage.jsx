@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -40,6 +40,39 @@ export default function HomePage() {
   const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('cloud');
   const [openFaq, setOpenFaq] = useState(null);
+  const videoRef = useRef(null);
+
+  // Guarantee Mobile Autoplay on iOS / Android WebKit
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('webkit-playsinline', 'true');
+
+    const tryPlay = () => {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If browser policy blocks unprompted autoplay, start on first touch/scroll
+          const playOnInteraction = () => {
+            video.play().catch(() => {});
+            window.removeEventListener('touchstart', playOnInteraction);
+            window.removeEventListener('scroll', playOnInteraction);
+            window.removeEventListener('click', playOnInteraction);
+          };
+          window.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
+          window.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
+          window.addEventListener('click', playOnInteraction, { once: true, passive: true });
+        });
+      }
+    };
+
+    tryPlay();
+  }, []);
 
   const toggleFaq = (idx) => {
     setOpenFaq(openFaq === idx ? null : idx);
@@ -95,7 +128,7 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
 
-  // The 7 Core Activities (All verified image assets in public/assets)
+  // The 7 Core Activities
   const coreActivities = [
     {
       id: 'accounting',
@@ -272,16 +305,26 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 1. Real Master Showreel Video Hero (100% Pure Clarity & Sharp Animated Badge) */}
+      {/* 1. Real Master Showreel Video Hero (100% Mobile Autoplay & Pure Clarity) */}
       <section className="live-video-hero-section">
-        {/* Continuous Master Showreel Video */}
+        {/* Continuous Master Showreel Video with Guaranteed Mobile Autoplay */}
         <video 
+          ref={videoRef}
           className="hero-live-video"
           autoPlay 
           loop 
           muted 
+          defaultMuted
           playsInline
+          webkit-playsinline="true"
+          preload="auto"
           poster="/assets/web-hero-multidevice.jpg"
+          onCanPlay={(e) => e.target.play().catch(() => {})}
+          onLoadedData={(e) => e.target.play().catch(() => {})}
+          onEnded={(e) => {
+            e.target.currentTime = 0;
+            e.target.play().catch(() => {});
+          }}
         >
           <source src="/assets/pom-showreel.mp4" type="video/mp4" />
         </video>
@@ -640,7 +683,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. NEW: Enterprise SLA Guarantees & Why Choose POM */}
+      {/* 7. Enterprise SLA Guarantees & Why Choose POM */}
       <section className="home-guarantees-section">
         <div className="container">
           <div className="badge-center" style={{ color: '#059669', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
@@ -667,7 +710,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. NEW: Client Success Stories & Testimonials */}
+      {/* 8. Client Success Stories & Testimonials */}
       <section className="home-testimonials-section">
         <div className="container">
           <div className="badge-center" style={{ color: '#059669', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
@@ -706,7 +749,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. NEW: Interactive FAQ Accordion */}
+      {/* 9. Interactive FAQ Accordion */}
       <section className="home-faq-section">
         <div className="container">
           <div className="badge-center" style={{ color: '#059669', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
