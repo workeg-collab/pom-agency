@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, Phone, MapPin, ShieldCheck, Headphones } from 'lucide-react';
+import { Mail, Phone, MapPin, Headphones } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -85,22 +85,11 @@ export default function Footer() {
                 <span>info@pom-agency.online</span>
               </a>
             </li>
-            <li className="footer-privacy-item">
-              <Link to="/privacy-policy" className="footer-privacy-link">
-                <ShieldCheck size={18} className="contact-icon" />
-                <span>Privacy Policy</span>
-              </Link>
-            </li>
             <li className="footer-contact-us-item">
-              <a 
-                href="https://wa.me/201093706027?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20POM%20Agency%20services" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="footer-contact-link"
-              >
+              <Link to="/contact" className="footer-contact-link">
                 <Headphones size={18} className="contact-icon" />
                 <span>Contact Us</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

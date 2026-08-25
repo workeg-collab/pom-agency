@@ -19,6 +19,7 @@ import CartPage from './pages/CartPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import RefundPolicyPage from './pages/RefundPolicyPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   return (
@@ -38,6 +39,8 @@ export default function App() {
                 <Route path="/it" element={<ITPage />} />
                 <Route path="/mail-professional" element={<MailProfessionalPage />} />
                 <Route path="/cart" element={<CartPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/contact-us" element={<ContactPage />} />
                 <Route path="/terms-and-conditions" element={<TermsPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
