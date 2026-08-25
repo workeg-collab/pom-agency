@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -23,13 +23,22 @@ import {
   Award,
   Zap,
   Lock,
-  Cpu
+  Cpu,
+  BarChart3,
+  PieChart,
+  Activity,
+  FileCheck2,
+  Truck,
+  DollarSign,
+  ArrowUpRight,
+  Monitor
 } from 'lucide-react';
 import './AccountingPage.css';
 
 export default function AccountingPage() {
   const { addToCart } = useCart();
   const { t, lang } = useLanguage();
+  const [activeTab, setActiveTab] = useState('financial');
 
   const odooModules = [
     {
@@ -300,8 +309,417 @@ export default function AccountingPage() {
         </div>
       </section>
 
-      {/* 3. Core Odoo ERP Modules Grid */}
-      <section className="section bg-surface">
+      {/* 3. Interactive Odoo Dashboard & Visual Charts Showcase */}
+      <section className="dashboard-showcase-section">
+        <div className="container">
+          <div className="badge-center">
+            <BarChart3 size={14} /> {lang === 'ar' ? 'لوحات تحكم ورسوم بيانية ذكية' : 'Live Odoo ERP Visual Dashboards'}
+          </div>
+          <h2 className="section-title">
+            {lang === 'ar' ? 'شاشات ورسوم بيانية تفاعلية لإدارة أعمالك لحظة بلحظة' : 'Interactive Analytics & Real-Time Financial Visibility'}
+          </h2>
+          <p className="section-subtitle">
+            {lang === 'ar' 
+              ? 'تتيح لك شاشات Odoo مراقبة التدفقات النقدية، حركة المستودعات، الدورة المستندية، وحالة الفواتير الضريبية بنقرة زر.' 
+              : 'Monitor real-time cashflow, stock movements, procurement pipelines, and tax verification across all branches.'}
+          </p>
+
+          {/* Tab Switcher */}
+          <div className="dashboard-tab-buttons">
+            <button 
+              className={`dash-tab-btn ${activeTab === 'financial' ? 'active' : ''}`}
+              onClick={() => setActiveTab('financial')}
+            >
+              <DollarSign size={16} />
+              <span>{lang === 'ar' ? 'التحليل المالي والأرباح والخسائر' : 'Financial P&L & Cash Flow'}</span>
+            </button>
+            <button 
+              className={`dash-tab-btn ${activeTab === 'inventory' ? 'active' : ''}`}
+              onClick={() => setActiveTab('inventory')}
+            >
+              <Boxes size={16} />
+              <span>{lang === 'ar' ? 'رقابة المخازن وحركة الأصناف' : 'Warehouse & Stock Flow'}</span>
+            </button>
+            <button 
+              className={`dash-tab-btn ${activeTab === 'pipeline' ? 'active' : ''}`}
+              onClick={() => setActiveTab('pipeline')}
+            >
+              <Activity size={16} />
+              <span>{lang === 'ar' ? 'الدورة المستندية المؤتمتة' : 'Automated Sales Pipeline'}</span>
+            </button>
+            <button 
+              className={`dash-tab-btn ${activeTab === 'eta' ? 'active' : ''}`}
+              onClick={() => setActiveTab('eta')}
+            >
+              <Receipt size={16} />
+              <span>{lang === 'ar' ? 'الفاتورة والإيصال الضريبي (ETA)' : 'ETA Tax Direct Sync'}</span>
+            </button>
+          </div>
+
+          {/* Dashboard Visual Window */}
+          <div className="dashboard-window">
+            <div className="window-header-bar">
+              <div className="window-dots">
+                <div className="window-dot dot-red" />
+                <div className="window-dot dot-yellow" />
+                <div className="window-dot dot-green" />
+              </div>
+              <div className="window-title">
+                <Monitor size={15} />
+                <span>Odoo Enterprise v18.0 &bull; {lang === 'ar' ? 'لوحة المراقبة المركزية المعتمدة' : 'Unified Executive Management Console'}</span>
+              </div>
+              <span className="window-badge">{lang === 'ar' ? 'متزامن لحظياً (Live)' : 'Live Synced'}</span>
+            </div>
+
+            <div className="window-body">
+              {/* Tab 1: Financial */}
+              {activeTab === 'financial' && (
+                <div>
+                  <div className="dash-kpis-grid">
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'إجمالي الإيرادات (المبيعات)' : 'Total Revenue (MTD)'}</span>
+                      <span className="kpi-value">$128,450</span>
+                      <span className="kpi-badge-gain"><ArrowUpRight size={14} /> +18.4% {lang === 'ar' ? 'عن الشهر السابق' : 'vs last month'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'المصروفات التشغيلية' : 'Operating Expenses'}</span>
+                      <span className="kpi-value">$42,300</span>
+                      <span className="kpi-badge-neutral"><CheckCircle2 size={14} /> {lang === 'ar' ? 'ضمن الميزانية المقدرة' : 'Within Target Budget'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'صافي الربح التشغيلي (EBIT)' : 'Net Operating Profit'}</span>
+                      <span className="kpi-value" style={{ color: '#34d399' }}>$86,150</span>
+                      <span className="kpi-badge-gain"><ArrowUpRight size={14} /> 67.1% {lang === 'ar' ? 'هامش الربحية' : 'Profit Margin'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'السيولة والتدفق النقدي' : 'Cash Flow Liquidity'}</span>
+                      <span className="kpi-value" style={{ color: '#38bdf8' }}>$312,900</span>
+                      <span className="kpi-badge-neutral"><ShieldCheck size={14} /> {lang === 'ar' ? 'مطابقة بنكية 100%' : '100% Bank Reconciled'}</span>
+                    </div>
+                  </div>
+
+                  <div className="dash-charts-row">
+                    <div className="dash-main-chart-box">
+                      <div className="dash-chart-header">
+                        <h4>{lang === 'ar' ? 'رسم بياني للإيرادات والمصروفات الشهرية' : 'Monthly Revenue vs Expense Trend'}</h4>
+                        <div className="chart-legend">
+                          <span className="legend-item"><span className="legend-dot dot-blue" /> {lang === 'ar' ? 'الإيرادات' : 'Revenue'}</span>
+                          <span className="legend-item"><span className="legend-dot dot-purple" /> {lang === 'ar' ? 'المصروفات' : 'Expenses'}</span>
+                        </div>
+                      </div>
+                      <div className="bar-graph-container">
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-rev" style={{ height: '65%' }} title="Revenue: $65k" />
+                            <div className="bar-stick stick-exp" style={{ height: '30%' }} title="Expenses: $30k" />
+                          </div>
+                          <span className="bar-month-label">Jan</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-rev" style={{ height: '75%' }} title="Revenue: $75k" />
+                            <div className="bar-stick stick-exp" style={{ height: '35%' }} title="Expenses: $35k" />
+                          </div>
+                          <span className="bar-month-label">Feb</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-rev" style={{ height: '85%' }} title="Revenue: $85k" />
+                            <div className="bar-stick stick-exp" style={{ height: '38%' }} title="Expenses: $38k" />
+                          </div>
+                          <span className="bar-month-label">Mar</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-rev" style={{ height: '95%' }} title="Revenue: $95k" />
+                            <div className="bar-stick stick-exp" style={{ height: '40%' }} title="Expenses: $40k" />
+                          </div>
+                          <span className="bar-month-label">Apr</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-rev" style={{ height: '100%' }} title="Revenue: $128k" />
+                            <div className="bar-stick stick-exp" style={{ height: '42%' }} title="Expenses: $42k" />
+                          </div>
+                          <span className="bar-month-label">May</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="dash-side-panel">
+                      <h4>{lang === 'ar' ? 'توزيع المصروفات حسب مراكز التكلفة' : 'Cost Center Budget Allocation'}</h4>
+                      <div className="progress-metric-list">
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'المشتريات وتكلفة البضاعة' : 'Cost of Goods Sold (COGS)'}</span>
+                            <strong>48%</strong>
+                          </div>
+                          <div className="metric-bar-bg">
+                            <div className="metric-bar-fill" style={{ width: '48%', background: '#1388fd' }} />
+                          </div>
+                        </div>
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'الرواتب والأجور والتأمينات' : 'Salaries & Payroll'}</span>
+                            <strong>32%</strong>
+                          </div>
+                          <div className="metric-bar-bg">
+                            <div className="metric-bar-fill" style={{ width: '32%', background: '#8b5cf6' }} />
+                          </div>
+                        </div>
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'المصاريف الإدارية والعمومية' : 'Admin & Operational'}</span>
+                            <strong>14%</strong>
+                          </div>
+                          <div className="metric-bar-bg">
+                            <div className="metric-bar-fill" style={{ width: '14%', background: '#38bdf8' }} />
+                          </div>
+                        </div>
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'التسويق وتطوير الأعمال' : 'Marketing & Growth'}</span>
+                            <strong>6%</strong>
+                          </div>
+                          <div className="metric-bar-bg">
+                            <div className="metric-bar-fill" style={{ width: '6%', background: '#10b981' }} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Tab 2: Inventory & Warehouse */}
+              {activeTab === 'inventory' && (
+                <div>
+                  <div className="dash-kpis-grid">
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'إجمالي قيمة المخزون الحالي' : 'Total Stock Valuation (FIFO)'}</span>
+                      <span className="kpi-value" style={{ color: '#38bdf8' }}>$485,200</span>
+                      <span className="kpi-badge-neutral"><Boxes size={14} /> 3 {lang === 'ar' ? 'مستودعات رئيسية' : 'Main Warehouses'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'حركات التحويل بين الفروع' : 'Internal Stock Transfers'}</span>
+                      <span className="kpi-value">142</span>
+                      <span className="kpi-badge-gain"><CheckCircle2 size={14} /> {lang === 'ar' ? 'مكتملة ومطابقة بالباركود' : '100% Barcode Verified'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'أوامر إعادة الطلب التلقائي' : 'Auto Reorder Triggers'}</span>
+                      <span className="kpi-value" style={{ color: '#f59e0b' }}>8 {lang === 'ar' ? 'أصناف' : 'Items'}</span>
+                      <span className="kpi-badge-gain" style={{ color: '#f59e0b' }}><Activity size={14} /> {lang === 'ar' ? 'تم إنشاء أوامر شراء تلقائية' : 'PO Generated Automatically'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'دقة الجرد الدوري' : 'Inventory Audit Accuracy'}</span>
+                      <span className="kpi-value" style={{ color: '#34d399' }}>99.8%</span>
+                      <span className="kpi-badge-gain"><ShieldCheck size={14} /> {lang === 'ar' ? 'بدون أي هدر أو فروقات' : 'Zero Discrepancy'}</span>
+                    </div>
+                  </div>
+
+                  <div className="dash-charts-row">
+                    <div className="dash-main-chart-box">
+                      <div className="dash-chart-header">
+                        <h4>{lang === 'ar' ? 'مستويات المخزون حسب الفروع والمستودعات' : 'Inventory Distribution by Warehouse'}</h4>
+                        <span className="window-badge" style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8' }}>{lang === 'ar' ? 'تحديث فوري' : 'Live Sync'}</span>
+                      </div>
+                      <div className="bar-graph-container">
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-stock" style={{ height: '90%', width: '22px' }} />
+                          </div>
+                          <span className="bar-month-label">{lang === 'ar' ? 'مستودع القاهرة الرئيسي' : 'Cairo Central'}</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-stock" style={{ height: '65%', width: '22px' }} />
+                          </div>
+                          <span className="bar-month-label">{lang === 'ar' ? 'فرع الإسكندرية' : 'Alexandria Hub'}</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-stock" style={{ height: '45%', width: '22px' }} />
+                          </div>
+                          <span className="bar-month-label">{lang === 'ar' ? 'فرع الجيزة' : 'Giza Depot'}</span>
+                        </div>
+                        <div className="bar-col">
+                          <div className="bar-dual">
+                            <div className="bar-stick stick-stock" style={{ height: '35%', width: '22px' }} />
+                          </div>
+                          <span className="bar-month-label">{lang === 'ar' ? 'مخزن العبور' : 'Obour Storage'}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="dash-side-panel">
+                      <h4>{lang === 'ar' ? 'الأصناف الأكثر حركة ودوراناً' : 'Fast-Moving Inventory Velocity'}</h4>
+                      <div className="progress-metric-list">
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'مجموعة الإلكترونيات والشبكات' : 'Hardware & Servers'}</span>
+                            <strong>89%</strong>
+                          </div>
+                          <div className="metric-bar-bg"><div className="metric-bar-fill" style={{ width: '89%', background: '#10b981' }} /></div>
+                        </div>
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'أنظمة التحكم وأجهزة IoT' : 'Smart IoT Devices'}</span>
+                            <strong>72%</strong>
+                          </div>
+                          <div className="metric-bar-bg"><div className="metric-bar-fill" style={{ width: '72%', background: '#38bdf8' }} /></div>
+                        </div>
+                        <div className="progress-metric-item">
+                          <div className="metric-row-labels">
+                            <span>{lang === 'ar' ? 'كابلات ومستلزمات التركيب' : 'Cables & Accessories'}</span>
+                            <strong>54%</strong>
+                          </div>
+                          <div className="metric-bar-bg"><div className="metric-bar-fill" style={{ width: '54%', background: '#8b5cf6' }} /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Tab 3: Sales Pipeline */}
+              {activeTab === 'pipeline' && (
+                <div>
+                  <div className="dash-chart-header" style={{ marginBottom: '1rem' }}>
+                    <h4>{lang === 'ar' ? 'مراحل الدورة المستندية المؤتمتة في Odoo ERP' : 'Automated Sales-to-Cash Workflow'}</h4>
+                    <span className="window-badge">{lang === 'ar' ? '100% مؤتمتة بدون تدخل يدوي' : '100% Zero Manual Friction'}</span>
+                  </div>
+
+                  <div className="pipeline-flow-grid">
+                    <div className="pipeline-step-box active-step">
+                      <div className="pipeline-icon-circle"><FileSpreadsheet size={20} /></div>
+                      <h5>{lang === 'ar' ? '1. عرض الأسعار' : '1. Quotation'}</h5>
+                      <span>{lang === 'ar' ? 'إرسال عرض سعر إلكتروني مع رابط الدفع المباشر' : 'Send branded quotation with digital sign'}</span>
+                    </div>
+                    <div className="pipeline-step-box active-step">
+                      <div className="pipeline-icon-circle"><CheckCircle2 size={20} /></div>
+                      <h5>{lang === 'ar' ? '2. أمر البيع (SO)' : '2. Sales Order'}</h5>
+                      <span>{lang === 'ar' ? 'تأكيد العميل وحجز المخزون آلياً' : 'Customer approval & stock reservation'}</span>
+                    </div>
+                    <div className="pipeline-step-box active-step">
+                      <div className="pipeline-icon-circle"><Truck size={20} /></div>
+                      <h5>{lang === 'ar' ? '3. إذن الصرف والتسليم' : '3. Delivery Note'}</h5>
+                      <span>{lang === 'ar' ? 'مسح الباركود وخصم الأصناف من المستودع' : 'Barcode picking & stock deduction'}</span>
+                    </div>
+                    <div className="pipeline-step-box active-step">
+                      <div className="pipeline-icon-circle"><Receipt size={20} /></div>
+                      <h5>{lang === 'ar' ? '4. الفاتورة الإلكترونية' : '4. Tax E-Invoice'}</h5>
+                      <span>{lang === 'ar' ? 'إرسال آلي لمصلحة الضرائب المصرية ETA' : 'Direct ETA Portal submission & QR code'}</span>
+                    </div>
+                    <div className="pipeline-step-box active-step">
+                      <div className="pipeline-icon-circle"><DollarSign size={20} /></div>
+                      <h5>{lang === 'ar' ? '5. التحصيل والتسوية' : '5. Bank Reconcile'}</h5>
+                      <span>{lang === 'ar' ? 'قيد اليومية التلقائي وإقفال الحساب' : 'Automated journal entry & bank feed sync'}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Tab 4: ETA E-Invoicing */}
+              {activeTab === 'eta' && (
+                <div>
+                  <div className="dash-kpis-grid">
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'حالة الربط مع مصلحة الضرائب ETA' : 'ETA Server API Status'}</span>
+                      <span className="kpi-value" style={{ color: '#34d399' }}>CONNECTED</span>
+                      <span className="kpi-badge-gain"><CheckCircle2 size={14} /> {lang === 'ar' ? 'شهادة التوقيع الإلكتروني سارية' : 'e-Token Signature Valid'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'الفواتير المرسلة والمقبولة (الشهر)' : 'Accepted Tax Invoices (MTD)'}</span>
+                      <span className="kpi-value">1,480</span>
+                      <span className="kpi-badge-gain"><CheckCircle2 size={14} /> 100% {lang === 'ar' ? 'قبول بدون أي رفض' : 'Zero Rejection'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'الإيصالات الإلكترونية B2C' : 'Consumer Receipts (B2C)'}</span>
+                      <span className="kpi-value">6,240</span>
+                      <span className="kpi-badge-gain"><CheckCircle2 size={14} /> {lang === 'ar' ? 'كود استجابة سريعة QR فوري' : 'Instant QR Validated'}</span>
+                    </div>
+                    <div className="dash-kpi-card">
+                      <span className="kpi-title">{lang === 'ar' ? 'زمن التزامن اللحظي' : 'Average Sync Latency'}</span>
+                      <span className="kpi-value" style={{ color: '#38bdf8' }}>0.4s</span>
+                      <span className="kpi-badge-neutral"><Zap size={14} /> {lang === 'ar' ? 'فائق السرعة والموثوقية' : 'High Speed Queue'}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Visual Feature Breakdown with Images */}
+      {/* Section A: Odoo Ecosystem Image */}
+      <section className="visual-split-section">
+        <div className="container visual-split-grid">
+          <div className="split-img-card">
+            <img 
+              src="/assets/odoo-image.png" 
+              alt="Odoo Unified ERP Cloud Ecosystem" 
+            />
+          </div>
+          <div className="split-content">
+            <div className="badge"><Layers size={14} /> {lang === 'ar' ? 'منظومة Odoo السحابية المتكاملة' : 'Unified Cloud Architecture'}</div>
+            <h3>
+              {lang === 'ar' 
+                ? 'اربط جميع إدارات وفروع شركتك في قاعدة بيانات مركزية واحدة' 
+                : 'Unify All Departments & Branches on One Powerful Database'}
+            </h3>
+            <p>
+              {lang === 'ar'
+                ? 'تخلص من تشتت البرامج والملفات المنفصلة. يوفر Odoo تكاملاً شاملاً يربط المحاسبة بالمخازن، المشتريات بالمبيعات، والمصانع بنقاط البيع مع إمكانية الوصول من أي جهاز بأعلى معايير التشفير والأمان.'
+                : 'Eliminate disconnected spreadsheets and siloed software. Odoo connects accounting to inventory, purchasing to sales, and manufacturing to POS in real time with enterprise-grade encryption and automated daily backups.'}
+            </p>
+            <ul className="split-feature-checklist">
+              <li><CheckCircle2 size={18} color="#1388fd" /> {lang === 'ar' ? 'إمكانية الوصول الآمن من المتصفح وتطبيقات الهواتف الذكية' : 'Cross-platform access on Web, iOS, and Android devices'}</li>
+              <li><CheckCircle2 size={18} color="#1388fd" /> {lang === 'ar' ? 'إدارة صلاحيات متقدمة وتحديد أدوار كل محاسب وموظف' : 'Granular role-based user access and audit log trails'}</li>
+              <li><CheckCircle2 size={18} color="#1388fd" /> {lang === 'ar' ? 'نسخ احتياطي سحابي تلقائي لضمان عدم فقدان أي بيانات' : 'Automated daily encrypted off-site cloud snapshots'}</li>
+            </ul>
+            <Link to="/contact" className="btn btn-primary">
+              {lang === 'ar' ? 'استشر مهندس Odoo الآن' : 'Speak with an ERP Engineer'} <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section B: Financial Charts & Stock Graph */}
+      <section className="visual-split-section bg-surface">
+        <div className="container visual-split-grid reverse">
+          <div className="split-img-card">
+            <img 
+              src="/assets/stock-graph.png" 
+              alt="Financial Analytics & KPI Reports in Odoo" 
+            />
+          </div>
+          <div className="split-content">
+            <div className="badge"><BarChart3 size={14} /> {lang === 'ar' ? 'تقارير مالية وتحليلات استثمارية' : 'Executive Business Intelligence'}</div>
+            <h3>
+              {lang === 'ar' 
+                ? 'تقارير مالية تفصيلية ومؤشرات أداء KPI لاتخاذ القرارات الاستثمارية' 
+                : 'Granular Financial Insights & KPI Dashboards for Confident Decisions'}
+            </h3>
+            <p>
+              {lang === 'ar'
+                ? 'احصل على رؤية شاملة لموقف السيولة، أرباح وخسائر كل فرع، وتكاليف مراكز التشغيل بضغطة زر واحدة، مع إمكانية تصدير كافة الجداول والتقارير إلى ملفات Excel و PDF المعتمدة.'
+                : 'Gain immediate visibility into cash liquidity, branch profitability, and cost center allocations with one click. Export audit-ready financial statements directly to formatted Excel and PDF files.'}
+            </p>
+            <ul className="split-feature-checklist">
+              <li><CheckCircle2 size={18} color="#1388fd" /> {lang === 'ar' ? 'ميزان مراجعة وقائمة مركز مالي لحظية بنقرة زر' : 'Instant trial balance and balance sheet generation'}</li>
+              <li><CheckCircle2 size={18} color="#1388fd" /> {lang === 'ar' ? 'تحليل ربحية كل منتج وفرع ومركز تكلفة بدقة' : 'Profitability drilldown per product, branch, and cost center'}</li>
+              <li><CheckCircle2 size={18} color="#1388fd" /> {lang === 'ar' ? 'تنبيهات ذكية بالفواتير المستحقة والديون المتأخرة' : 'Automated payment due dates & customer aging reminders'}</li>
+            </ul>
+            <a href="#plans" className="btn btn-secondary">
+              {lang === 'ar' ? 'عرض تفاصيل باقات الأسعار' : 'View Transparent Pricing'}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Core Odoo ERP Modules Grid */}
+      <section className="section">
         <div className="container">
           <div className="badge-center">
             <Sparkles size={14} /> {lang === 'ar' ? 'موديولات أودو المتكاملة' : 'Comprehensive Odoo ERP Suite'}
@@ -334,8 +752,8 @@ export default function AccountingPage() {
         </div>
       </section>
 
-      {/* 4. Why Choose POM Implementation */}
-      <section className="section">
+      {/* 6. Why Choose POM Implementation */}
+      <section className="section bg-surface">
         <div className="container">
           <div className="badge-center">
             <Building2 size={14} /> {lang === 'ar' ? 'لماذا تختار POM Agency؟' : 'Why Implement with POM?'}
@@ -363,8 +781,8 @@ export default function AccountingPage() {
         </div>
       </section>
 
-      {/* 5. Pricing Plans */}
-      <section className="section bg-surface" id="plans">
+      {/* 7. Pricing Plans */}
+      <section className="section" id="plans">
         <div className="container">
           <div className="badge-center">
             <Calculator size={14} /> {lang === 'ar' ? 'باقات وتكاليف Odoo' : 'Transparent ERP Packages'}
@@ -418,8 +836,8 @@ export default function AccountingPage() {
         </div>
       </section>
 
-      {/* 6. Implementation 4-Step Methodology */}
-      <section className="section">
+      {/* 8. Implementation 4-Step Methodology */}
+      <section className="section bg-surface">
         <div className="container">
           <div className="badge-center">
             <Layers size={14} /> {lang === 'ar' ? 'منهجية العمل والتشغيل' : 'Implementation Roadmap'}
@@ -445,7 +863,7 @@ export default function AccountingPage() {
         </div>
       </section>
 
-      {/* 7. Bottom CTA Banner */}
+      {/* 9. Bottom CTA Banner */}
       <section className="section text-center" style={{ paddingTop: '1rem' }}>
         <div className="container">
           <div className="acc-cta-card">

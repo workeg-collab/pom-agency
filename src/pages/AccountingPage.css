@@ -177,6 +177,437 @@
   margin-top: 0.35rem;
 }
 
+/* -------------------------------------------------------------
+   Interactive Odoo Dashboard & Charts Showcase Section
+------------------------------------------------------------- */
+.dashboard-showcase-section {
+  background: #ffffff;
+  padding: 5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dashboard-tab-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.dash-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dash-tab-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.dash-tab-btn.active {
+  background: #1388fd;
+  color: #ffffff;
+  border-color: #1388fd;
+  box-shadow: 0 4px 15px rgba(19, 136, 253, 0.25);
+}
+
+/* Dashboard Mockup Window */
+.dashboard-window {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+  color: #ffffff;
+}
+
+.window-header-bar {
+  background: #1e293b;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.window-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.window-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.window-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  font-weight: 700;
+}
+
+.window-body {
+  padding: 2rem;
+  background: #0f172a;
+}
+
+/* KPI Summary Cards in Dashboard */
+.dash-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.dash-kpi-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.kpi-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-heading);
+}
+
+.kpi-badge-gain {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.kpi-badge-neutral {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* Visual Bar Charts inside Dashboard */
+.dash-charts-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+}
+
+.dash-main-chart-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.dash-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.dash-chart-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-blue { background: #1388fd; }
+.dot-green { background: #10b981; }
+.dot-purple { background: #8b5cf6; }
+
+/* Custom CSS Bar Graph Visualization */
+.bar-graph-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 180px;
+  padding: 0.5rem 0;
+  gap: 0.75rem;
+  border-bottom: 1px solid #334155;
+}
+
+.bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar-dual {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+
+.bar-stick {
+  width: 12px;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s ease;
+}
+
+.stick-rev {
+  background: #1388fd;
+}
+
+.stick-exp {
+  background: #8b5cf6;
+}
+
+.stick-stock {
+  background: #10b981;
+}
+
+.bar-month-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Secondary Panel in Dashboard */
+.dash-side-panel {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dash-side-panel h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+}
+
+.progress-metric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.progress-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metric-row-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.metric-bar-bg {
+  width: 100%;
+  height: 7px;
+  background: #334155;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.metric-bar-fill {
+  height: 100%;
+  border-radius: 50px;
+}
+
+/* Interactive Pipeline Visualization in Tab 3 */
+.pipeline-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pipeline-step-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.pipeline-step-box.active-step {
+  border-color: #1388fd;
+  background: rgba(19, 136, 253, 0.1);
+}
+
+.pipeline-icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+.pipeline-step-box h5 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.pipeline-step-box span {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Split Visual Showcase Sections with Images */
+.visual-split-section {
+  padding: 4.5rem 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.visual-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.visual-split-grid.reverse {
+  direction: rtl;
+}
+
+.visual-split-grid.reverse > * {
+  direction: ltr;
+}
+
+.split-img-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.split-img-card img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.split-content h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.split-content p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.split-feature-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.split-feature-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
 /* Odoo Modules Grid */
 .odoo-modules-grid {
   display: grid;
@@ -505,6 +936,18 @@
   .workflow-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .dash-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dash-charts-row {
+    grid-template-columns: 1fr;
+  }
+  .visual-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .pipeline-flow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
@@ -541,5 +984,11 @@
   }
   .acc-float-card {
     display: none;
+  }
+  .pipeline-flow-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-kpis-grid {
+    grid-template-columns: 1fr;
   }
 }
