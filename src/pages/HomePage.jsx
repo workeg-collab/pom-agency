@@ -15,46 +15,41 @@ import {
   ArrowRight,
   Sparkles,
   Zap,
-  Award
+  Award,
+  Activity,
+  Layers,
+  Globe,
+  Building2,
+  Lock,
+  Sliders,
+  Database,
+  Smartphone,
+  Video,
+  ShoppingBag
 } from 'lucide-react';
 import './HomePage.css';
 
 export default function HomePage() {
   const { addToCart } = useCart();
   const { t, lang } = useLanguage();
+  const [activeTab, setActiveTab] = useState('cloud');
 
   const phrases = lang === 'ar' ? [
-    'أنظمة البرمجيات',
-    'أنظمة الأجهزة',
-    'التحكم الذكي',
-    'بريد الشركات',
-    'الأنظمة المحاسبية',
-    'تصميم المواقع',
-    'التسويق الرقمي'
-  ] : lang === 'fr' ? [
-    'Solutions Logicielles',
-    'Systèmes Matériels',
-    'Contrôle Intelligent',
-    'E-mail Professionnel',
-    'Systèmes Comptables',
-    'Sites Web',
-    'Marketing Digital'
-  ] : lang === 'hi' ? [
-    'सॉफ्टवेयर समाधान',
-    'हार्डवेयर सिस्टम',
-    'स्मार्ट कंट्रोल',
-    'प्रोफेशनल ईमेल',
-    'अकाउंटिंग सिस्टम',
-    'वेबसाइट डिजाइनिंग',
-    'डिजिटल मार्केटिंग'
+    'الأنظمة المحاسبية (Odoo ERP)',
+    'الشبكات والسيرفرات المؤسسية',
+    'التحكم الذكي والتيار الخفيف',
+    'التسويق الرقمي ونمو المبيعات',
+    'تصميم وتطوير المواقع الحديثة',
+    'خدمات تكنولوجيا المعلومات 24/7',
+    'البريد الإلكتروني المهني السحابي'
   ] : [
-    'Software Solutions',
-    'Hardware Systems',
-    'Smart Control',
-    'Professional Email',
-    'Accounting Systems',
-    'Websites & Web Design',
-    'Social Media Marketing'
+    'Integrated Accounting (Odoo ERP)',
+    'Enterprise Networks & Servers',
+    'Smart Control & Low-Current BMS',
+    'Data-Driven Digital Marketing',
+    'Modern Web & UI/UX Development',
+    '24/7 Managed IT & Helpdesk',
+    'Enterprise Cloud Mailboxes'
   ];
 
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -68,14 +63,14 @@ export default function HomePage() {
     const handleTyping = () => {
       if (!isDeleting) {
         setCurrentText(fullText.substring(0, currentText.length + 1));
-        setTypingSpeed(90);
+        setTypingSpeed(80);
 
         if (currentText === fullText) {
-          setTimeout(() => setIsDeleting(true), 1800);
+          setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
         setCurrentText(fullText.substring(0, currentText.length - 1));
-        setTypingSpeed(45);
+        setTypingSpeed(40);
 
         if (currentText === '') {
           setIsDeleting(false);
@@ -88,245 +83,240 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
 
-  const pricingPlans = [
+  // The 7 Core Activities
+  const coreActivities = [
     {
-      id: 'individual-mail',
-      titleKey: 'planIndividual',
-      subtitleKey: 'planIndividualSub',
-      price: 99.99,
-      image: '/assets/iiii.png',
-      featureKeys: [
-        'feat1Mailbox',
-        'feat5GB',
-        'featCloudInfra',
-        'featAntivirus'
-      ],
-      recommended: false
+      id: 'accounting',
+      title: lang === 'ar' ? 'الأنظمة المحاسبية وإدارة المؤسسات (Odoo ERP)' : 'Odoo ERP & Integrated Accounting',
+      desc: lang === 'ar' 
+        ? 'ربط الفاتورة الإلكترونية ETA، نقاط البيع السريعة POS، وإدارة المخازن والشجرة المحاسبية بدقة متناهية.'
+        : 'Official ETA e-invoicing compliance, POS cashier sync, multi-warehouse automation, and financial audit reports.',
+      image: '/assets/accounting-dashboard.jpg',
+      link: '/accounting',
+      tag: lang === 'ar' ? 'معتمد من الضرائب' : 'Tax Compliant',
+      features: lang === 'ar' 
+        ? ['الفاتورة والإيصال الإلكتروني ETA', 'نقاط البيع والمطاعم والتجزئة POS', 'إدارة المخازن والجرد الفوري', 'الرواتب وشؤون الموظفين HR']
+        : ['ETA Electronic Invoicing', 'Retail & F&B POS Systems', 'Automated Inventory & Warehouses', 'Payroll & HR Administration']
     },
     {
-      id: 'business-mail',
-      titleKey: 'planBusiness',
-      subtitleKey: 'planBusinessSub',
-      price: 499.99,
-      image: '/assets/bbbb.png',
-      featureKeys: [
-        'feat3Mailboxes',
-        'feat30GB',
-        'featCloudInfra',
-        'featAntivirus',
-        'featFullMobileSync'
-      ],
-      recommended: true
+      id: 'network-servers',
+      title: lang === 'ar' ? 'حلول الشبكات والسيرفرات المؤسسية' : 'Enterprise Networks & Datacenter Servers',
+      desc: lang === 'ar'
+        ? 'تصميم غرف الخوادم، بيئات VMware السحابية، شبكات الفايبر، وحماية الجدران النارية Fortinet و Cisco.'
+        : 'Datacenter server racks, VMware/Proxmox clustering, fiber cabling, and Fortinet enterprise firewalls.',
+      image: '/assets/net-server-rack.jpg',
+      link: '/network-servers',
+      tag: lang === 'ar' ? 'ضمان تشغيل 99.99%' : '99.99% Uptime',
+      features: lang === 'ar'
+        ? ['خوادم Dell & HPE عالية التوافر', 'شبكات الفايبر وسويتشات 10Gbps', 'جدران الحماية والأمان السيبراني', 'ربط الفروع VPN & SD-WAN']
+        : ['High-Availability Dell/HPE Servers', '10Gbps Fiber Core Switching', 'Next-Gen Firewall Cybersecurity', 'Multi-Branch Encrypted VPN']
     },
     {
-      id: 'professional-mail',
-      titleKey: 'planProfessional',
-      subtitleKey: 'planProfessionalSub',
-      price: 999.99,
-      image: '/assets/pppp.png',
-      featureKeys: [
-        'feat5Mailboxes',
-        'feat75GB',
-        'featCloudInfra',
-        'featAntivirus',
-        'featFullMobileSync',
-        'featFreeDomain'
-      ],
-      recommended: false
+      id: 'smart-control',
+      title: lang === 'ar' ? 'التحكم الذكي وأنظمة التيار الخفيف (BMS)' : 'Smart Automation & Low-Current Systems',
+      desc: lang === 'ar'
+        ? 'إدارة المباني الذكية، كاميرات المراقبة بالذكاء الاصطناعي، إنذار الحريق Hochiki، والتحكم بالفيلات والقصور.'
+        : 'Smart building BMS automation, AI CCTV video analytics, addressable fire alarm loops, and luxury KNX smart homes.',
+      image: '/assets/smart-home-villa.jpg',
+      link: '/smart-control',
+      tag: lang === 'ar' ? 'توفير 35% طاقة' : '-35% Energy Saved',
+      features: lang === 'ar'
+        ? ['كاميرات المراقبة بالذكاء الاصطناعي', 'أنظمة إنذار الحريق المعتمدة', 'أنظمة إدارة المباني والأبراج BMS', 'بوابات الدخول ومواقف السيارات']
+        : ['4K AI Face & ANPR Cameras', 'Hochiki Fire Alarm Safety', 'Central Building BMS Telemetry', 'Biometric Speed Gates & Parking']
+    },
+    {
+      id: 'digital-marketing',
+      title: lang === 'ar' ? 'التسويق الرقمي ومضاعفة المبيعات (ROAS)' : 'Performance Digital Marketing & Ads',
+      desc: lang === 'ar'
+        ? 'إعلانات ممولة فائقة التحويل على ميتا وجوجل وتيك توك، صناعة محتوى إبداعي وتصدر محركات البحث SEO.'
+        : 'Data-driven Meta, Google, and TikTok ad funnels delivering 4.8x average ROAS with creative video production.',
+      image: '/assets/mkt-growth-dashboard.jpg',
+      link: '/digital-marketing',
+      tag: lang === 'ar' ? 'عائد إعلاني 4.8x' : '4.8x ROAS',
+      features: lang === 'ar'
+        ? ['إعلانات ميتا وجوجل وتيك توك', 'تصوير سينمائي ومونتاج Reels', 'تصدر نتائج بحث جوجل (SEO)', 'إعلانات ومسارات المتاجر الإلكترونية']
+        : ['Meta, Google & TikTok PPC Ads', 'Creative Studio Video & Reels', 'Google Top #1 Keyword SEO', 'E-Commerce Sales Funnels']
+    },
+    {
+      id: 'web-design',
+      title: lang === 'ar' ? 'تصميم وتطوير المواقع وتطبيقات الويب' : 'Modern Web Development & UI/UX Design',
+      desc: lang === 'ar'
+        ? 'مواقع ومتاجر إلكترونية فائقة السرعة والأناقة مبنية بأحدث تقنيات React 19 مع تجاوب كامل وسرعة 100/100.'
+        : 'Ultra-fast React 19 & Next.js web applications, luxury e-commerce stores, and Lighthouse 100/100 performance.',
+      image: '/assets/web-hero-multidevice.jpg',
+      link: '/web-design',
+      tag: lang === 'ar' ? 'سرعة < 1.2 ثانية' : '< 1.2s Load Time',
+      features: lang === 'ar'
+        ? ['واجهات UI/UX مخصصة ومتجاوبة', 'متاجر إلكترونية مع بوابات الدفع', 'تطبيقات ويب ولوحات تحكم SaaS', 'تهيئة سيو كاملة وسرعة فائقة']
+        : ['Custom Responsive UI/UX Design', 'Full-Suite E-Commerce Storefronts', 'Custom SaaS Analytics Portals', 'Built-in Technical SEO & Speed']
+    },
+    {
+      id: 'it-services',
+      title: lang === 'ar' ? 'خدمات تكنولوجيا المعلومات والدعم الفني المدار' : '24/7 Managed IT Support & Cloud',
+      desc: lang === 'ar'
+        ? 'دعم فني فوري لأجهزة الموظفين، إدارة بيئات Microsoft 365، وحماية متقدمة لنقط النهاية EDR ضد الفيروسات.'
+        : 'Instant helpdesk SLA under 15 mins, Microsoft 365 cloud administration, and enterprise EDR cybersecurity.',
+      image: '/assets/it-helpdesk-center.jpg',
+      link: '/it',
+      tag: lang === 'ar' ? 'استجابة < 15 دقيقة' : '< 15m Response',
+      features: lang === 'ar'
+        ? ['دعم فني مدار للموظفين 24/7', 'إدارة سحابة Microsoft 365', 'حماية EDR ضد برمجيات الفدية', 'نسخ احتياطي سحابي معزول يومياً']
+        : ['24/7 Managed Remote Helpdesk', 'Microsoft 365 & Azure Cloud', 'Next-Gen EDR Anti-Ransomware', 'Automated Disaster Recovery (DRaaS)']
+    },
+    {
+      id: 'mail-professional',
+      title: lang === 'ar' ? 'البريد الإلكتروني المهني السحابي للشركات' : 'Enterprise Cloud Email & Collaboration',
+      desc: lang === 'ar'
+        ? 'بريد رسمي باسم شركتك name@company.com، وصول مضمون لصندوق الوارد 100%، ومزامنة فورية مع Outlook.'
+        : 'Custom domain business email with strict DMARC/SPF deliverability, AI anti-spam, and Outlook ActiveSync.',
+      image: '/assets/web-corporate-portal.jpg',
+      link: '/mail-professional',
+      tag: lang === 'ar' ? '100% تسليم إنبوكس' : '100% Inbox Placement',
+      features: lang === 'ar'
+        ? ['عناوين بريد باسم نطاق شركتك', 'توثيق أمني DMARC و SPF و DKIM', 'مزامنة Outlook والآيفون والأندرويد', 'هجرة مجانية بدون انقطاع']
+        : ['Branded Custom Domain Email', 'Hardened DMARC/DKIM Security', 'Real-Time Outlook & Phone Sync', 'Zero-Downtime Mail Migration']
     }
   ];
 
   return (
     <div className="home-page">
-      {/* Top Hero Section */}
-      <section className="hero-section">
-        <div className="container hero-container">
-          <div className="hero-content">
-            <div className="badge">
-              <Sparkles size={14} /> {t('digitalPlatform')}
+      {/* 1. Grand Master Portal Hero Section */}
+      <section className="home-hero-section">
+        <div className="container">
+          <div className="home-hero-content">
+            <div className="home-platform-pills">
+              <span style={{ color: '#10b981', fontWeight: 800 }}>POM Agency</span> &bull; 
+              <span>ERP & Odoo</span> &bull; 
+              <span>Servers & Networks</span> &bull; 
+              <span>Smart Control BMS</span> &bull; 
+              <span>Digital Marketing</span> &bull; 
+              <span>Web Apps</span> &bull; 
+              <span>Managed IT 24/7</span>
             </div>
-            <h1 className="hero-title">
-              {t('heroHeading')}{' '}
-              <span className="animated-typography-text">
+
+            <h1 className="home-hero-title">
+              {lang === 'ar' ? 'شريكك الهندسي والتقني المتكامل لـ' : 'Your Complete Tech & Engineering Partner for'}{' '}
+              <br />
+              <span className="animated-dynamic-word">
                 {currentText}
                 <span className="animated-cursor">|</span>
               </span>
             </h1>
-            <p className="hero-description">
-              {t('heroDesc')}
+            
+            <p className="home-hero-subtitle">
+              {lang === 'ar'
+                ? 'وكالة رائدة تجمع بين هندسة البنية التحتية لتكنولوجيا المعلومات، الأنظمة المحاسبية المتطورة، حلول التحكم الذكي، والتسويق الرقمي عالي العائد لبناء وتوسيع أعمالك بأعلى المعايير العالمية.'
+                : 'A premier multidisciplinary technology powerhouse delivering enterprise IT infrastructure, certified Odoo ERP accounting, building automation, and high-ROI digital marketing to scale your enterprise seamlessly.'}
             </p>
-            <div className="hero-actions">
-              <Link to="/mail-professional" className="btn btn-primary">
-                {t('getStarted')} <ArrowRight size={18} />
+
+            <div className="home-hero-actions">
+              <Link to="/contact" className="btn btn-primary" style={{ padding: '0.9rem 2rem' }}>
+                {lang === 'ar' ? 'طلب استشارة هندسية وتقنية مجانية' : 'Book Free Tech Consultation'} <ArrowRight size={18} />
               </Link>
-              <Link to="/about" className="btn btn-secondary">
-                {t('webDesignAndServices')}
-              </Link>
-            </div>
-            <div className="hero-stats">
-              <div className="stat-item">
-                <span className="stat-num">99.9%</span>
-                <span className="stat-label">{t('uptimeGuarantee')}</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">24/7</span>
-                <span className="stat-label">{t('techSupport')}</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">500+</span>
-                <span className="stat-label">{t('globalClients')}</span>
-              </div>
+              <a href="#services" className="btn btn-secondary" style={{ padding: '0.9rem 2rem' }}>
+                {lang === 'ar' ? 'استكشف كافة خدمات الشركة' : 'Explore All Services'}
+              </a>
             </div>
           </div>
-          <div className="hero-visual">
-            <div className="hero-image-transparent">
+
+          {/* Master Hero Visual Showcase Frame */}
+          <div className="home-hero-centerpiece">
+            <div className="home-centerpiece-wrapper">
               <img 
-                src="/assets/Home-3.png" 
-                alt="POM Digital Platform Main Hero" 
-                className="hero-official-img"
+                src="/assets/web-hero-multidevice.jpg" 
+                alt="POM Agency Integrated Technology Ecosystem" 
+                className="home-hero-img" 
               />
+              
+              <div className="home-float-widget home-float-widget-1">
+                <div className="home-widget-icon" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
+                  <Award size={22} />
+                </div>
+                <div className="home-widget-text">
+                  <strong>{lang === 'ar' ? '500+ مشروع تم تنفيذه' : '500+ Delivered Projects'}</strong>
+                  <span>{lang === 'ar' ? 'شريك معتمد لكبرى الشركات' : 'Certified Enterprise Partner'}</span>
+                </div>
+              </div>
+
+              <div className="home-float-widget home-float-widget-2">
+                <div className="home-widget-icon" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6' }}>
+                  <Shield size={22} />
+                </div>
+                <div className="home-widget-text">
+                  <strong>{lang === 'ar' ? 'ضمان تشغيل 99.99% SLA' : '99.99% Reliability SLA'}</strong>
+                  <span>{lang === 'ar' ? 'دعم فني مدار على مدار الساعة' : '24/7/365 Managed Support'}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Your All-in-One Tech Partner Section */}
-      <section className="section bg-surface">
+      {/* 2. Enterprise Trust & SLA Metrics Bar */}
+      <section className="home-stats-section">
         <div className="container">
-          <div className="badge-center"><Sparkles size={14} /> {t('featuresBadge')}</div>
-          <h2 className="section-title">{t('allInOneTitle')}</h2>
+          <div className="home-stats-grid">
+            <div className="home-stat-item">
+              <span className="home-stat-num">12+</span>
+              <span className="home-stat-label">{lang === 'ar' ? 'عاماً من الخبرة والتميز التقني' : 'Years of Tech Excellence'}</span>
+            </div>
+            <div className="home-stat-item">
+              <span className="home-stat-num">99.99%</span>
+              <span className="home-stat-label">{lang === 'ar' ? 'استقرار وجاهزية السيرفرات والشبكات' : 'Infrastructure Uptime SLA'}</span>
+            </div>
+            <div className="home-stat-item">
+              <span className="home-stat-num">500+</span>
+              <span className="home-stat-label">{lang === 'ar' ? 'مؤسسة وعميلاً معتمداً في مصر والخليج' : 'Enterprise Client Deployments'}</span>
+            </div>
+            <div className="home-stat-item">
+              <span className="home-stat-num">24/7</span>
+              <span className="home-stat-label">{lang === 'ar' ? 'دعم فني مدار واستجابة فورية' : 'Continuous Expert Support'}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. The 7 Core Business Pillars Showcase (Rich Cards with Images) */}
+      <section className="home-services-section" id="services">
+        <div className="container">
+          <div className="badge-center" style={{ color: '#10b981', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+            <Layers size={14} /> {lang === 'ar' ? 'منظومة خدماتنا المتكاملة' : 'Core Business Pillars'}
+          </div>
+          <h2 className="section-title">
+            {lang === 'ar' ? '7 قطاعات هندسية وتقنية تقود أعمالك نحو المستقبل' : '7 Comprehensive Pillars Powering Your Digital Evolution'}
+          </h2>
           <p className="section-subtitle">
-            {t('allInOneDesc')}
+            {lang === 'ar' 
+              ? 'نقدم حلولاً متكاملة من البداية وحتى النهاية: من البنية التحتية والشبكات وحتى البرمجيات المحاسبية والتسويق الرقمي.' 
+              : 'End-to-end expertise spanning low-current engineering, server clustering, ERP accounting, modern web, and revenue marketing.'}
           </p>
 
-          <div className="all-in-one-banner grid-2-col align-center">
-            <div className="all-in-one-text">
-              <h3 className="mb-3" style={{ fontSize: '1.75rem', color: '#343f5a' }}>{t('integratedDigitalEngineering')}</h3>
-              <p className="text-muted mb-4">
-                {t('integratedDesc')}
-              </p>
-              <div className="check-list">
-                <div><CheckCircle2 size={16} className="check-icon" /> {t('lowCurrentCert')}</div>
-                <div><CheckCircle2 size={16} className="check-icon" /> {t('cloudEmailCert')}</div>
-                <div><CheckCircle2 size={16} className="check-icon" /> {t('webErpCert')}</div>
-              </div>
-            </div>
-            <div className="all-in-one-graphic">
-              <img 
-                src="/assets/Illustration-2.png" 
-                alt="All in One Tech Partner Graphic" 
-                className="all-in-one-img"
-              />
-            </div>
-          </div>
-
-          <div className="grid-5-col mt-4">
-            <div className="tech-pill">
-              <Zap size={20} className="pill-icon" />
-              <h4>{t('smartScalableTech')}</h4>
-              <p>{t('smartScalableTechDesc')}</p>
-            </div>
-            <div className="tech-pill">
-              <Mail size={20} className="pill-icon" />
-              <h4>{t('secureEmail')}</h4>
-              <p>{t('secureEmailDesc')}</p>
-            </div>
-            <div className="tech-pill">
-              <Monitor size={20} className="pill-icon" />
-              <h4>{t('modernWebsites')}</h4>
-              <p>{t('modernWebsitesDesc')}</p>
-            </div>
-            <div className="tech-pill">
-              <Calculator size={20} className="pill-icon" />
-              <h4>{t('accountingSystems')}</h4>
-              <p>{t('accountingSystemsDesc')}</p>
-            </div>
-            <div className="tech-pill">
-              <TrendingUp size={20} className="pill-icon" />
-              <h4>{t('socialMedia')}</h4>
-              <p>{t('socialMediaDesc')}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Services Grid */}
-      <section className="section">
-        <div className="container">
-          <div className="grid-4-col">
-            <div className="card service-card">
-              <div className="service-icon"><Mail size={28} /></div>
-              <h3>{t('mailPro')}</h3>
-              <p>{t('proEmailCardDesc')}</p>
-              <Link to="/mail-professional" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
-            </div>
-
-            <div className="card service-card">
-              <div className="service-icon"><Share2 size={28} /></div>
-              <h3>{t('digitalMarketing')}</h3>
-              <p>{t('socialCardDesc')}</p>
-              <Link to="/digital-marketing" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
-            </div>
-
-            <div className="card service-card">
-              <div className="service-icon"><Calculator size={28} /></div>
-              <h3>{t('accounting')}</h3>
-              <p>{t('accCardDesc')}</p>
-              <Link to="/accounting" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
-            </div>
-
-            <div className="card service-card">
-              <div className="service-icon"><Server size={28} /></div>
-              <h3>{t('networkServers')}</h3>
-              <p>{t('networkCardDesc')}</p>
-              <Link to="/network-servers" className="card-link">{t('learnMore')} <ArrowRight size={14} /></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Plans */}
-      <section className="section">
-        <div className="container">
-          <div className="badge-center"><Zap size={14} /> {t('pricingPlans')}</div>
-          <h2 className="section-title">{t('pricingPlans')}</h2>
-          <p className="section-subtitle">
-            {t('pricingSub')}
-          </p>
-
-          <div className="grid-3-col pricing-grid">
-            {pricingPlans.map((plan) => (
-              <div key={plan.id} className={`card pricing-card ${plan.recommended ? 'recommended' : ''}`}>
-                {plan.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
-                <div className="plan-img-box mb-3">
-                  <img src={plan.image} alt={t(plan.titleKey)} className="plan-thumb" />
+          <div className="home-services-grid">
+            {coreActivities.map((act) => (
+              <div key={act.id} className="home-service-card">
+                <div className="home-service-img-wrapper">
+                  <img src={act.image} alt={act.title} className="home-service-img" />
+                  <div className="home-service-badge">
+                    <Sparkles size={12} color="#34d399" />
+                    <span>{act.tag}</span>
+                  </div>
                 </div>
-                <h3 className="plan-title">{t(plan.titleKey)}</h3>
-                <span className="plan-subtitle">{t(plan.subtitleKey)}</span>
-                <div className="plan-price">
-                  <span className="currency">{t('currency')}</span>
-                  <span className="amount">{plan.price}</span>
-                  <span className="period">{t('perMonth')}</span>
-                </div>
-                <ul className="plan-features">
-                  {plan.featureKeys.map((fKey, idx) => (
-                    <li key={idx}><CheckCircle2 size={16} className="check-icon" /> {t(fKey)}</li>
-                  ))}
-                </ul>
-                <div className="plan-actions">
-                  <button 
-                    onClick={() => addToCart({
-                      id: plan.id,
-                      title: `${t(plan.titleKey)} Mail Plan`,
-                      price: plan.price,
-                      image: plan.image
-                    })}
-                    className={`btn ${plan.recommended ? 'btn-primary' : 'btn-secondary'} full-width`}
-                  >
-                    {t('addToCart')}
-                  </button>
-                  <Link to={`/product/${plan.id}`} className="view-product-link">
-                    {t('viewDetails')}
+                <div className="home-service-body">
+                  <div>
+                    <h3>{act.title}</h3>
+                    <p>{act.desc}</p>
+                    <ul className="home-service-checklist">
+                      {act.features.map((feat, idx) => (
+                        <li key={idx}>
+                          <CheckCircle2 size={15} color="#10b981" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Link to={act.link} className="home-service-btn">
+                    <span>{lang === 'ar' ? 'تفاصيل الخدمة والباقات' : 'Explore Service & Plans'}</span>
+                    <ArrowRight size={15} />
                   </Link>
                 </div>
               </div>
@@ -335,55 +325,217 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="section bg-surface">
+      {/* 4. Interactive Central Operations Hub (4 Tabs) */}
+      <section className="home-console-section">
         <div className="container">
-          <div className="badge-center"><Cpu size={14} /> {t('whatWeDo')}</div>
-          <h2 className="section-title">{t('techSolutionsTitle')}</h2>
+          <div className="badge-center" style={{ color: '#10b981', borderColor: '#a7f3d0', background: '#ecfdf5' }}>
+            <Activity size={14} /> {lang === 'ar' ? 'مركز مراقبة العمليات المركزية' : 'Central Enterprise Command'}
+          </div>
+          <h2 className="section-title">
+            {lang === 'ar' ? 'منصة موحدة لمتابعة استقرار وتكامل كافة قطاعات شركتك' : 'Unified Telemetry Across Your Entire Digital Estate'}
+          </h2>
           <p className="section-subtitle">
-            {t('techSolutionsSub')}
+            {lang === 'ar' 
+              ? 'مؤشرات لحظية دقيقة تغطي السيرفرات السحابية، المعاملات المحاسبية، كفاءة الطاقة، وعائد الإعلانات.' 
+              : 'Real-time telemetry monitoring server load, ERP transactional throughput, building energy, and digital ad ROAS.'}
           </p>
 
-          <div className="grid-4-col">
-            <div className="card feature-box">
-              <Monitor size={32} className="box-icon" />
-              <h3>{t('webDesign')}</h3>
-              <p>{t('modernWebsitesDesc')}</p>
-              <Link to="/about" className="box-link">{t('learnMore')} →</Link>
+          {/* Tab Switcher */}
+          <div className="home-tab-buttons">
+            <button 
+              className={`home-tab-btn ${activeTab === 'cloud' ? 'active' : ''}`}
+              onClick={() => setActiveTab('cloud')}
+            >
+              <Server size={16} />
+              <span>{lang === 'ar' ? 'السحابة والشبكات (Infra)' : 'Cloud & Networks'}</span>
+            </button>
+            <button 
+              className={`home-tab-btn ${activeTab === 'erp' ? 'active' : ''}`}
+              onClick={() => setActiveTab('erp')}
+            >
+              <Calculator size={16} />
+              <span>{lang === 'ar' ? 'المحاسبة و Odoo ERP' : 'Accounting & ERP'}</span>
+            </button>
+            <button 
+              className={`home-tab-btn ${activeTab === 'smart' ? 'active' : ''}`}
+              onClick={() => setActiveTab('smart')}
+            >
+              <Building2 size={16} />
+              <span>{lang === 'ar' ? 'التحكم الذكي و BMS' : 'Smart Control & BMS'}</span>
+            </button>
+            <button 
+              className={`home-tab-btn ${activeTab === 'growth' ? 'active' : ''}`}
+              onClick={() => setActiveTab('growth')}
+            >
+              <TrendingUp size={16} />
+              <span>{lang === 'ar' ? 'التسويق ونمو المبيعات' : 'Marketing & Growth'}</span>
+            </button>
+          </div>
+
+          {/* Console Mockup Window */}
+          <div className="home-console-window">
+            <div className="home-window-header">
+              <div className="home-window-dots">
+                <div className="home-window-dot" style={{ background: '#ef4444' }} />
+                <div className="home-window-dot" style={{ background: '#f59e0b' }} />
+                <div className="home-window-dot" style={{ background: '#10b981' }} />
+              </div>
+              <div className="home-window-title">
+                <Activity size={15} />
+                <span>POM Global Ops &bull; {lang === 'ar' ? 'مركز مراقبة الأداء المتكامل' : 'Master Operations Telemetry'}</span>
+              </div>
+              <span className="home-window-badge">{lang === 'ar' ? 'المنظومة تعمل بكفاءة 100%' : 'All 7 Pillars Fully Operational'}</span>
             </div>
 
-            <div className="card feature-box">
-              <Shield size={32} className="box-icon" />
-              <h3>{t('smartControl')}</h3>
-              <p>{t('smartScalableTechDesc')}</p>
-              <Link to="/smart-control" className="box-link">{t('learnMore')} →</Link>
-            </div>
+            <div className="home-window-body">
+              {/* Tab 1: Cloud */}
+              {activeTab === 'cloud' && (
+                <div className="home-kpis-grid">
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'جاهزية السيرفرات السحابية' : 'Cloud Server Uptime'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>99.99% SLA</span>
+                    <span className="home-kpi-badge-gain"><CheckCircle2 size={14} /> High Availability</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'سرعة استجابة الدعم الفني' : 'Helpdesk Response SLA'}</span>
+                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>8.4 Mins</span>
+                    <span className="home-kpi-badge-gain"><Zap size={14} /> Guaranteed &lt; 15m</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'حالة جدران الحماية والأمان' : 'Cybersecurity EDR'}</span>
+                    <span className="home-kpi-value">ARMED (100%)</span>
+                    <span className="home-kpi-badge-neutral"><Shield size={14} /> Zero-Trust Fortinet</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'النسخ الاحتياطي المعزول' : 'Immutable Cloud Backups'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>DAILY (Verified)</span>
+                    <span className="home-kpi-badge-gain"><Database size={14} /> RPO 15m / RTO &lt; 30m</span>
+                  </div>
+                </div>
+              )}
 
-            <div className="card feature-box">
-              <Cpu size={32} className="box-icon" />
-              <h3>{t('it')}</h3>
-              <p>{t('techSupport')}</p>
-              <Link to="/it" className="box-link">{t('learnMore')} →</Link>
-            </div>
+              {/* Tab 2: ERP */}
+              {activeTab === 'erp' && (
+                <div className="home-kpis-grid">
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'ربط الفاتورة الإلكترونية ETA' : 'ETA e-Invoice Sync'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>CONNECTED</span>
+                    <span className="home-kpi-badge-gain"><CheckCircle2 size={14} /> 100% Tax Compliant</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'سرعة معاملات نقاط البيع POS' : 'POS Cashier Latency'}</span>
+                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>0.08s</span>
+                    <span className="home-kpi-badge-gain"><Zap size={14} /> Offline Mode Active</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'دقة الجرد ومطابقة المخازن' : 'Inventory Accuracy'}</span>
+                    <span className="home-kpi-value">99.98%</span>
+                    <span className="home-kpi-badge-neutral"><Sliders size={14} /> Barcode Multi-Warehouse</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'التقارير المالية والأرباح' : 'Financial Statement Sync'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>AUTOMATED</span>
+                    <span className="home-kpi-badge-gain"><Award size={14} /> Live Trial Balance</span>
+                  </div>
+                </div>
+              )}
 
-            <div className="card feature-box">
-              <TrendingUp size={32} className="box-icon" />
-              <h3>{t('digitalMarketing')}</h3>
-              <p>{t('socialMediaDesc')}</p>
-              <Link to="/digital-marketing" className="box-link">{t('learnMore')} →</Link>
+              {/* Tab 3: Smart */}
+              {activeTab === 'smart' && (
+                <div className="home-kpis-grid">
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'توفير استهلاك الطاقة الكهربائية' : 'Building Energy Reduction'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>-34.8%</span>
+                    <span className="home-kpi-badge-gain"><Zap size={14} /> Smart Chiller Logic</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'كاميرات المراقبة بالذكاء الاصطناعي' : 'AI CCTV Stream Streams'}</span>
+                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>64 4K Feeds</span>
+                    <span className="home-kpi-badge-gain"><Video size={14} /> ANPR + Face Recognition</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'حالة شبكة إنذار الحريق' : 'Fire Alarm Safety Loops'}</span>
+                    <span className="home-kpi-value">NORMAL (100%)</span>
+                    <span className="home-kpi-badge-neutral"><Shield size={14} /> Hochiki Addressable</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'استجابة بوابات الدخول Speed Gates' : 'Access Gate Throughput'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>0.2s Facial</span>
+                    <span className="home-kpi-badge-gain"><CheckCircle2 size={14} /> 45 Persons / Min</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Tab 4: Growth */}
+              {activeTab === 'growth' && (
+                <div className="home-kpis-grid">
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'متوسط العائد الإعلاني (ROAS)' : 'Omnichannel ROAS'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>4.8x ROAS</span>
+                    <span className="home-kpi-badge-gain"><TrendingUp size={14} /> Meta, Google & TikTok</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'تصدر بحث جوجل (Google SEO)' : 'Top #1 Google Keywords'}</span>
+                    <span className="home-kpi-value" style={{ color: '#38bdf8' }}>142 Keywords</span>
+                    <span className="home-kpi-badge-gain"><Award size={14} /> 785K Organic Visits</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'سرعة فتح مواقع الويب' : 'Web Speed (Lighthouse)'}</span>
+                    <span className="home-kpi-value">99 / 100</span>
+                    <span className="home-kpi-badge-neutral"><Zap size={14} /> React 19 & Next.js</span>
+                  </div>
+                  <div className="home-kpi-card">
+                    <span className="home-kpi-title">{lang === 'ar' ? 'تسليم البريد في صندوق الوارد' : 'Mail Deliverability (DMARC)'}</span>
+                    <span className="home-kpi-value" style={{ color: '#34d399' }}>100% INBOX</span>
+                    <span className="home-kpi-badge-gain"><Mail size={14} /> Zero Spam Placement</span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Worldwide Trust Banner */}
-      <section className="section trust-section text-center">
+      {/* 5. Certified Brand Partners & Global Vendors */}
+      <section className="home-partners-section">
         <div className="container">
-          <div className="badge-center"><Award size={14} /> {t('worldwideTrust')}</div>
-          <h2 className="section-title">{t('worldwideTrustTitle')}</h2>
-          <p className="section-subtitle">
-            {t('worldwideTrustSub')}
-          </p>
+          <div className="badge-center"><Award size={14} /> {lang === 'ar' ? 'التوكيلات والشراكات العالمية المعتمدة' : 'Certified Global Brand Partners'}</div>
+          <h3 className="section-title" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
+            {lang === 'ar' ? 'نعتمد على أفضل التقنيات والماركات العالمية لضمان أعلى جودة' : 'Built on Leading Global Hardware & Software Technologies'}
+          </h3>
+
+          <div className="home-partners-grid">
+            <img src="/assets/LOGO-Hikvision-300x179-1.png" alt="Hikvision Partner" className="home-partner-logo" />
+            <img src="/assets/EZVIZ_logo.png" alt="EZVIZ Partner" className="home-partner-logo" />
+            <img src="/assets/Hochiki-Global-Banner-Logo-2019-with-Strapline-black-_-red-web-1.png" alt="Hochiki Fire Safety Partner" className="home-partner-logo" />
+            <img src="/assets/png-clipart-bose-factory-store-bose-corporation-logo-home-automation-kits-others-cdr-text-1.png" alt="Bose Audio Partner" className="home-partner-logo" />
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Bottom Master CTA Banner */}
+      <section className="section text-center" style={{ paddingTop: '2rem' }}>
+        <div className="container">
+          <div className="home-cta-card">
+            <h2>
+              {lang === 'ar' 
+                ? 'هل أنت مستعد لنقل أعمالك ومنشأتك إلى أحدث المعايير التقنية؟' 
+                : 'Ready to Transform Your Enterprise with Next-Gen Technology?'}
+            </h2>
+            <p>
+              {lang === 'ar' 
+                ? 'تواصل مع فريق مهندسينا اليوم للحصول على استشارة متخصصة ودراسة شاملة لمتطلبات مشروعك.' 
+                : 'Schedule a comprehensive consultation with our senior systems, network, and software engineers.'}
+            </p>
+            <div className="home-cta-btns">
+              <Link to="/contact" className="btn btn-primary" style={{ padding: '0.95rem 2.2rem', background: '#10b981', borderColor: '#10b981' }}>
+                {lang === 'ar' ? 'طلب استشارة ومقترح هندسي' : 'Request Engineering Proposal'} <ArrowRight size={18} />
+              </Link>
+              <a href="https://wa.me/201093706027" target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ padding: '0.95rem 2.2rem', color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.1)' }}>
+                {lang === 'ar' ? 'محادثة مباشرة عبر واتساب' : 'Chat on WhatsApp'}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
