@@ -17,6 +17,8 @@ import ITPage from './pages/ITPage';
 import MailProfessionalPage from './pages/MailProfessionalPage';
 import CartPage from './pages/CartPage';
 import TermsPage from './pages/TermsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import RefundPolicyPage from './pages/RefundPolicyPage';
 
 export default function App() {
   return (
@@ -37,6 +39,11 @@ export default function App() {
                 <Route path="/mail-professional" element={<MailProfessionalPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/terms-and-conditions" element={<TermsPage />} />
+                <Route path="/terms" element={<TermsPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/refund-policy" element={<RefundPolicyPage />} />
+                <Route path="/refund" element={<RefundPolicyPage />} />
               </Routes>
             </main>
             <WhatsAppButton />

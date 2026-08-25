@@ -61,6 +61,8 @@ export default function Footer() {
             <li><Link to="/smart-control">{t('smartControl')}</Link></li>
             <li><Link to="/it">{t('it')}</Link></li>
             <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/refund-policy">Refund Policy</Link></li>
           </ul>
         </div>
 
@@ -89,7 +91,7 @@ export default function Footer() {
         <div className="container footer-bottom-container">
           <p>© {new Date().getFullYear()} POM Agency. {t('allRightsReserved')}</p>
           <div className="footer-bottom-links">
-            <Link to="/terms-and-conditions">Privacy Policy</Link> | <Link to="/terms-and-conditions">Terms of Service</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link> | <Link to="/refund-policy">Refund Policy</Link> | <Link to="/terms-and-conditions">Terms & Conditions</Link>
           </div>
         </div>
       </div>
