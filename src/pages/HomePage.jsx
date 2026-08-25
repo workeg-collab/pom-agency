@@ -318,7 +318,7 @@ export default function HomePage() {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          poster="/assets/web-hero-multidevice.jpg"
+          poster="/assets/pom-showreel-poster.jpg"
           onCanPlay={(e) => e.target.play().catch(() => {})}
           onLoadedData={(e) => e.target.play().catch(() => {})}
           onEnded={(e) => {
