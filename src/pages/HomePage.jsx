@@ -34,7 +34,57 @@ export default function HomePage() {
   const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('cloud');
 
-  // The 7 Core Activities (Real verified images and synchronized titles)
+  const phrases = lang === 'ar' ? [
+    'الأنظمة المحاسبية (Odoo ERP)',
+    'الشبكات والسيرفرات المؤسسية',
+    'التحكم الذكي والتيار الخفيف',
+    'التسويق الرقمي ونمو المبيعات',
+    'تصميم وتطوير المواقع الحديثة',
+    'خدمات تكنولوجيا المعلومات 24/7',
+    'البريد الإلكتروني المهني السحابي'
+  ] : [
+    'Integrated Accounting (Odoo ERP)',
+    'Enterprise Networks & Servers',
+    'Smart Control & Low-Current BMS',
+    'Data-Driven Digital Marketing',
+    'Modern Web & UI/UX Development',
+    '24/7 Managed IT & Helpdesk',
+    'Enterprise Cloud Mailboxes'
+  ];
+
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(90);
+
+  // Dynamic Typing Animation
+  useEffect(() => {
+    const fullText = phrases[phraseIndex] || phrases[0];
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        setTypingSpeed(80);
+
+        if (currentText === fullText) {
+          setTimeout(() => setIsDeleting(true), 2400);
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        setTypingSpeed(40);
+
+        if (currentText === '') {
+          setIsDeleting(false);
+          setPhraseIndex((prev) => (prev + 1) % phrases.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
+
+  // The 7 Core Activities (All verified image assets in public/assets)
   const coreActivities = [
     {
       id: 'accounting',
@@ -44,7 +94,6 @@ export default function HomePage() {
         : 'Official ETA e-invoicing compliance, POS cashier sync, multi-warehouse automation, and live financial reporting.',
       image: '/assets/accounting-dashboard.png',
       link: '/accounting',
-      shortTitle: lang === 'ar' ? 'الأنظمة المحاسبية (Odoo ERP)' : 'Accounting & ERP',
       tag: lang === 'ar' ? 'معتمد من الضرائب' : 'Tax Compliant',
       features: lang === 'ar' 
         ? ['الفاتورة والإيصال الإلكتروني ETA', 'نقاط البيع والمطاعم والتجزئة POS', 'إدارة المخازن والجرد الفوري', 'الرواتب وشؤون الموظفين HR']
@@ -58,7 +107,6 @@ export default function HomePage() {
         : 'Datacenter server racks, VMware/Proxmox clustering, fiber cabling, and Fortinet enterprise firewalls.',
       image: '/assets/net-server-rack.jpg',
       link: '/network-servers',
-      shortTitle: lang === 'ar' ? 'الشبكات والسيرفرات' : 'Networks & Servers',
       tag: lang === 'ar' ? 'ضمان تشغيل 99.99%' : '99.99% Uptime',
       features: lang === 'ar'
         ? ['خوادم Dell & HPE عالية التوافر', 'شبكات الفايبر وسويتشات 10Gbps', 'جدران الحماية والأمان السيبراني', 'ربط الفروع VPN & SD-WAN']
@@ -72,7 +120,6 @@ export default function HomePage() {
         : 'Smart building BMS automation, AI CCTV video analytics, addressable fire alarm loops, and luxury KNX smart homes.',
       image: '/assets/smart-home-villa.jpg',
       link: '/smart-control',
-      shortTitle: lang === 'ar' ? 'التحكم الذكي و BMS' : 'Smart Control & BMS',
       tag: lang === 'ar' ? 'توفير 35% طاقة' : '-35% Energy Saved',
       features: lang === 'ar'
         ? ['كاميرات المراقبة بالذكاء الاصطناعي', 'أنظمة إنذار الحريق المعتمدة', 'أنظمة إدارة المباني والأبراج BMS', 'بوابات الدخول ومواقف السيارات']
@@ -86,7 +133,6 @@ export default function HomePage() {
         : 'Data-driven Meta, Google, and TikTok ad funnels delivering 4.8x average ROAS with creative video production.',
       image: '/assets/mkt-growth-dashboard.jpg',
       link: '/digital-marketing',
-      shortTitle: lang === 'ar' ? 'التسويق ونمو المبيعات' : 'Digital Marketing',
       tag: lang === 'ar' ? 'عائد إعلاني 4.8x' : '4.8x ROAS',
       features: lang === 'ar'
         ? ['إعلانات ميتا وجوجل وتيك توك', 'تصوير سينمائي ومونتاج Reels', 'تصدر نتائج بحث جوجل (SEO)', 'إعلانات ومسارات المتاجر الإلكترونية']
@@ -100,7 +146,6 @@ export default function HomePage() {
         : 'Ultra-fast React 19 & Next.js web applications, luxury e-commerce stores, and Lighthouse 100/100 performance.',
       image: '/assets/web-ecommerce-ux.jpg',
       link: '/web-design',
-      shortTitle: lang === 'ar' ? 'تصميم وتطوير المواقع' : 'Web & Apps',
       tag: lang === 'ar' ? 'سرعة < 1.2 ثانية' : '< 1.2s Load Time',
       features: lang === 'ar'
         ? ['واجهات UI/UX مخصصة ومتجاوبة', 'متاجر إلكترونية مع بوابات الدفع', 'تطبيقات ويب ولوحات تحكم SaaS', 'تهيئة سيو كاملة وسرعة فائقة']
@@ -114,7 +159,6 @@ export default function HomePage() {
         : 'Instant helpdesk SLA under 15 mins, Microsoft 365 cloud administration, and enterprise EDR cybersecurity.',
       image: '/assets/it-helpdesk-center.jpg',
       link: '/it',
-      shortTitle: lang === 'ar' ? 'خدمات الـ IT والدعم 24/7' : 'Managed IT Support',
       tag: lang === 'ar' ? 'استجابة < 15 دقيقة' : '< 15m Response',
       features: lang === 'ar'
         ? ['دعم فني مدار للموظفين 24/7', 'إدارة سحابة Microsoft 365', 'حماية EDR ضد برمجيات الفدية', 'نسخ احتياطي سحابي معزول يومياً']
@@ -128,7 +172,6 @@ export default function HomePage() {
         : 'Custom domain business email with strict DMARC/SPF deliverability, AI anti-spam, and Outlook ActiveSync.',
       image: '/assets/web-corporate-portal.jpg',
       link: '/mail-professional',
-      shortTitle: lang === 'ar' ? 'البريد المهني السحابي' : 'Business Mail',
       tag: lang === 'ar' ? '100% تسليم إنبوكس' : '100% Inbox Placement',
       features: lang === 'ar'
         ? ['عناوين بريد باسم نطاق شركتك', 'توثيق أمني DMARC و SPF و DKIM', 'مزامنة Outlook والآيفون والأندرويد', 'هجرة مجانية بدون انقطاع']
@@ -136,59 +179,27 @@ export default function HomePage() {
     }
   ];
 
-  const [activeReelIndex, setActiveReelIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(90);
-
-  // Dynamic Typing Animation (Synchronized with Real Photo Reel)
-  useEffect(() => {
-    const fullText = coreActivities[activeReelIndex].shortTitle;
-
-    const handleTyping = () => {
-      if (!isDeleting) {
-        setCurrentText(fullText.substring(0, currentText.length + 1));
-        setTypingSpeed(80);
-
-        if (currentText === fullText) {
-          setTimeout(() => setIsDeleting(true), 2800);
-        }
-      } else {
-        setCurrentText(fullText.substring(0, currentText.length - 1));
-        setTypingSpeed(35);
-
-        if (currentText === '') {
-          setIsDeleting(false);
-          setActiveReelIndex((prev) => (prev + 1) % coreActivities.length);
-        }
-      }
-    };
-
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, activeReelIndex, typingSpeed, coreActivities]);
-
   return (
     <div className="home-page">
-      {/* 1. Cinematic Real-Works Photo-Reel Hero (Realistic Dynamic Visual Transitions & No Box) */}
-      <section className="cinematic-reel-hero-section">
-        {/* Background Stack of Real Photos (Smooth Cross-fade & Ken Burns Motion) */}
-        <div className="hero-reel-background">
-          {coreActivities.map((act, idx) => (
-            <img 
-              key={act.id}
-              src={act.image} 
-              alt={act.title}
-              className={`hero-reel-slide ${idx === activeReelIndex ? 'active' : ''}`}
-            />
-          ))}
-        </div>
+      {/* 1. Real Live-Action Video Hero (Continuous Live Action Playback & No Box) */}
+      <section className="live-video-hero-section">
+        {/* Continuous Real Live Video */}
+        <video 
+          className="hero-live-video"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          poster="/assets/web-hero-multidevice.jpg"
+        >
+          <source src="/assets/live-tech-hero.mp4" type="video/mp4" />
+        </video>
 
-        {/* Translucent Light Cinematic Overlay & Subtle Grid */}
-        <div className="hero-reel-overlay" />
+        {/* Translucent Light Cinematic Overlay & Grid */}
+        <div className="hero-video-overlay" />
         <div className="hero-subtle-grid" />
 
-        {/* Content Directly Over Reel (NO BOX) */}
+        {/* Content Directly Over Live Video (NO BOX) */}
         <div className="container hero-direct-content">
           <div className="hero-pill-badge">
             <span className="pill-dot" />
@@ -218,23 +229,6 @@ export default function HomePage() {
             <a href="#services" className="btn-hero-secondary">
               <span>{lang === 'ar' ? 'استكشف كافة الخدمات الـ 7' : 'Explore All 7 Services'}</span>
             </a>
-          </div>
-
-          {/* Interactive Activity Navigation Pills (Click to view any real photo directly) */}
-          <div className="hero-activity-pills">
-            {coreActivities.map((act, idx) => (
-              <button 
-                key={act.id}
-                className={`activity-nav-pill ${idx === activeReelIndex ? 'active' : ''}`}
-                onClick={() => {
-                  setActiveReelIndex(idx);
-                  setCurrentText(act.shortTitle);
-                  setIsDeleting(false);
-                }}
-              >
-                {act.shortTitle}
-              </button>
-            ))}
           </div>
 
           {/* Direct Trust Highlights Row */}
