@@ -68,6 +68,18 @@ img {
   display: block;
 }
 
+/* Main Content Area (Scaled between Navbar and Footer across all pages) */
+.main-content {
+  zoom: 0.90;
+  min-height: calc(100vh - 75px - 350px);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    zoom: 1;
+  }
+}
+
 /* Common Layout Components */
 .container {
   max-width: 1240px;
