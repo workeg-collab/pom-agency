@@ -5,7 +5,7 @@
 }
 
 /* -------------------------------------------------------------
-   Real Live-Action Showreel Video Hero (6-Clip Composite)
+   Real Live-Action Showreel Video Hero (Crystal Clear & Punchy)
 ------------------------------------------------------------- */
 .live-video-hero-section {
   position: relative;
@@ -14,13 +14,13 @@
   align-items: center;
   justify-content: center;
   padding: 6.5rem 1.5rem 5.5rem 1.5rem;
-  background: #ffffff;
+  background: #0f172a;
   overflow: hidden;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
 }
 
-/* Master Showreel Video Background */
+/* Master Showreel Video Background - 100% Crisp & High Contrast */
 .hero-live-video {
   position: absolute;
   top: 0;
@@ -29,19 +29,24 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.86;
-  filter: brightness(1.03) contrast(1.05);
+  opacity: 0.95;
+  filter: brightness(0.92) contrast(1.12) saturate(1.15);
   pointer-events: none;
 }
 
-/* Translucent Light Cinematic Overlay */
+/* Light Translucent Contrast Overlay - Keeps Video Vibrant and Clear */
 .hero-video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 244, 0.60) 50%, rgba(255, 255, 255, 0.75) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.55) 60%,
+    rgba(240, 253, 244, 0.75) 100%
+  );
   z-index: 2;
   pointer-events: none;
 }
@@ -53,9 +58,9 @@
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 45px 45px;
   z-index: 3;
   pointer-events: none;
 }
@@ -72,24 +77,24 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid #cbd5e1;
-  color: #047857;
-  padding: 0.5rem 1.4rem;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid #10b981;
+  color: #065f46;
+  padding: 0.55rem 1.5rem;
   border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .pill-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: #10b981;
-  box-shadow: 0 0 10px #10b981;
+  box-shadow: 0 0 12px #10b981;
   animation: pulseDot 1.5s infinite;
 }
 
@@ -102,30 +107,33 @@
   font-family: var(--font-heading);
   font-size: 3.6rem;
   font-weight: 900;
-  color: #0f172a;
+  color: #090d16;
   line-height: 1.25;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
-  text-shadow: 0 2px 30px rgba(255, 255, 255, 0.95), 0 0 15px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 25px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.95);
 }
 
+/* Deep, High-Contrast, Vivid Animated Words */
 .animated-service-word {
-  color: #059669;
+  color: #047857;
   display: inline-block;
   position: relative;
-  background: linear-gradient(120deg, #059669 0%, #10b981 50%, #0284c7 100%);
+  font-weight: 900;
+  background: linear-gradient(135deg, #047857 0%, #059669 45%, #0369a1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  padding-bottom: 2px;
+  padding-bottom: 3px;
+  filter: drop-shadow(0 2px 15px rgba(255, 255, 255, 0.95));
 }
 
 .animated-cursor {
   display: inline-block;
-  font-weight: 300;
-  color: #10b981;
-  -webkit-text-fill-color: #10b981;
+  font-weight: 900;
+  color: #047857;
+  -webkit-text-fill-color: #047857;
   animation: blinkCursor 0.8s infinite;
+  margin-right: 4px;
 }
 
 @keyframes blinkCursor {
@@ -134,13 +142,13 @@
 }
 
 .hero-main-subtitle {
-  color: #1e293b;
-  font-size: 1.22rem;
-  line-height: 1.8;
+  color: #0f172a;
+  font-size: 1.25rem;
+  line-height: 1.85;
   margin: 0 auto 2.5rem auto;
-  max-width: 840px;
-  font-weight: 600;
-  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.95);
+  max-width: 860px;
+  font-weight: 700;
+  text-shadow: 0 2px 25px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.95);
 }
 
 .hero-main-actions {
@@ -156,24 +164,24 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1rem 2.4rem;
+  padding: 1.05rem 2.5rem;
   border-radius: 12px;
   font-size: 1.05rem;
   font-weight: 800;
   color: #ffffff;
-  background: #10b981;
-  border: 1px solid #10b981;
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+  background: #059669;
+  border: 1px solid #059669;
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
   transition: all var(--transition-normal);
   text-decoration: none;
   cursor: pointer;
 }
 
 .btn-hero-primary:hover {
-  background: #059669;
-  border-color: #059669;
+  background: #047857;
+  border-color: #047857;
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.45);
+  box-shadow: 0 15px 35px rgba(5, 150, 105, 0.5);
   color: #ffffff;
 }
 
@@ -181,15 +189,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1rem 2.4rem;
+  padding: 1.05rem 2.5rem;
   border-radius: 12px;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid #94a3b8;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-normal);
   text-decoration: none;
   cursor: pointer;
@@ -197,9 +205,9 @@
 
 .btn-hero-secondary:hover {
   background: #ffffff;
-  border-color: #94a3b8;
+  border-color: #059669;
   transform: translateY(-3px);
-  color: #0f172a;
+  color: #059669;
 }
 
 /* Trust Badges Directly on Background */
@@ -215,18 +223,19 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #0f172a;
+  color: #090d16;
   font-size: 0.95rem;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(8px);
-  padding: 0.4rem 0.95rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .hero-trust-icon {
-  color: #10b981;
+  color: #059669;
 }
 
 /* -------------------------------------------------------------
@@ -255,7 +264,7 @@
 .home-stat-num {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #10b981;
+  color: #059669;
   line-height: 1.1;
   font-family: var(--font-heading);
 }
