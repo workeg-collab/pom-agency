@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -33,6 +33,7 @@ export default function HomePage() {
   const { addToCart } = useCart();
   const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('cloud');
+  const canvasRef = useRef(null);
 
   const phrases = lang === 'ar' ? [
     'الأنظمة المحاسبية (Odoo ERP)',
@@ -83,6 +84,121 @@ export default function HomePage() {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
+
+  // 60FPS Fluid Motion Tech Canvas Engine (Light, Crisp & Interactive)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let width = (canvas.width = canvas.parentElement.offsetWidth);
+    let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+    const handleResize = () => {
+      if (!canvas || !canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.offsetWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+    };
+    window.addEventListener('resize', handleResize);
+
+    const particleCount = 50;
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 2.5 + 1.5,
+        color: i % 2 === 0 ? 'rgba(16, 185, 129, 0.45)' : 'rgba(2, 132, 199, 0.4)'
+      });
+    }
+
+    let mouse = { x: null, y: null };
+    const handleMouseMove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+    const handleMouseLeave = () => {
+      mouse.x = null;
+      mouse.y = null;
+    };
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mouseleave', handleMouseLeave);
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw connection laser lines between particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(16, 185, 129, ${0.22 * (1 - dist / 150)})`;
+            ctx.lineWidth = 1.2;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw interactive lines to mouse pointer
+      if (mouse.x !== null && mouse.y !== null) {
+        for (let i = 0; i < particles.length; i++) {
+          const dx = particles[i].x - mouse.x;
+          const dy = particles[i].y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 180) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(2, 132, 199, ${0.35 * (1 - dist / 180)})`;
+            ctx.lineWidth = 1.4;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Update & Draw particles
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   // The 7 Core Activities (All verified image assets in public/assets)
   const coreActivities = [
@@ -181,25 +297,17 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 1. Light Ambient Video Hero (Real Looping Video with Subtle Blur + No Text Box) */}
-      <section className="light-video-hero-section">
-        {/* Real Looping Background Video */}
-        <video 
-          className="hero-video-bg" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="/assets/web-hero-multidevice.jpg"
-        >
-          <source src="/assets/hero-bg-video.mp4" type="video/mp4" />
-        </video>
+      {/* 1. Light Motion Canvas Hero (Fluid 60FPS Ambient Network & No Text Box) */}
+      <section className="light-motion-hero-section">
+        {/* Interactive Fluid 60FPS Canvas Layer */}
+        <canvas ref={canvasRef} className="hero-interactive-canvas" />
 
-        {/* Translucent Light Gradients & Grid Overlay */}
-        <div className="hero-light-overlay" />
+        {/* Ambient Glowing Orbs */}
+        <div className="hero-ambient-orb orb-green" />
+        <div className="hero-ambient-orb orb-cyan" />
         <div className="hero-subtle-grid" />
 
-        {/* Typography Directly Over Video (NO BOX) */}
+        {/* Typography Directly Over Canvas (NO BOX) */}
         <div className="container hero-direct-content">
           <div className="hero-pill-badge">
             <span className="pill-dot" />

@@ -5,47 +5,68 @@
 }
 
 /* -------------------------------------------------------------
-   Light Immersive Video Hero (Text Directly Over Video, No Box)
+   Light Immersive Motion Canvas Hero (Crisp, Bright & Dynamic)
 ------------------------------------------------------------- */
-.light-video-hero-section {
+.light-motion-hero-section {
   position: relative;
   min-height: 86vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 6rem 1.5rem 5rem 1.5rem;
-  background: #ffffff;
+  background: radial-gradient(circle at 50% 15%, #ecfdf5 0%, #ffffff 80%);
   overflow: hidden;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
 }
 
-/* Background Looping Video */
-.hero-video-bg {
+/* 60FPS Fluid Motion Canvas Layer */
+.hero-interactive-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 1;
-  filter: brightness(1.02);
-  pointer-events: none;
-  opacity: 0.92;
+  pointer-events: auto;
 }
 
-/* Translucent Light Overlay (Soft & Clear) */
-.hero-light-overlay {
+/* Ambient Glowing Light Meshes (Bright & Consistent) */
+.hero-ambient-orb {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.55) 75%, rgba(240, 253, 244, 0.65) 100%);
-  z-index: 2;
+  border-radius: 50%;
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
   pointer-events: none;
+  opacity: 0.55;
+  animation: floatAmbientOrb 12s ease-in-out infinite alternate;
 }
 
+.orb-green {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0) 70%);
+  top: -100px;
+  left: 10%;
+  animation-duration: 14s;
+}
+
+.orb-cyan {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0) 70%);
+  bottom: -150px;
+  right: 8%;
+  animation-duration: 18s;
+}
+
+@keyframes floatAmbientOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(35px, -25px) scale(1.08); }
+  100% { transform: translate(-25px, 35px) scale(0.95); }
+}
+
+/* Precise Tech Grid Pattern */
 .hero-subtle-grid {
   position: absolute;
   top: 0;
@@ -53,10 +74,10 @@
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: 3;
+    linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+  background-size: 45px 45px;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -66,6 +87,12 @@
   z-index: 10;
   max-width: 980px;
   margin: 0 auto;
+  pointer-events: none;
+}
+
+.hero-direct-content a,
+.hero-direct-content button {
+  pointer-events: auto;
 }
 
 .hero-pill-badge {
@@ -73,14 +100,15 @@
   align-items: center;
   gap: 0.6rem;
   background: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #a7f3d0;
   color: #047857;
   padding: 0.5rem 1.4rem;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
+  pointer-events: auto;
 }
 
 .pill-dot {
@@ -105,7 +133,6 @@
   line-height: 1.25;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
-  text-shadow: 0 2px 25px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.9);
 }
 
 .animated-service-word {
@@ -133,13 +160,12 @@
 }
 
 .hero-main-subtitle {
-  color: #1e293b;
+  color: #334155;
   font-size: 1.2rem;
   line-height: 1.8;
   margin: 0 auto 2.5rem auto;
   max-width: 820px;
-  font-weight: 600;
-  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.95);
+  font-weight: 500;
 }
 
 .hero-main-actions {
@@ -149,6 +175,7 @@
   gap: 1.25rem;
   flex-wrap: wrap;
   margin-bottom: 3rem;
+  pointer-events: auto;
 }
 
 .btn-hero-primary {
@@ -207,6 +234,7 @@
   justify-content: center;
   gap: 2.5rem;
   flex-wrap: wrap;
+  pointer-events: auto;
 }
 
 .hero-trust-point {
@@ -263,7 +291,7 @@
 }
 
 /* -------------------------------------------------------------
-   The 7 Core Business Pillars (Clean Light Cards with Images)
+   The 7 Core Business Pillars (Clean Light Cards with Verified Images)
 ------------------------------------------------------------- */
 .home-services-section {
   padding: 6rem 0;
