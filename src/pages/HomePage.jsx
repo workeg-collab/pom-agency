@@ -354,9 +354,6 @@ export default function HomePage() {
               <span>{lang === 'ar' ? 'ابدأ الآن واحجز استشارتك المجانية' : 'Get Started & Book Free Audit'}</span>
               <ArrowRight size={18} />
             </Link>
-            <a href="#services" className="btn-hero-secondary">
-              <span>{lang === 'ar' ? 'استكشف كافة الخدمات الـ 7' : 'Explore All 7 Services'}</span>
-            </a>
           </div>
 
           {/* Direct Trust Highlights Row */}

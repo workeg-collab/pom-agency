@@ -984,12 +984,56 @@
   }
 }
 
-@media (max-width: 600px) {
-  .hero-main-title {
-    font-size: 1.85rem;
+@media (max-width: 768px) {
+  .live-video-hero-section {
+    min-height: 62svh;
+    padding: 4.5rem 1rem 3rem 1rem;
   }
-  .hero-main-subtitle {
-    font-size: 1rem;
+  .hero-main-title {
+    font-size: 2.1rem;
+    line-height: 1.35;
+    margin-bottom: 1.25rem;
+  }
+  .animated-service-word {
+    font-size: 1.45rem;
+    padding: 0.15rem 0.75rem;
+    border-radius: 12px;
+  }
+  .hero-pill-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+  .btn-hero-primary {
+    padding: 0.95rem 1.8rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  .hero-trust-bar {
+    gap: 0.6rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-trust-point {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .live-video-hero-section {
+    min-height: 58svh;
+    padding: 3.75rem 0.85rem 2.5rem 0.85rem;
+  }
+  .hero-main-title {
+    font-size: 1.75rem;
+    line-height: 1.35;
+  }
+  .animated-service-word {
+    font-size: 1.2rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 10px;
   }
   .home-services-grid {
     grid-template-columns: 1fr;
