@@ -56,6 +56,10 @@ export default function App() {
                 <Route path="/helpdesk" element={<ITPage />} />
                 <Route path="/managed-it" element={<ITPage />} />
                 <Route path="/mail-professional" element={<MailProfessionalPage />} />
+                <Route path="/mail" element={<MailProfessionalPage />} />
+                <Route path="/email" element={<MailProfessionalPage />} />
+                <Route path="/webmail" element={<MailProfessionalPage />} />
+                <Route path="/business-mail" element={<MailProfessionalPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/contact-us" element={<ContactPage />} />
