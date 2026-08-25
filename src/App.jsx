@@ -34,6 +34,9 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<WebDesignPage />} />
+                <Route path="/web-design" element={<WebDesignPage />} />
+                <Route path="/websites" element={<WebDesignPage />} />
+                <Route path="/web" element={<WebDesignPage />} />
                 <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
                 <Route path="/marketing" element={<DigitalMarketingPage />} />
                 <Route path="/growth" element={<DigitalMarketingPage />} />
