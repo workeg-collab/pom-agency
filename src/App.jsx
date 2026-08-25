@@ -5,6 +5,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -26,6 +27,7 @@ export default function App() {
     <LanguageProvider>
       <CartProvider>
         <Router>
+          <ScrollToTop />
           <div className="app-layout">
             <Navbar />
             <main className="main-content">
