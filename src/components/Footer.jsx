@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -61,7 +61,6 @@ export default function Footer() {
             <li><Link to="/smart-control">{t('smartControl')}</Link></li>
             <li><Link to="/it">{t('it')}</Link></li>
             <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
-            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/refund-policy">Refund Policy</Link></li>
           </ul>
         </div>
@@ -81,6 +80,12 @@ export default function Footer() {
             <li>
               <Mail size={18} className="contact-icon" />
               <span>info@pom-agency.online</span>
+            </li>
+            <li className="footer-privacy-item">
+              <Link to="/privacy-policy" className="footer-privacy-link">
+                <ShieldCheck size={18} className="contact-icon" />
+                <span>Privacy Policy</span>
+              </Link>
             </li>
           </ul>
         </div>
