@@ -5,68 +5,62 @@
 }
 
 /* -------------------------------------------------------------
-   Light Immersive Motion Canvas Hero (Crisp, Bright & Dynamic)
+   Cinematic Real-Works Photo-Reel Hero (Light & Realistic)
 ------------------------------------------------------------- */
-.light-motion-hero-section {
+.cinematic-reel-hero-section {
   position: relative;
-  min-height: 86vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1.5rem 5rem 1.5rem;
-  background: radial-gradient(circle at 50% 15%, #ecfdf5 0%, #ffffff 80%);
+  padding: 6.5rem 1.5rem 5.5rem 1.5rem;
+  background: #ffffff;
   overflow: hidden;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
 }
 
-/* 60FPS Fluid Motion Canvas Layer */
-.hero-interactive-canvas {
+/* Background Realistic Slideshow Stack */
+.hero-reel-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: auto;
+  overflow: hidden;
 }
 
-/* Ambient Glowing Light Meshes (Bright & Consistent) */
-.hero-ambient-orb {
+.hero-reel-slide {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  -webkit-filter: blur(80px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 7s ease-out;
   pointer-events: none;
-  opacity: 0.55;
-  animation: floatAmbientOrb 12s ease-in-out infinite alternate;
 }
 
-.orb-green {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0) 70%);
-  top: -100px;
-  left: 10%;
-  animation-duration: 14s;
+.hero-reel-slide.active {
+  opacity: 0.85;
+  transform: scale(1.06);
 }
 
-.orb-cyan {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0) 70%);
-  bottom: -150px;
-  right: 8%;
-  animation-duration: 18s;
+/* Translucent Light Cinematic Overlay */
+.hero-reel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.65) 55%, rgba(240, 253, 244, 0.88) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-@keyframes floatAmbientOrb {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(35px, -25px) scale(1.08); }
-  100% { transform: translate(-25px, 35px) scale(0.95); }
-}
-
-/* Precise Tech Grid Pattern */
 .hero-subtle-grid {
   position: absolute;
   top: 0;
@@ -74,41 +68,35 @@
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
-  background-size: 45px 45px;
-  z-index: 2;
+    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 3;
   pointer-events: none;
 }
 
-/* Content sitting DIRECTLY over background (NO BOX) */
+/* Typography & Actions Directly Over Reel (NO BOX) */
 .hero-direct-content {
   position: relative;
   z-index: 10;
-  max-width: 980px;
+  max-width: 1020px;
   margin: 0 auto;
-  pointer-events: none;
-}
-
-.hero-direct-content a,
-.hero-direct-content button {
-  pointer-events: auto;
 }
 
 .hero-pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: #ffffff;
-  border: 1px solid #a7f3d0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid #cbd5e1;
   color: #047857;
   padding: 0.5rem 1.4rem;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
-  pointer-events: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .pill-dot {
@@ -133,6 +121,7 @@
   line-height: 1.25;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
+  text-shadow: 0 2px 30px rgba(255, 255, 255, 0.95), 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
 .animated-service-word {
@@ -160,12 +149,13 @@
 }
 
 .hero-main-subtitle {
-  color: #334155;
-  font-size: 1.2rem;
+  color: #1e293b;
+  font-size: 1.22rem;
   line-height: 1.8;
   margin: 0 auto 2.5rem auto;
-  max-width: 820px;
-  font-weight: 500;
+  max-width: 840px;
+  font-weight: 600;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.95);
 }
 
 .hero-main-actions {
@@ -174,8 +164,7 @@
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
-  pointer-events: auto;
+  margin-bottom: 2.75rem;
 }
 
 .btn-hero-primary {
@@ -212,7 +201,8 @@
   font-size: 1.05rem;
   font-weight: 700;
   color: #0f172a;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
   border: 1px solid #cbd5e1;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all var(--transition-normal);
@@ -221,10 +211,46 @@
 }
 
 .btn-hero-secondary:hover {
-  background: #f8fafc;
+  background: #ffffff;
   border-color: #94a3b8;
   transform: translateY(-3px);
   color: #0f172a;
+}
+
+/* Interactive Activity Selector Pills (Jump to Real Photo) */
+.hero-activity-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.activity-nav-pill {
+  padding: 0.4rem 0.95rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.activity-nav-pill:hover {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #10b981;
+}
+
+.activity-nav-pill.active {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 /* Trust Badges Directly on Background */
@@ -234,16 +260,19 @@
   justify-content: center;
   gap: 2.5rem;
   flex-wrap: wrap;
-  pointer-events: auto;
 }
 
 .hero-trust-point {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #1e293b;
+  color: #0f172a;
   font-size: 0.95rem;
   font-weight: 700;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
 }
 
 .hero-trust-icon {

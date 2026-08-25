@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -33,174 +33,8 @@ export default function HomePage() {
   const { addToCart } = useCart();
   const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('cloud');
-  const canvasRef = useRef(null);
 
-  const phrases = lang === 'ar' ? [
-    'الأنظمة المحاسبية (Odoo ERP)',
-    'الشبكات والسيرفرات المؤسسية',
-    'التحكم الذكي والتيار الخفيف',
-    'التسويق الرقمي ونمو المبيعات',
-    'تصميم وتطوير المواقع الحديثة',
-    'خدمات تكنولوجيا المعلومات 24/7',
-    'البريد الإلكتروني المهني السحابي'
-  ] : [
-    'Integrated Accounting (Odoo ERP)',
-    'Enterprise Networks & Servers',
-    'Smart Control & Low-Current BMS',
-    'Data-Driven Digital Marketing',
-    'Modern Web & UI/UX Development',
-    '24/7 Managed IT & Helpdesk',
-    'Enterprise Cloud Mailboxes'
-  ];
-
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(90);
-
-  // Dynamic Typing Animation
-  useEffect(() => {
-    const fullText = phrases[phraseIndex] || phrases[0];
-
-    const handleTyping = () => {
-      if (!isDeleting) {
-        setCurrentText(fullText.substring(0, currentText.length + 1));
-        setTypingSpeed(80);
-
-        if (currentText === fullText) {
-          setTimeout(() => setIsDeleting(true), 2400);
-        }
-      } else {
-        setCurrentText(fullText.substring(0, currentText.length - 1));
-        setTypingSpeed(40);
-
-        if (currentText === '') {
-          setIsDeleting(false);
-          setPhraseIndex((prev) => (prev + 1) % phrases.length);
-        }
-      }
-    };
-
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
-
-  // 60FPS Fluid Motion Tech Canvas Engine (Light, Crisp & Interactive)
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-    let width = (canvas.width = canvas.parentElement.offsetWidth);
-    let height = (canvas.height = canvas.parentElement.offsetHeight);
-
-    const handleResize = () => {
-      if (!canvas || !canvas.parentElement) return;
-      width = canvas.width = canvas.parentElement.offsetWidth;
-      height = canvas.height = canvas.parentElement.offsetHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    const particleCount = 50;
-    const particles = [];
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: Math.random() * 2.5 + 1.5,
-        color: i % 2 === 0 ? 'rgba(16, 185, 129, 0.45)' : 'rgba(2, 132, 199, 0.4)'
-      });
-    }
-
-    let mouse = { x: null, y: null };
-    const handleMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    };
-    const handleMouseLeave = () => {
-      mouse.x = null;
-      mouse.y = null;
-    };
-    canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseleave', handleMouseLeave);
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Draw connection laser lines between particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(16, 185, 129, ${0.22 * (1 - dist / 150)})`;
-            ctx.lineWidth = 1.2;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw interactive lines to mouse pointer
-      if (mouse.x !== null && mouse.y !== null) {
-        for (let i = 0; i < particles.length; i++) {
-          const dx = particles[i].x - mouse.x;
-          const dy = particles[i].y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 180) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(2, 132, 199, ${0.35 * (1 - dist / 180)})`;
-            ctx.lineWidth = 1.4;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Update & Draw particles
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 8;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      canvas.removeEventListener('mousemove', handleMouseMove);
-      canvas.removeEventListener('mouseleave', handleMouseLeave);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  // The 7 Core Activities (All verified image assets in public/assets)
+  // The 7 Core Activities (Real verified images and synchronized titles)
   const coreActivities = [
     {
       id: 'accounting',
@@ -210,6 +44,7 @@ export default function HomePage() {
         : 'Official ETA e-invoicing compliance, POS cashier sync, multi-warehouse automation, and live financial reporting.',
       image: '/assets/accounting-dashboard.png',
       link: '/accounting',
+      shortTitle: lang === 'ar' ? 'الأنظمة المحاسبية (Odoo ERP)' : 'Accounting & ERP',
       tag: lang === 'ar' ? 'معتمد من الضرائب' : 'Tax Compliant',
       features: lang === 'ar' 
         ? ['الفاتورة والإيصال الإلكتروني ETA', 'نقاط البيع والمطاعم والتجزئة POS', 'إدارة المخازن والجرد الفوري', 'الرواتب وشؤون الموظفين HR']
@@ -223,6 +58,7 @@ export default function HomePage() {
         : 'Datacenter server racks, VMware/Proxmox clustering, fiber cabling, and Fortinet enterprise firewalls.',
       image: '/assets/net-server-rack.jpg',
       link: '/network-servers',
+      shortTitle: lang === 'ar' ? 'الشبكات والسيرفرات' : 'Networks & Servers',
       tag: lang === 'ar' ? 'ضمان تشغيل 99.99%' : '99.99% Uptime',
       features: lang === 'ar'
         ? ['خوادم Dell & HPE عالية التوافر', 'شبكات الفايبر وسويتشات 10Gbps', 'جدران الحماية والأمان السيبراني', 'ربط الفروع VPN & SD-WAN']
@@ -236,6 +72,7 @@ export default function HomePage() {
         : 'Smart building BMS automation, AI CCTV video analytics, addressable fire alarm loops, and luxury KNX smart homes.',
       image: '/assets/smart-home-villa.jpg',
       link: '/smart-control',
+      shortTitle: lang === 'ar' ? 'التحكم الذكي و BMS' : 'Smart Control & BMS',
       tag: lang === 'ar' ? 'توفير 35% طاقة' : '-35% Energy Saved',
       features: lang === 'ar'
         ? ['كاميرات المراقبة بالذكاء الاصطناعي', 'أنظمة إنذار الحريق المعتمدة', 'أنظمة إدارة المباني والأبراج BMS', 'بوابات الدخول ومواقف السيارات']
@@ -249,6 +86,7 @@ export default function HomePage() {
         : 'Data-driven Meta, Google, and TikTok ad funnels delivering 4.8x average ROAS with creative video production.',
       image: '/assets/mkt-growth-dashboard.jpg',
       link: '/digital-marketing',
+      shortTitle: lang === 'ar' ? 'التسويق ونمو المبيعات' : 'Digital Marketing',
       tag: lang === 'ar' ? 'عائد إعلاني 4.8x' : '4.8x ROAS',
       features: lang === 'ar'
         ? ['إعلانات ميتا وجوجل وتيك توك', 'تصوير سينمائي ومونتاج Reels', 'تصدر نتائج بحث جوجل (SEO)', 'إعلانات ومسارات المتاجر الإلكترونية']
@@ -262,6 +100,7 @@ export default function HomePage() {
         : 'Ultra-fast React 19 & Next.js web applications, luxury e-commerce stores, and Lighthouse 100/100 performance.',
       image: '/assets/web-ecommerce-ux.jpg',
       link: '/web-design',
+      shortTitle: lang === 'ar' ? 'تصميم وتطوير المواقع' : 'Web & Apps',
       tag: lang === 'ar' ? 'سرعة < 1.2 ثانية' : '< 1.2s Load Time',
       features: lang === 'ar'
         ? ['واجهات UI/UX مخصصة ومتجاوبة', 'متاجر إلكترونية مع بوابات الدفع', 'تطبيقات ويب ولوحات تحكم SaaS', 'تهيئة سيو كاملة وسرعة فائقة']
@@ -275,6 +114,7 @@ export default function HomePage() {
         : 'Instant helpdesk SLA under 15 mins, Microsoft 365 cloud administration, and enterprise EDR cybersecurity.',
       image: '/assets/it-helpdesk-center.jpg',
       link: '/it',
+      shortTitle: lang === 'ar' ? 'خدمات الـ IT والدعم 24/7' : 'Managed IT Support',
       tag: lang === 'ar' ? 'استجابة < 15 دقيقة' : '< 15m Response',
       features: lang === 'ar'
         ? ['دعم فني مدار للموظفين 24/7', 'إدارة سحابة Microsoft 365', 'حماية EDR ضد برمجيات الفدية', 'نسخ احتياطي سحابي معزول يومياً']
@@ -288,6 +128,7 @@ export default function HomePage() {
         : 'Custom domain business email with strict DMARC/SPF deliverability, AI anti-spam, and Outlook ActiveSync.',
       image: '/assets/web-corporate-portal.jpg',
       link: '/mail-professional',
+      shortTitle: lang === 'ar' ? 'البريد المهني السحابي' : 'Business Mail',
       tag: lang === 'ar' ? '100% تسليم إنبوكس' : '100% Inbox Placement',
       features: lang === 'ar'
         ? ['عناوين بريد باسم نطاق شركتك', 'توثيق أمني DMARC و SPF و DKIM', 'مزامنة Outlook والآيفون والأندرويد', 'هجرة مجانية بدون انقطاع']
@@ -295,19 +136,59 @@ export default function HomePage() {
     }
   ];
 
+  const [activeReelIndex, setActiveReelIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(90);
+
+  // Dynamic Typing Animation (Synchronized with Real Photo Reel)
+  useEffect(() => {
+    const fullText = coreActivities[activeReelIndex].shortTitle;
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        setTypingSpeed(80);
+
+        if (currentText === fullText) {
+          setTimeout(() => setIsDeleting(true), 2800);
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        setTypingSpeed(35);
+
+        if (currentText === '') {
+          setIsDeleting(false);
+          setActiveReelIndex((prev) => (prev + 1) % coreActivities.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, activeReelIndex, typingSpeed, coreActivities]);
+
   return (
     <div className="home-page">
-      {/* 1. Light Motion Canvas Hero (Fluid 60FPS Ambient Network & No Text Box) */}
-      <section className="light-motion-hero-section">
-        {/* Interactive Fluid 60FPS Canvas Layer */}
-        <canvas ref={canvasRef} className="hero-interactive-canvas" />
+      {/* 1. Cinematic Real-Works Photo-Reel Hero (Realistic Dynamic Visual Transitions & No Box) */}
+      <section className="cinematic-reel-hero-section">
+        {/* Background Stack of Real Photos (Smooth Cross-fade & Ken Burns Motion) */}
+        <div className="hero-reel-background">
+          {coreActivities.map((act, idx) => (
+            <img 
+              key={act.id}
+              src={act.image} 
+              alt={act.title}
+              className={`hero-reel-slide ${idx === activeReelIndex ? 'active' : ''}`}
+            />
+          ))}
+        </div>
 
-        {/* Ambient Glowing Orbs */}
-        <div className="hero-ambient-orb orb-green" />
-        <div className="hero-ambient-orb orb-cyan" />
+        {/* Translucent Light Cinematic Overlay & Subtle Grid */}
+        <div className="hero-reel-overlay" />
         <div className="hero-subtle-grid" />
 
-        {/* Typography Directly Over Canvas (NO BOX) */}
+        {/* Content Directly Over Reel (NO BOX) */}
         <div className="container hero-direct-content">
           <div className="hero-pill-badge">
             <span className="pill-dot" />
@@ -337,6 +218,23 @@ export default function HomePage() {
             <a href="#services" className="btn-hero-secondary">
               <span>{lang === 'ar' ? 'استكشف كافة الخدمات الـ 7' : 'Explore All 7 Services'}</span>
             </a>
+          </div>
+
+          {/* Interactive Activity Navigation Pills (Click to view any real photo directly) */}
+          <div className="hero-activity-pills">
+            {coreActivities.map((act, idx) => (
+              <button 
+                key={act.id}
+                className={`activity-nav-pill ${idx === activeReelIndex ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveReelIndex(idx);
+                  setCurrentText(act.shortTitle);
+                  setIsDeleting(false);
+                }}
+              >
+                {act.shortTitle}
+              </button>
+            ))}
           </div>
 
           {/* Direct Trust Highlights Row */}
