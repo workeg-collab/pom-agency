@@ -349,13 +349,7 @@ export default function HomePage() {
             </span>
           </h1>
           
-          <p className="hero-main-subtitle">
-            {lang === 'ar'
-              ? 'نبني وندير بنيتك التحتية من الصفر: أنظمة ERP المحاسبية، السيرفرات والشبكات السحابية، التحكم الذكي بالمباني، والتسويق الرقمي عالي العائد لمضاعفة أرباح منشأتك.'
-              : 'End-to-end enterprise solutions: certified Odoo ERP accounting, high-availability datacenter servers, low-current building automation, and high-ROI performance marketing.'}
-          </p>
-
-          <div className="hero-main-actions">
+          <div className="hero-main-actions" style={{ marginTop: '2.5rem' }}>
             <Link to="/contact" className="btn-hero-primary">
               <span>{lang === 'ar' ? 'ابدأ الآن واحجز استشارتك المجانية' : 'Get Started & Book Free Audit'}</span>
               <ArrowRight size={18} />
