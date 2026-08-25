@@ -35,6 +35,10 @@ export default function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<WebDesignPage />} />
                 <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
+                <Route path="/marketing" element={<DigitalMarketingPage />} />
+                <Route path="/growth" element={<DigitalMarketingPage />} />
+                <Route path="/ads" element={<DigitalMarketingPage />} />
+                <Route path="/seo" element={<DigitalMarketingPage />} />
                 <Route path="/accounting" element={<AccountingPage />} />
                 <Route path="/network-servers" element={<NetworkServersPage />} />
                 <Route path="/network" element={<NetworkServersPage />} />

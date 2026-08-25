@@ -1,110 +1,742 @@
 .digital-marketing-page {
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  background-color: #ffffff;
 }
 
-/* Main Top Hero Section */
-.marketing-hero-section {
+/* -------------------------------------------------------------
+   Unique Omnichannel Command Hero Layout
+------------------------------------------------------------- */
+.mkt-hero-section {
   padding: 4.5rem 0 4rem 0;
-  background: #ffffff !important;
+  background: radial-gradient(circle at 50% 0%, #f0fdf4 0%, #ffffff 70%);
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.mkt-hero-content {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+.mkt-platform-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mkt-hero-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.mkt-hero-subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 auto 2rem auto;
+  max-width: 720px;
+}
+
+.mkt-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Centerpiece Big Showcase Frame */
+.mkt-hero-centerpiece {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mkt-centerpiece-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 1rem;
+  box-shadow: 0 25px 60px rgba(16, 185, 129, 0.12);
+  transition: transform var(--transition-normal);
+  position: relative;
+}
+
+.mkt-centerpiece-wrapper:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+}
+
+.mkt-hero-dashboard-img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.mkt-float-widget {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  padding: 0.85rem 1.4rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  text-align: left;
+}
+
+.mkt-float-widget-1 {
+  top: 15%;
+  left: -2rem;
+}
+
+.mkt-float-widget-2 {
+  bottom: 15%;
+  right: -2rem;
+}
+
+.mkt-widget-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mkt-widget-text strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.mkt-widget-text span {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* -------------------------------------------------------------
+   Trust Stats Bar
+------------------------------------------------------------- */
+.mkt-stats-section {
+  padding: 2.25rem 0;
+  background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
 }
 
-.marketing-hero-title {
-  font-family: var(--font-heading);
-  font-size: 2.75rem;
-  font-weight: 800;
-  color: #343f5a;
-  line-height: 1.25;
-  margin-bottom: 1.25rem;
+.mkt-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
 }
 
-.marketing-hero-checklist {
+.mkt-stat-item {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  align-items: center;
+  padding: 0.5rem;
 }
 
-.marketing-hero-visual {
+.mkt-stat-num {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #10b981;
+  line-height: 1.1;
+  font-family: var(--font-heading);
+}
+
+.mkt-stat-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.35rem;
+}
+
+/* -------------------------------------------------------------
+   Interactive Marketing Campaign Telemetry Console
+------------------------------------------------------------- */
+.mkt-console-section {
+  background: #ffffff;
+  padding: 5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mkt-tab-buttons {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.mkt-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mkt-tab-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.mkt-tab-btn.active {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+}
+
+/* Console Mockup Window */
+.mkt-console-window {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+  color: #ffffff;
+}
+
+.mkt-window-header {
+  background: #1e293b;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.mkt-window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mkt-window-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.mkt-window-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mkt-window-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  font-weight: 700;
+}
+
+.mkt-window-body {
+  padding: 2rem;
+  background: #0f172a;
+}
+
+.mkt-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.mkt-kpi-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mkt-kpi-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.mkt-kpi-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-heading);
+}
+
+.mkt-kpi-badge-gain {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.mkt-kpi-badge-neutral {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* -------------------------------------------------------------
+   Visual Split Showcases with Images
+------------------------------------------------------------- */
+.mkt-visual-split-section {
+  padding: 4.5rem 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mkt-visual-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
-.marketing-img-box {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
+.mkt-visual-split-grid.reverse {
+  direction: rtl;
+}
+
+.mkt-visual-split-grid.reverse > * {
+  direction: ltr;
+}
+
+.mkt-split-img-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(19, 136, 253, 0.1);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mkt-split-img-card img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 14px;
   transition: transform var(--transition-normal);
 }
 
-.marketing-img-box:hover {
-  transform: scale(1.03);
-  border-color: #1388fd;
+.mkt-split-img-card:hover img {
+  transform: scale(1.02);
 }
 
-.marketing-official-img {
+.mkt-split-content h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.mkt-split-content p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.mkt-split-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.mkt-split-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* -------------------------------------------------------------
+   Core Marketing Pillars Grid
+------------------------------------------------------------- */
+.mkt-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.mkt-module-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.mkt-module-card:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.12);
+}
+
+.mkt-module-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.mkt-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.08);
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mkt-module-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.mkt-module-card p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.mkt-module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+/* -------------------------------------------------------------
+   Creative Gallery Showcase Grid
+------------------------------------------------------------- */
+.mkt-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.mkt-gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all var(--transition-normal);
+  background: #ffffff;
+}
+
+.mkt-gallery-item:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+}
+
+.mkt-gallery-item img {
   width: 100%;
-  height: auto;
+  height: 220px;
   object-fit: cover;
   display: block;
 }
 
-.marketing-floating-badge {
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  padding: 0.6rem 1.1rem;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #343f5a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+.mkt-gallery-caption {
+  padding: 1.25rem;
 }
 
-/* Pillar Cards */
-.marketing-pillar-card {
-  display: flex;
-  flex-direction: column;
+.mkt-gallery-caption h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.mkt-gallery-caption p {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------
+   Growth Packages & Pricing Grid
+------------------------------------------------------------- */
+.mkt-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.mkt-pricing-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-.marketing-pillar-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(19, 136, 253, 0.12);
-  border-color: #1388fd;
+.mkt-pricing-card.recommended {
+  border-color: #10b981;
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.15);
+  transform: scale(1.02);
 }
 
-.marketing-pillar-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #343f5a;
+.mkt-pricing-card:hover {
+  transform: translateY(-4px);
 }
 
-.marketing-pillar-card p {
-  color: #777777;
+.mkt-pricing-card.recommended:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+.mkt-plan-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.mkt-plan-subtitle {
+  color: #64748b;
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.mkt-plan-features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.mkt-plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
   font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.mkt-plan-features .check-icon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Workflow Step Cards */
+.mkt-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.mkt-workflow-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.mkt-workflow-card:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.08);
+}
+
+.mkt-workflow-step-num {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: rgba(16, 185, 129, 0.25);
+  font-family: var(--font-heading);
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+
+.mkt-workflow-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.mkt-workflow-card p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Bottom CTA Banner */
+.mkt-cta-card {
+  background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(6, 78, 59, 0.25);
+}
+
+.mkt-cta-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.mkt-cta-card p {
+  color: #a7f3d0;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.mkt-cta-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+  .mkt-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mkt-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mkt-workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mkt-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mkt-visual-split-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
-  .marketing-hero-title {
-    font-size: 2.1rem;
+  .mkt-hero-title {
+    font-size: 2.25rem;
+  }
+  .mkt-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .mkt-pricing-card.recommended {
+    transform: none;
+  }
+  .mkt-float-widget {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .mkt-hero-title {
+    font-size: 1.85rem;
+  }
+  .mkt-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .mkt-modules-grid,
+  .mkt-gallery-grid,
+  .mkt-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+  .mkt-kpis-grid {
+    grid-template-columns: 1fr;
   }
 }
