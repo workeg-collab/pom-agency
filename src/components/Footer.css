@@ -13,10 +13,11 @@
 }
 
 .footer-brand-img {
-  height: 48px;
+  height: 50px;
+  width: auto;
   object-fit: contain;
   margin-bottom: 1.25rem;
-  filter: brightness(0) invert(1);
+  display: block;
 }
 
 .footer-desc {

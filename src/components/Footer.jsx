@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer-col brand-col">
           <Link to="/" className="footer-brand">
             <img 
-              src="/assets/Untitled-1.png" 
+              src="/assets/pom-logo-white.png" 
               alt="POM Agency Logo" 
               className="footer-brand-img"
             />

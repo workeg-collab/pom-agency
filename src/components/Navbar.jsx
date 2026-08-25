@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Brand Logo */}
         <Link to="/" className="nav-brand">
           <img 
-            src="/assets/Untitled-1.png" 
+            src="/assets/pom-logo-dark.png" 
             alt="POM Digital Engineering Logo" 
             className="logo-img"
           />
