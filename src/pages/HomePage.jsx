@@ -181,9 +181,9 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 1. Real Live-Action Video Hero (Continuous Live Action Playback & No Box) */}
+      {/* 1. Real Master Showreel Video Hero (Combined 6-Clip Professional Action Video) */}
       <section className="live-video-hero-section">
-        {/* Continuous Real Live Video */}
+        {/* Continuous Master Showreel Video */}
         <video 
           className="hero-live-video"
           autoPlay 
@@ -192,7 +192,7 @@ export default function HomePage() {
           playsInline
           poster="/assets/web-hero-multidevice.jpg"
         >
-          <source src="/assets/live-tech-hero.mp4" type="video/mp4" />
+          <source src="/assets/pom-showreel.mp4" type="video/mp4" />
         </video>
 
         {/* Translucent Light Cinematic Overlay & Grid */}
