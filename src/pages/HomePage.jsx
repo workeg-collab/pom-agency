@@ -38,7 +38,7 @@ export default function HomePage() {
     'الأنظمة المحاسبية (Odoo ERP)',
     'الشبكات والسيرفرات المؤسسية',
     'التحكم الذكي والتيار الخفيف',
-    'التسويق الرقمي ونمو المبيعات',
+    'التسويق الرقمي ومضاعفة المبيعات',
     'تصميم وتطوير المواقع الحديثة',
     'خدمات تكنولوجيا المعلومات 24/7',
     'البريد الإلكتروني المهني السحابي'
@@ -55,7 +55,7 @@ export default function HomePage() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
+  const [typingSpeed, setTypingSpeed] = useState(90);
 
   useEffect(() => {
     const fullText = phrases[phraseIndex] || phrases[0];
@@ -66,7 +66,7 @@ export default function HomePage() {
         setTypingSpeed(80);
 
         if (currentText === fullText) {
-          setTimeout(() => setIsDeleting(true), 2000);
+          setTimeout(() => setIsDeleting(true), 2200);
         }
       } else {
         setCurrentText(fullText.substring(0, currentText.length - 1));
@@ -83,15 +83,15 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, phraseIndex, typingSpeed, phrases]);
 
-  // The 7 Core Activities
+  // The 7 Core Activities (Guaranteed verified image assets)
   const coreActivities = [
     {
       id: 'accounting',
       title: lang === 'ar' ? 'الأنظمة المحاسبية وإدارة المؤسسات (Odoo ERP)' : 'Odoo ERP & Integrated Accounting',
       desc: lang === 'ar' 
-        ? 'ربط الفاتورة الإلكترونية ETA، نقاط البيع السريعة POS، وإدارة المخازن والشجرة المحاسبية بدقة متناهية.'
-        : 'Official ETA e-invoicing compliance, POS cashier sync, multi-warehouse automation, and financial audit reports.',
-      image: '/assets/accounting-dashboard.jpg',
+        ? 'ربط الفاتورة والإيصال الإلكتروني ETA، نقاط البيع السريعة POS، وإدارة المخازن والجرد والميزانيات العمومية.'
+        : 'Official ETA e-invoicing compliance, POS cashier sync, multi-warehouse automation, and live financial reporting.',
+      image: '/assets/accounting-dashboard.png',
       link: '/accounting',
       tag: lang === 'ar' ? 'معتمد من الضرائب' : 'Tax Compliant',
       features: lang === 'ar' 
@@ -115,7 +115,7 @@ export default function HomePage() {
       id: 'smart-control',
       title: lang === 'ar' ? 'التحكم الذكي وأنظمة التيار الخفيف (BMS)' : 'Smart Automation & Low-Current Systems',
       desc: lang === 'ar'
-        ? 'إدارة المباني الذكية، كاميرات المراقبة بالذكاء الاصطناعي، إنذار الحريق Hochiki، والتحكم بالفيلات والقصور.'
+        ? 'إدارة المباني الذكية BMS، كاميرات المراقبة بالذكاء الاصطناعي، إنذار الحريق Hochiki، والتحكم بالفيلات والقصور.'
         : 'Smart building BMS automation, AI CCTV video analytics, addressable fire alarm loops, and luxury KNX smart homes.',
       image: '/assets/smart-home-villa.jpg',
       link: '/smart-control',
@@ -143,7 +143,7 @@ export default function HomePage() {
       desc: lang === 'ar'
         ? 'مواقع ومتاجر إلكترونية فائقة السرعة والأناقة مبنية بأحدث تقنيات React 19 مع تجاوب كامل وسرعة 100/100.'
         : 'Ultra-fast React 19 & Next.js web applications, luxury e-commerce stores, and Lighthouse 100/100 performance.',
-      image: '/assets/web-hero-multidevice.jpg',
+      image: '/assets/web-ecommerce-ux.jpg',
       link: '/web-design',
       tag: lang === 'ar' ? 'سرعة < 1.2 ثانية' : '< 1.2s Load Time',
       features: lang === 'ar'
@@ -180,10 +180,10 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 1. Grand Master Portal Hero Section */}
+      {/* 1. Full-Width Immersive Light Hero Banner with Overlaid Animation */}
       <section className="home-hero-section">
         <div className="container">
-          <div className="home-hero-content">
+          <div className="home-hero-glass-box">
             <div className="home-platform-pills">
               <span style={{ color: '#10b981', fontWeight: 800 }}>POM Agency</span> &bull; 
               <span>ERP & Odoo</span> &bull; 
@@ -195,7 +195,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="home-hero-title">
-              {lang === 'ar' ? 'شريكك الهندسي والتقني المتكامل لـ' : 'Your Complete Tech & Engineering Partner for'}{' '}
+              {lang === 'ar' ? 'شريكك التقني والهندسي المتكامل لـ' : 'Your Complete Tech & Engineering Partner for'}{' '}
               <br />
               <span className="animated-dynamic-word">
                 {currentText}
@@ -210,42 +210,27 @@ export default function HomePage() {
             </p>
 
             <div className="home-hero-actions">
-              <Link to="/contact" className="btn btn-primary" style={{ padding: '0.9rem 2rem' }}>
+              <Link to="/contact" className="btn btn-primary" style={{ padding: '0.95rem 2.2rem', fontSize: '1rem' }}>
                 {lang === 'ar' ? 'طلب استشارة هندسية وتقنية مجانية' : 'Book Free Tech Consultation'} <ArrowRight size={18} />
               </Link>
-              <a href="#services" className="btn btn-secondary" style={{ padding: '0.9rem 2rem' }}>
-                {lang === 'ar' ? 'استكشف كافة خدمات الشركة' : 'Explore All Services'}
+              <a href="#services" className="btn btn-secondary" style={{ padding: '0.95rem 2.2rem', fontSize: '1rem' }}>
+                {lang === 'ar' ? 'استكشف كافة خدمات الشركة الـ 7' : 'Explore All 7 Services'}
               </a>
             </div>
-          </div>
 
-          {/* Master Hero Visual Showcase Frame */}
-          <div className="home-hero-centerpiece">
-            <div className="home-centerpiece-wrapper">
-              <img 
-                src="/assets/web-hero-multidevice.jpg" 
-                alt="POM Agency Integrated Technology Ecosystem" 
-                className="home-hero-img" 
-              />
-              
-              <div className="home-float-widget home-float-widget-1">
-                <div className="home-widget-icon" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
-                  <Award size={22} />
-                </div>
-                <div className="home-widget-text">
-                  <strong>{lang === 'ar' ? '500+ مشروع تم تنفيذه' : '500+ Delivered Projects'}</strong>
-                  <span>{lang === 'ar' ? 'شريك معتمد لكبرى الشركات' : 'Certified Enterprise Partner'}</span>
-                </div>
+            {/* Overlaid Highlights Row */}
+            <div className="home-hero-highlights">
+              <div className="home-highlight-item">
+                <Award size={20} color="#10b981" />
+                <span>{lang === 'ar' ? '500+ مشروع تم تنفيذه بنجاح' : '500+ Delivered Projects'}</span>
               </div>
-
-              <div className="home-float-widget home-float-widget-2">
-                <div className="home-widget-icon" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6' }}>
-                  <Shield size={22} />
-                </div>
-                <div className="home-widget-text">
-                  <strong>{lang === 'ar' ? 'ضمان تشغيل 99.99% SLA' : '99.99% Reliability SLA'}</strong>
-                  <span>{lang === 'ar' ? 'دعم فني مدار على مدار الساعة' : '24/7/365 Managed Support'}</span>
-                </div>
+              <div className="home-highlight-item">
+                <Shield size={20} color="#3b82f6" />
+                <span>{lang === 'ar' ? '99.99% ضمان استقرار البنية السحابية' : '99.99% Cloud Uptime SLA'}</span>
+              </div>
+              <div className="home-highlight-item">
+                <Zap size={20} color="#f59e0b" />
+                <span>{lang === 'ar' ? 'دعم فني واستجابة فورية 24/7' : '24/7 Managed Fast Support'}</span>
               </div>
             </div>
           </div>
