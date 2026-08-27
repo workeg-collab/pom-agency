@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { CartProvider } from './context/CartContext';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
@@ -74,6 +75,7 @@ export default function App() {
             <WhatsAppButton />
             <Footer />
           </div>
+          <Analytics />
         </Router>
       </CartProvider>
     </LanguageProvider>
