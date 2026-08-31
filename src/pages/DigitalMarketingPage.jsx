@@ -672,6 +672,9 @@ export default function DigitalMarketingPage() {
             {packages.map((pkg) => (
               <div key={pkg.id} className={`mkt-pricing-card ${pkg.recommended ? 'recommended' : ''}`}>
                 {pkg.recommended && <div className="popular-badge" style={{ background: '#10b981' }}>{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={pkg.image} alt={pkg.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="mkt-plan-title">{pkg.title}</h3>
                   <span className="mkt-plan-subtitle">{pkg.subtitle}</span>

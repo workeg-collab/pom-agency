@@ -664,6 +664,9 @@ export default function MailProfessionalPage() {
             {packages.map((pkg) => (
               <div key={pkg.id} className={`mail-pricing-card ${pkg.recommended ? 'recommended' : ''}`}>
                 {pkg.recommended && <div className="popular-badge" style={{ background: '#2563eb' }}>{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={pkg.image} alt={pkg.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="mail-plan-title">{pkg.title}</h3>
                   <span className="mail-plan-subtitle">{pkg.subtitle}</span>

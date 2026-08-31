@@ -129,6 +129,7 @@ export default function AccountingPage() {
       subtitle: lang === 'ar' ? 'للأنشطة التجارية والمحلات الناشئة' : 'Small Businesses & Retail Shops',
       price: 1999.99,
       recommended: false,
+      image: '/assets/accounting-dashboard.png',
       features: lang === 'ar' ? [
         'نظام حسابات عامة وقيود يومية متكامل',
         'ربط الفاتورة والإيصال الإلكتروني ETA',
@@ -149,6 +150,7 @@ export default function AccountingPage() {
       subtitle: lang === 'ar' ? 'للشركات المتنامية والمتوسطة' : 'Growing & Medium Sized Companies',
       price: 4999.99,
       recommended: true,
+      image: '/assets/Odoo-implementation.png',
       features: lang === 'ar' ? [
         'نظام Odoo ERP كامل (حسابات، مخازن، مبيعات، مشتريات)',
         'ربط كامل مع مصلحة الضرائب المصرية ETA',
@@ -171,6 +173,7 @@ export default function AccountingPage() {
       subtitle: lang === 'ar' ? 'للمصانع والشركات ذات الفروع المتعددة' : 'Factories, Holdings & Manufacturing',
       price: 9999.99,
       recommended: false,
+      image: '/assets/odoo-image.png',
       features: lang === 'ar' ? [
         'نظام Odoo مخصص بالكامل بدون حد لعدد المستخدمين',
         'موديول التصنيع وخطوط الإنتاج الكامل (MRP)',
@@ -800,6 +803,9 @@ export default function AccountingPage() {
             {plans.map((p) => (
               <div key={p.id} className={`pricing-card ${p.recommended ? 'recommended' : ''}`}>
                 {p.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={p.image} alt={p.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="plan-title">{p.title}</h3>
                   <span className="plan-subtitle">{p.subtitle}</span>
@@ -823,7 +829,7 @@ export default function AccountingPage() {
                       id: p.id,
                       title: p.title,
                       price: p.price,
-                      image: '/assets/Odoo-implementation.png'
+                      image: p.image
                     })}
                     className={`btn ${p.recommended ? 'btn-primary' : 'btn-secondary'} full-width`}
                   >

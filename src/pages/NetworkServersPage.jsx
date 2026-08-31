@@ -122,6 +122,7 @@ export default function NetworkServersPage() {
       subtitle: lang === 'ar' ? 'للشركات والمكاتب حتى 30 مستخدم' : 'Offices & Branches up to 30 Users',
       price: 2499.99,
       recommended: false,
+      image: '/assets/Post-1.jpg',
       features: lang === 'ar' ? [
         'راوتر وسويتش مدار Cisco / Mikrotik',
         'جدار حماية فايروول وتشفير VPN',
@@ -142,6 +143,7 @@ export default function NetworkServersPage() {
       subtitle: lang === 'ar' ? 'للشركات المتوسطة والمتعددة الفروع' : 'Growing Medium Enterprises & Multi-Sites',
       price: 5999.99,
       recommended: true,
+      image: '/assets/Post-2.jpg',
       features: lang === 'ar' ? [
         'سيرفر فيزيائي مخصص + بيئات VMware الافتراضية',
         'نظام Active Directory وإدارة مركزية للصلاحيات',
@@ -164,6 +166,7 @@ export default function NetworkServersPage() {
       subtitle: lang === 'ar' ? 'للمصانع والشركات القابضة الكبرى' : 'Holdings, Multi-Floor HQ & Factories',
       price: 11999.99,
       recommended: false,
+      image: '/assets/Post-3.jpg',
       features: lang === 'ar' ? [
         'بناء وتجهيز غرفة سيرفرات Data Center متكاملة',
         'كابينة سيرفرات 42U مع كابلات ألياف ضوئية 10G',
@@ -675,6 +678,9 @@ export default function NetworkServersPage() {
             {infrastructureTiers.map((p) => (
               <div key={p.id} className={`net-pricing-card ${p.recommended ? 'recommended' : ''}`}>
                 {p.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={p.image} alt={p.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="net-plan-title">{p.title}</h3>
                   <span className="net-plan-subtitle">{p.subtitle}</span>

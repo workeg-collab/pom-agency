@@ -662,6 +662,9 @@ export default function ITPage() {
             {packages.map((pkg) => (
               <div key={pkg.id} className={`it-pricing-card ${pkg.recommended ? 'recommended' : ''}`}>
                 {pkg.recommended && <div className="popular-badge" style={{ background: '#0891b2' }}>{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={pkg.image} alt={pkg.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="it-plan-title">{pkg.title}</h3>
                   <span className="it-plan-subtitle">{pkg.subtitle}</span>

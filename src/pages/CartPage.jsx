@@ -52,9 +52,16 @@ export default function CartPage() {
             <div className="cart-items-container">
               {cart.map((item) => (
                 <div key={item.id} className="card cart-item-card">
-                  <div className="item-info">
-                    <h3>{item.title}</h3>
-                    <span className="item-price">{item.price} EGP / Month</span>
+                  <div className="cart-item-main">
+                    {item.image && (
+                      <div className="cart-item-thumb-box">
+                        <img src={item.image} alt={item.title} className="cart-item-thumb" />
+                      </div>
+                    )}
+                    <div className="item-info">
+                      <h3>{item.title}</h3>
+                      <span className="item-price">{item.price} EGP / Month</span>
+                    </div>
                   </div>
                   <div className="item-controls">
                     <div className="quantity-selector">

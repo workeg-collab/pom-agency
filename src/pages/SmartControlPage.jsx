@@ -798,6 +798,9 @@ export default function SmartControlPage() {
             {smartPackages.map((p) => (
               <div key={p.id} className={`smart-pricing-card ${p.recommended ? 'recommended' : ''}`}>
                 {p.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={p.image} alt={p.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="smart-plan-title">{p.title}</h3>
                   <span className="smart-plan-subtitle">{p.subtitle}</span>

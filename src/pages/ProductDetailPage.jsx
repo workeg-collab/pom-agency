@@ -10,7 +10,7 @@ const productsData = {
     title: 'Individual – Mail',
     price: 99.99,
     category: 'Mail Plans',
-    image: 'https://pom-agency.online/wp-content/uploads/2025/08/iiii.png',
+    image: '/assets/iiii.png',
     features: [
       '1 mailbox included',
       '5GB for emails',
@@ -24,7 +24,7 @@ const productsData = {
     title: 'Business – Mail',
     price: 499.99,
     category: 'Mail Plans',
-    image: 'https://pom-agency.online/wp-content/uploads/2025/08/bbbb.png',
+    image: '/assets/bbbb.png',
     features: [
       '3 mailboxes included',
       '30GB for emails',
@@ -39,7 +39,7 @@ const productsData = {
     title: 'Professional – Mail',
     price: 999.99,
     category: 'Mail Plans',
-    image: 'https://pom-agency.online/wp-content/uploads/2025/08/pppp.png',
+    image: '/assets/pppp.png',
     features: [
       '5 mailboxes included',
       '75GB for emails',

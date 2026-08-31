@@ -662,6 +662,9 @@ export default function WebDesignPage() {
             {packages.map((pkg) => (
               <div key={pkg.id} className={`web-pricing-card ${pkg.recommended ? 'recommended' : ''}`}>
                 {pkg.recommended && <div className="popular-badge" style={{ background: '#6366f1' }}>{t('popularChoice')}</div>}
+                <div className="plan-img-box">
+                  <img src={pkg.image} alt={pkg.title} className="plan-thumb" />
+                </div>
                 <div>
                   <h3 className="web-plan-title">{pkg.title}</h3>
                   <span className="web-plan-subtitle">{pkg.subtitle}</span>

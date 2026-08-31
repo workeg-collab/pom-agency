@@ -19,6 +19,32 @@
   border: 1px solid #e2e8f0;
 }
 
+.cart-item-main {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cart-item-thumb-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cart-item-thumb {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .item-info h3 {
   font-size: 1.15rem;
   margin-bottom: 0.25rem;

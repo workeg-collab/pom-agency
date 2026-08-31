@@ -27,3 +27,10 @@ bk/
 *.gz
 *.zip
 *.sql
+
+# Raw root videos & scratch
+/*.mp4
+scratch/
+public/assets/hero-bg-video-streaks.mp4
+public/assets/hero-bg-video.mp4
+public/assets/live-tech-hero.mp4

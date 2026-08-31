@@ -213,6 +213,7 @@ export default function ItServicesPage() {
       subtitleKey: 'planStarterITSub',
       price: 1499.99,
       recommended: false,
+      image: '/assets/it-helpdesk-center.jpg',
       features: getPlanFeatures(0)
     },
     {
@@ -221,6 +222,7 @@ export default function ItServicesPage() {
       subtitleKey: 'planManagedITProSub',
       price: 3499.99,
       recommended: true,
+      image: '/assets/net-server-rack.jpg',
       features: getPlanFeatures(1)
     },
     {
@@ -229,6 +231,7 @@ export default function ItServicesPage() {
       subtitleKey: 'planEnterpriseCareSLASub',
       price: 7999.99,
       recommended: false,
+      image: '/assets/net-soc-noc.jpg',
       features: getPlanFeatures(2)
     }
   ];
@@ -302,7 +305,10 @@ export default function ItServicesPage() {
             {pricingPlans.map((p) => (
               <div key={p.id} className={`card pricing-card text-center ${p.recommended ? 'recommended' : ''}`}>
                 {p.recommended && <div className="popular-badge">{t('popularChoice')}</div>}
-                <h3 className="plan-title mt-2">{t(p.titleKey)}</h3>
+                <div className="plan-img-box">
+                  <img src={p.image} alt={t(p.titleKey)} className="plan-thumb" />
+                </div>
+                <h3 className="plan-title">{t(p.titleKey)}</h3>
                 <span className="plan-subtitle">{t(p.subtitleKey)}</span>
                 <div className="plan-price">
                   <span className="currency">{t('currency')}</span>
@@ -320,7 +326,7 @@ export default function ItServicesPage() {
                       id: p.id,
                       title: `${t(p.titleKey)} Managed IT Plan`,
                       price: p.price,
-                      image: '/assets/Home-3.png'
+                      image: p.image
                     })}
                     className={`btn ${p.recommended ? 'btn-primary' : 'btn-secondary'} full-width`}
                   >
