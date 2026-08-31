@@ -24,10 +24,9 @@ export default function Navbar() {
   ];
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'ar', name: 'العربية', flag: '🇪🇬' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' }
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'tr', name: 'Türkçe', flag: '🇹🇷' }
   ];
 
   return (
